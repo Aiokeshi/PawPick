@@ -7,27 +7,33 @@
     color: white;
     text-decoration: none;
 }
-
 @font-face {
     font-family: SeymourOne;
     src: url(/static/main/fonts/SeymourOne-Regular.ttf);
 
 }
+@font-face {
+    font-family: EBGaramond;
+    src: url(/static/main/fonts//EBGaramond-VariableFont_wght.ttf);
+
+}
 
 h1,h2,h3,a {
     font-family: SeymourOne;
+    font-size: 24px;
+}
+p{
+    font-family:EBGaramond;
+}
+img{
+    width: 100%;
 }
 body{
     background-image: url(/static/main/img/background.svg);
     background-size: cover;
-
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-}
 .container{
     max-width: 1480px;
+   margin: 0 auto;
 }
