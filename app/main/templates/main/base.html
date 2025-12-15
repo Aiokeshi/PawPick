@@ -1,0 +1,58 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Корочки.есть</h1>
+        <!-- <img src="" alt=""> -->
+
+        <nav class="nav">      
+            <a href="{% url 'index' %}" class="button"> Тест </a>
+            <a href="#" class="button"> Собаки </a>
+            <a href="#" class="button"> Спасатели</a>
+            <a href="#" class="button"> Избранное</a>
+        </nav>
+        <a href="#">Вход | Регистрация</a>
+        
+      
+
+    </header>
+
+<main>
+    {% block content %}
+
+    {% endblock %}
+    </main>
+    <footer>
+        <div class="container">
+        <div class="footer_sec1">
+            <nav class="nav">
+            <a href="{% url 'index' %}" class="button"> Тест </a>
+            <a href="#" class="button"> Собаки </a>
+            <a href="#" class="button"> Спасатели</a>
+            <a href="#" class="button"> Избранное</a>
+            </nav>
+             <h1>Корочки.есть</h1>
+        </div>
+        <div class="divider"></div>
+        <div class="footer_sec2">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem amet dolore accusamus, nisi illo error voluptates commodi porro unde adipisci, temporibus nihil voluptate consequuntur, natus eum! Accusantium dolorum sunt reiciendis.</p>
+            <h2>соц</h2>
+        </div>
+        </div>
+    </footer>
+    {% load static %}
+    <script src="{% static '/main/js/main.js' %}"></script>
+</body>
+
+</html>

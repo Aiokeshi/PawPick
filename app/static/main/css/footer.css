@@ -1,0 +1,30 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:#2B3939;
+    align-items:center;
+    padding: 20px 0px;
+}
+.wrapper{
+display: flex;
+flex-direction: column;
+    row-gap: 43px;
+    }
+.footer_sec1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.divider{
+    height: 3px;
+    border-radius: 5px;
+    min-width: 350px;
+    max-width: 1480px;
+    background-color:#FACA78;
+}
+.footer_sec2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,17 @@
+.section1{
+    background-image:url(/static/main/img/sec1back.svg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.section1_banner{
+    background-color:#794A3A;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 50px;
+}
+.section1_slider{
+    width: 700px;
+    height: 700px;
+}
