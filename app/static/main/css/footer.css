@@ -1,15 +1,14 @@
 footer{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-color:#2B3939;
-    align-items:center;
-    padding: 20px 0px;
+
 }
-.wrapper{
+.footer{
 display: flex;
 flex-direction: column;
     row-gap: 43px;
+        padding: 20px 0px;
     }
 .footer_sec1{
     display: flex;

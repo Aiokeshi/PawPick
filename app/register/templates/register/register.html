@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static%}
+{% block title %}{{'Регистрация'}}{% endblock %}
+
+{% block content %}
+
+
+<div class="container cont_form">
+        <span class="form_title"><h2>Регистрация</h2></span>
+    <div class="form">
+    <form method="POST" class="form_form">
+        {% csrf_token %}
+        <label class="text">Введите Логин</label>
+        <input type="text" id="username" name="username" placeholder="Логин..." class="form_input" required>
+
+        <label class="text">Введите ФИО</label>
+        <input type="text" id="name" name="name" placeholder="ФИО..." class="form_input" required>
+
+        <label class="text">Введите Email</label>
+        <input type="email" id="email" name="email" placeholder="Email..." class="form_input" required>
+
+        <label class="text">Введите Пароль</label>
+        <input type="password" id="password" name="password" placeholder="Пароль..." class="form_input" required>
+
+        <label class="text">Подтвердите Пароль</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Пароль..." class="form_input"
+            required>
+        <a href="{% url 'register:login' %}" class="button">Есть аккаунт? Войдите.</a>
+        <button type="submit" class="btn"><span> Зарегистрироваться</span></button>
+    </form>
+
+
+    </div>
+</div>
+{% endblock %}

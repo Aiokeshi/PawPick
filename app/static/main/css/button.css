@@ -1,0 +1,30 @@
+.btn {
+    display: flex;
+    align-items: center;
+justify-content: center;
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+
+    background-image: radial-gradient(circle at top left, transparent 20px, #D0542E 17px), radial-gradient(circle at top right, transparent 20px, #D0542E 17px), radial-gradient(circle at bottom left, transparent 20px, #D0542E 17px), radial-gradient(circle at bottom right, transparent 20px, #D0542E 17px);
+    background-size: 50% 50%;
+    background-position: top left, top right, bottom left, bottom right;
+    height: 110px;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+    border: none;
+    span {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        color: #2B3939;
+        font-size: 24px;
+        border-radius: 20px;
+        width: 75%;
+    }
+}

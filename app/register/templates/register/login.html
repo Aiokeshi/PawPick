@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load static%}
+{% block title %}{{'Вход'}}{% endblock %}
+
+{% block content %}
+
+
+<div class="container cont_form">
+     <span class="form_title"><h2>Вход</h2></span>
+    <div class="form">
+    <form method="POST" class="form_form">
+        {% csrf_token %}
+        <label class="text">Введите Логин</label>
+        <input type="text" name="username" placeholder="Логин..." class="form_input" required>
+
+        <label class="text">Введите Пароль</label>
+        <input type="password" name="password" placeholder="Пароль..." class="form_input" required>
+ <a href="{% url 'register:register' %}" class="button">Нет аккаунта? Зарегистрируйтесь.</a>
+        <button type="submit" class="btn"><span> Войти</span></button>
+    </form>
+   
+    </div>
+</div>
+
+{% endblock %}

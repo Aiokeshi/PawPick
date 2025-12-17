@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static%}
-{% block title %}{{'Заявка'}}{% endblock %}
+{% block title %}{{'Главная страница'}}{% endblock %}
 
 {% block content %}
 <section class="section1">
@@ -11,7 +11,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque omnis, perferendis at facilis, facere
                     accusantium fugit vitae voluptatem odio itaque porro numquam assumenda, aspernatur dignissimos
                     reiciendis pariatur repellendus esse laudantium!</p>
-                <a href="" class="btn"><span>Пройти ТЕСТ</span></a>
+                <a href="" class="btn sec1btn"><span>Пройти ТЕСТ</span></a>
             </div>
 
             <div class="section1_slider">
@@ -64,14 +64,23 @@
 <img src="/static/main/img/divider1.svg" alt="" class="divider1">
 <section class="section4">
     <div class="container">
-        <div class="wrapper"></div>
-        <div class="form"></div>
+    <div class="wrapper">
+        <div class="sec4_form">
+         <span class="form_title"><h2>Отзыв</h2></span>
+    <div class="form">
+        
+        <form method="POST" class="form_form">
+        {% csrf_token %}
+        {{ review_form.as_p }}
+         <button type="submit" class="btn" method="POST"><span>Отправить</span></button>
+        </form>
+    </div>
     </div>
     <div class="section4_info">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam sed eligendi provident beatae commodi,
             accusamus debitis? Obcaecati iusto laudantium et repellendus soluta. Voluptate vero officiis facilis
             repudiandae, ipsa quaerat molestiae.</p>
-        <div class="btn"></div>
+    </div>
     </div>
     </div>
 </section>
