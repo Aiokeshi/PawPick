@@ -34,6 +34,7 @@ img{
 body{
     background-image: url(/static/main/img/background.svg);
     background-size: cover;
+    background-position: center;
 }
 
 .container{

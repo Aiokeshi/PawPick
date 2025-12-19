@@ -21,9 +21,12 @@
             <a href="{% url 'catalog:catalog' %}" class="button"> Собаки </a>
             <a href="#" class="button"> Спасатели</a>
             <a href="#" class="button"> Избранное</a>
-        </nav>
+        </nav> 
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'register:logout' %}" class="button"> Выход</a>
+        {%else%}
         <span><a href="{% url "register:login" %}">Вход</a>|<a href="{% url "register:register" %}">Регистрация</a></span>
-        
+        {%endif%}
       
 
     </header>
@@ -39,7 +42,7 @@
         <div class="footer_sec1">
             <nav class="nav">
             <a href="{% url 'main:index' %}" class="button"> Тест </a>
-            <a href="#" class="button"> Собаки </a>
+            <a href="{% url 'catalog:catalog' %}" class="button"> Собаки </a>
             <a href="#" class="button"> Спасатели</a>
             <a href="#" class="button"> Избранное</a>
             </nav>
