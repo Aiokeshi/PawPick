@@ -1,4 +1,4 @@
-header{
+header {
     position: relative;
     z-index: 2;
     background-color: #2B3939;
@@ -8,9 +8,17 @@ header{
     padding: 25px 40px;
     align-items: center;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+
 }
-.nav{
+
+.reg {
+    font-family: SeymourOne;
+    font-size: 24px;
+
+}
+
+.nav {
     display: flex;
     flex-direction: row;
-    column-gap:30px;
+    column-gap: 30px;
 }

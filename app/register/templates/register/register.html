@@ -5,7 +5,7 @@
 {% block content %}
 
 <section class="back">
-<div class="container cont_form">
+<div class="container cont_form fade-in">
         <span class="form_title"><h2>Регистрация</h2></span>
     <div class="form">
     <form method="POST" class="form_form">
@@ -25,7 +25,7 @@
         <label class="text">Подтвердите Пароль</label>
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Пароль..." class="form_input"
             required>
-        <a href="{% url 'register:login' %}" class="button">Есть аккаунт? Войдите.</a>
+        <a href="{% url 'register:login' %} " class="abtn">Есть аккаунт? Войдите.</a>
         <button type="submit" class="btn btn_form"><span> Зарегистрироваться</span></button>
     </form>
 
