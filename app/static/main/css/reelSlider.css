@@ -1,0 +1,35 @@
+:root {
+  --c-1: #333;
+  --c-2: #333;
+}
+.reel {
+  background-color: #FACA78;
+  border: 15px dashed var(--c-2);
+  border-left: none;
+  border-right: none;
+  margin: 50px 0px;
+}
+.reel::before {
+   display: block;
+    margin-top: -29px;
+    content: '';
+    padding: 6px;
+    border-top: 15px solid var(--c-2);
+    border-bottom: 15px solid var(--c-2);
+}
+.reel::after {
+  display: block;
+    margin-bottom: -29px;
+    content: '';
+    padding: 6px;
+    border-top: 15px solid var(--c-2);
+    border-bottom: 15px solid var(--c-2);
+}
+.sec3slider{
+    display: flex;
+    flex-direction: row;
+    img{
+        border-left: 15px solid var(--c-2);
+        border-right: 15px solid var(--c-2);
+    }
+}

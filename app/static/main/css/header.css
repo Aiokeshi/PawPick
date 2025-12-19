@@ -1,4 +1,6 @@
 header{
+    position: relative;
+    z-index: 2;
     background-color: #2B3939;
     display: flex;
     flex-direction: row;

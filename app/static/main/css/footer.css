@@ -8,7 +8,7 @@ footer{
 display: flex;
 flex-direction: column;
     row-gap: 43px;
-        padding: 20px 0px;
+        margin: 50px auto;
     }
 .footer_sec1{
     display: flex;

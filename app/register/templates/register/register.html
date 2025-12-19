@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+<section class="back">
 <div class="container cont_form">
         <span class="form_title"><h2>Регистрация</h2></span>
     <div class="form">
@@ -26,10 +26,11 @@
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Пароль..." class="form_input"
             required>
         <a href="{% url 'register:login' %}" class="button">Есть аккаунт? Войдите.</a>
-        <button type="submit" class="btn"><span> Зарегистрироваться</span></button>
+        <button type="submit" class="btn btn_form"><span> Зарегистрироваться</span></button>
     </form>
 
 
     </div>
 </div>
+</section>
 {% endblock %}

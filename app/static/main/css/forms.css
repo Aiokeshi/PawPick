@@ -14,7 +14,7 @@ label, input{
     row-gap: 20px;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
     background-image: radial-gradient(circle at top left, transparent 30px, white 17px), radial-gradient(circle at top right, transparent 30px, white 17px), radial-gradient(circle at bottom left, transparent 30px, white 17px), radial-gradient(circle at bottom right, transparent 30px, white 17px);
-    background-size: 50% 50%;
+    background-size: 51% 51%;
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat;
     padding: 50px;
@@ -46,4 +46,25 @@ top: 50px;
     border: 3px solid #6AC6C1;
     border-radius: 5px;
     background-color: white;
+}
+.btn_form{
+    padding: 10px;
+    height: 80px;
+    span{
+        width: 80%;
+        padding: 10px;
+    }
+}
+.back{
+    background-image: url(/static/main/img/regback.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 100px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+}
+.abtn{
+     font-family:EBGaramond;
+     text-align: center;
+     color: #2B3939;
 }

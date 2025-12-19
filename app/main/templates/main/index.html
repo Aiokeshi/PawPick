@@ -23,7 +23,6 @@
 
 <img src="/static/main/img/divider1.svg" alt="" class="divider1">
 <section class="section2">
-
     <div class="container">
         <div class="wrapper">
             <div class="section2_testbtn">
@@ -55,7 +54,14 @@
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque corrupti voluptas sit blanditiis consectetur?
         Beatae ipsa esse laborum! Nulla laborum placeat expedita. Eos nemo maiores, voluptatum doloribus dolor quaerat
         magnam.</p>
-    <div class="section3_slider"></div>
+    <div class="reel">
+        <div class="sec3slider">
+
+        <img src="/static/main/img/img1.png" alt="">
+        <img src="/static/main/img/img2.png" alt="">
+        <img src="/static/main/img/img3.png" alt="">
+        </div>
+    </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum mollitia quisquam quas, eaque officiis dolores
         nemo quos ad beatae! Quo dolore nostrum exercitationem quam tempore nisi enim possimus eaque eligendi!</p>
 </section>
@@ -64,15 +70,15 @@
 <img src="/static/main/img/divider1.svg" alt="" class="divider1">
 <section class="section4">
     <div class="container">
-    <div class="wrapper">
+    <div class="wrapper sec4_wrap">
         <div class="sec4_form">
          <span class="form_title"><h2>Отзыв</h2></span>
-    <div class="form">
+        <div class="form">
         
         <form method="POST" class="form_form">
         {% csrf_token %}
         {{ review_form.as_p }}
-         <button type="submit" class="btn" method="POST"><span>Отправить</span></button>
+         <button type="submit" class="btn btn_form" method="POST"><span>Отправить</span></button>
         </form>
     </div>
     </div>

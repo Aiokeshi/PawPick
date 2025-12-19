@@ -3,6 +3,7 @@
 @import url(/static/main/css/main.css);
 @import url(/static/main/css/button.css);
 @import url(/static/main/css/forms.css);
+@import url(/static/main/css/reelSlider.css);
 *{
     margin: 0;
     padding: 0;
