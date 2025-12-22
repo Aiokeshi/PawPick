@@ -1,8 +1,24 @@
 {% extends 'main/base.html' %}
 {% load static%}
-{% block title %}{{'Вход'}}{% endblock %}
+{% block title %}{{'Каталог'}}{% endblock %}
 
 {% block content %}
-
-
+<section class="sectionFil">
+<div class="filters">
+    <h2>Отличия</h2>
+<ul>
+    <li>Размер</li>
+    <li>Тип шерсти</li>
+    <li>Тип породы/предназначение</li>
+    <li>Характер и поведение</li>
+    <li>Уровень ухода</li>
+    <li>Физическая активность</li>
+    <li>Условия содержания</li>
+    <li>Социальность</li>
+    <li>здоровье</li>
+    <li>Интеллект и обучение</li>
+</ul>
+</div>
+<h1 class="unfound">Породы не найдены</h1>
+</section>
 {% endblock %}
