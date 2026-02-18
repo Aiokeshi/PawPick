@@ -1,0 +1,18 @@
+.logo {
+    width: 150px;
+}
+.sprite1{
+     position: relative;
+    width: 350px;
+    left: 270px;
+    bottom: 80px;
+}
+.sprite2{
+   width: 270px;
+    height: 370px;
+    align-self: center;
+}
+.sprite3{
+    width: 300px;
+    align-self: flex-end;
+}

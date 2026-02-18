@@ -3,10 +3,50 @@
   transform: translateY(-20px);
   animation: css-animation-fadeInUp 0.5s ease-out forwards;
 }
- 
+
 @keyframes css-animation-fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.slider {
+  width: 700px;
+
+  position: relative;
+  border-radius: 2px;
+  border: 5px solid #a5a4a4;
+  background-color: rgb(41, 41, 41);
+  padding: 50px;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #df562c;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
 }
