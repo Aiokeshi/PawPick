@@ -18,7 +18,11 @@ label, input{
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat;
     padding: 50px;
+    p{
+    color: black;
+    }
 }
+
 .form_form{
         display: flex;
     flex-direction: column;
@@ -67,4 +71,22 @@ top: 50px;
      font-family:EBGaramond;
      text-align: center;
      color: #2B3939;
+}
+
+
+.alert {
+    padding: 10px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.alert.error {
+    background-color: white;
+    color: #D0542E;
+}
+
+.alert.success {
+    background-color: white;
+    color: #6AC6C1;
 }

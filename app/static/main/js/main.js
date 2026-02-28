@@ -1,4 +1,4 @@
-const slides = document.querySelectorAll('.slider img');
+const slides = document.querySelectorAll('.slider img , .card_slider img');
 let i = 0;
 
 function show(n) {
@@ -11,3 +11,4 @@ document.getElementById('next').onclick = () => show(i + 1);
 document.getElementById('prev').onclick = () => show(i - 1);
 
 setInterval(() => show(i + 1), 3000);
+

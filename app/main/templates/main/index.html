@@ -94,6 +94,16 @@
                 <div class="form">
 
                     <form method="POST" class="form_form">
+                        {% if messages %}
+                        {% for message in messages %}
+                        {% if forloop.last %}
+                        <p class="alert {{ message.tags }}">
+                            {{ message }}
+                        </p>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        
                         {% csrf_token %}
                         {{ review_form.as_p }}
                         <button type="submit" class="btn btn_form" method="POST"><span>Отправить</span></button>

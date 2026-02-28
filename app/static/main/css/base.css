@@ -13,6 +13,11 @@
     color: white;
     text-decoration: none;
 }
+.form_form input,
+.form_form textarea {
+    color: black;
+    font-size: 15px;
+}
 @font-face {
     font-family: SeymourOne;
     src: url(/static/main/fonts/SeymourOne-Regular.ttf);

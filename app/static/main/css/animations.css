@@ -13,7 +13,6 @@
 
 .slider {
   width: 700px;
-
   position: relative;
   border-radius: 2px;
   border: 5px solid #a5a4a4;
@@ -49,4 +48,22 @@
 
 #next {
   right: 10px;
+}
+.card_slider {
+  position: relative;
+  border-radius: 2px;
+}
+.card_slider_cont {
+  width: 60%;
+  
+}
+
+.card_slider img {
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+}
+
+.card_slider img.active {
+  display: block;
 }

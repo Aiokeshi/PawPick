@@ -4,21 +4,46 @@
 
 {% block content %}
 <section class="sectionFil">
-<div class="filters">
-    <h2>Отличия</h2>
-<ul>
-    <li>Размер</li>
-    <li>Тип шерсти</li>
-    <li>Тип породы/предназначение</li>
-    <li>Характер и поведение</li>
-    <li>Уровень ухода</li>
-    <li>Физическая активность</li>
-    <li>Условия содержания</li>
-    <li>Социальность</li>
-    <li>здоровье</li>
-    <li>Интеллект и обучение</li>
-</ul>
-</div>
-<h1 class="unfound">Породы не найдены</h1>
+    <div class="filters">
+        <h2>Отличия</h2>
+        <ul>
+            <li>Размер</li>
+            <li>Тип шерсти</li>
+            <li>Тип породы/предназначение</li>
+            <li>Характер и поведение</li>
+            <li>Уровень ухода</li>
+            <li>Физическая активность</li>
+            <li>Условия содержания</li>
+            <li>Социальность</li>
+            <li>здоровье</li>
+            <li>Интеллект и обучение</li>
+        </ul>
+    </div>
+
+    <div class="catalog">
+        {% for product in catalog %}
+        <div class="card">
+            <div class="card_image">
+                {% if product.image %}
+                <img src="{{ product.image.url }}" class="cmage" alt="">
+                {% endif %}
+            </div>
+
+            <div class="info">
+                <a href="{% url 'catalog:product' %} " class="label">
+                    <p class="card_title">
+                        {{  product.name }}
+                    </p>
+
+                    <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
+                        <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+                    </svg>
+                </a>
+
+                <span class="like"><img src="/static/main/img/like.svg" class="like" alt=""></span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

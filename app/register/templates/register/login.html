@@ -5,21 +5,32 @@
 {% block content %}
 
 <section class="back">
-<div class="container cont_form fade-in">
-     <span class="form_title"><h2>Вход</h2></span>
-    <div class="form">
-    <form method="POST" class="form_form">
-        {% csrf_token %}
-        <label class="text">Введите Логин</label>
-        <input type="text" name="username" placeholder="Логин..." class="form_input" required>
+    <div class="container cont_form fade-in">
+        <span class="form_title">
+            <h2>Вход</h2>
+        </span>
+        <div class="form">
+            <form method="POST" class="form_form">
+                {% if messages %}
+                {% for message in messages %}
+                {% if forloop.last %}
+                <p class="alert {{ message.tags }}">
+                    {{ message }}
+                </p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% csrf_token %}
+                <label class="text">Введите Логин</label>
+                <input type="text" name="username" placeholder="Логин..." class="form_input" required>
 
-        <label class="text">Введите Пароль</label>
-        <input type="password" name="password" placeholder="Пароль..." class="form_input" required>
- <a href="{% url 'register:register' %}" class="abtn">Нет аккаунта? Зарегистрируйтесь.</a>
-        <button type="submit" class="btn btn_form"><span> Войти</span></button>
-    </form>
-   
+                <label class="text">Введите Пароль</label>
+                <input type="password" name="password" placeholder="Пароль..." class="form_input" required>
+                <a href="{% url 'register:register' %}" class="abtn">Нет аккаунта? Зарегистрируйтесь.</a>
+                <button type="submit" class="btn btn_form"><span> Войти</span></button>
+            </form>
+
+        </div>
     </div>
-</div>
 </section>
 {% endblock %}

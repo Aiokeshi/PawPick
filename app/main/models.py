@@ -7,3 +7,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 # Create your models here.
+    class Meta:
+        db_table='review'
+        verbose_name='Отзывы'
+        verbose_name_plural='Отзыв'
