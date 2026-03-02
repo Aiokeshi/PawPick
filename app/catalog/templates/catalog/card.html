@@ -1,52 +1,60 @@
 {% extends 'main/base.html' %}
 {% load static%}
-{% block title %}{{'Вход'}}{% endblock %}
+{% block title %}{{ card.name }}{% endblock %}
 
 {% block content %}
-<div class="container">
-    <section class="card_full">
-        <div class="short_info">
-            <div class="card_slider_cont fade-in">
-                <div class="card_slider">
-                    <button id="prev" class="arrow">‹</button>
-                    <img src="/static/main/img/image06.jpg" class="active">
-                    <img src="/static/main/img/image07.jpg">
-                    <img src="/static/main/img/image11.jpg">
-                    <img src="/static/main/img/image13.webp">
-                    <button id="next" class="arrow">›</button>
+<section class="back">
+    <div class="container">
+        <section class="card_full fade-in">
+            <div class="short_info">
+                <div class="card_slider_cont fade-in">
+                    <div class="card_slider">
+                        <button id="prev" class="arrow">‹</button>
+                        {% if card.imageMain %}
+                        <img src="{{ card.imageMain.url }}" class="active">
+                        {% endif %}
+
+                        {% if card.imageScnd %}
+                        <img src="{{ card.imageScnd.url }}">
+                        {% endif %}
+
+                        {% if card.imageThrd %}
+                        <img src="{{ card.imageThrd.url }}">
+                        {% endif %}
+                        <button id="next" class="arrow">›</button>
+                    </div>
+                </div>
+
+                <div class="short_desc">
+                    <h2>{{ card.name }}</h2>
+                    <p>Краткая информация:</p>
+                    <ul>
+
+                        <li> Рост: {{ card.height }} </li>
+                        <li> Вес: {{ card.weight }} </li>
+                        <li> Продолжительность жизни: {{ card.age }} </li>
+                        <li> Тип шерсти: {{ card.furr }} </li>
+                        <li> Окрасы: {{ card.furrColors }} </li>
+                    </ul>
                 </div>
             </div>
+            <div class="tag_like">
+                <div class=" card_label">
+                    <p class="card_title">
+                        {{ card.tages }}
+                    </p>
 
-            <div class="short_desc">
-                <h2>{{  product.name }}</h2>
-                <p>Краткая информация:</p>
-                <ul>
-                    <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia odit aliquam dolor veritatis
-                        magnam nulla assumenda quis molestiae incidunt numquam ut, enim possimus minima! Quo at beatae
-                        adipisci distinctio perspiciatis!</li>
-                </ul>
+                    <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
+                        <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+                    </svg>
+                </div>
+                <span class="like"><img src="/static/main/img/like.svg" class="like" alt=""></span>
             </div>
-        </div>
-        <div class="tag_like">
-            <div class=" card_label">
-                <p class="card_title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore similique at quae tempora ratione
-                    dolores soluta, qui adipisci nam. Ea doloribus eum laborum beatae, nihil iusto. Expedita cupiditate
-                    rerum odio.
-                </p>
-
-                <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
-                    <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
-                </svg>
+            <div class="description">
+                <p>{{ card.description }}</p>
             </div>
-            <span class="like"><img src="/static/main/img/like.svg" class="like" alt=""></span>
-        </div>
-        <div class="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tenetur autem commodi ut sequi?
-                Voluptatum ratione reprehenderit ea, quibusdam iste enim explicabo. Quaerat fugiat minima excepturi,
-                ipsam voluptatum quibusdam quam?</p>
-        </div>
-</div>
+    </div>
 </section>
 </div>
+</section>
 {% endblock %}

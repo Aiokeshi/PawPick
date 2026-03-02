@@ -29,3 +29,13 @@ def index(request):
     return render(request, 'main/index.html', {
         'review_form': review_form
     })
+
+
+def vet(request):
+
+    context= {
+        'title': 'Vet',
+        "vet": vet
+    }
+    return render(request, 'main/vet.html', context)
+    

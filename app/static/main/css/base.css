@@ -7,39 +7,53 @@
 @import url(/static/main/css/animations.css);
 @import url(/static/main/css/catalog.css);
 @import url(/static/main/css/maskot.css);
-*{
+@import url(/static/main/css/vet.css);
+
+* {
     margin: 0;
     padding: 0;
     color: white;
     text-decoration: none;
 }
+
 .form_form input,
 .form_form textarea {
-    color: black;
+    color: #2B3939;
     font-size: 15px;
 }
+
 @font-face {
     font-family: SeymourOne;
     src: url(/static/main/fonts/SeymourOne-Regular.ttf);
 
 }
+
 @font-face {
     font-family: EBGaramond;
     src: url(/static/main/fonts//EBGaramond-VariableFont_wght.ttf);
 
 }
 
-h1,h2,h3,a, button {
+h1,
+h2,
+h3,
+a,
+button {
     font-family: SeymourOne;
     font-size: 24px;
 }
-p,label,input{
-    font-family:EBGaramond;
+
+p,
+label,
+input {
+    font-family: EBGaramond;
 }
-img{
+
+img {
     width: 100%;
 }
-body{
+
+body {
     background-image: url(/static/main/img/background.svg);
     background-size: cover;
     background-position: center;
@@ -47,7 +61,7 @@ body{
 
 }
 
-.container{
+.container {
     max-width: 1480px;
     margin: 0 auto;
 

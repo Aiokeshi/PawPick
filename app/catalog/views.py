@@ -8,9 +8,11 @@ def catalog(request):
         "catalog": catalog
     }
     return render(request, 'catalog/catalog.html', context)
-def product(request):
+
+
+def card(request, card_slug):
+    card = Cards.objects.get(slug=card_slug)
     context= {
-        'title': 'Home',
-        'content': 'Главная страница'
+        'card': card
     }
-    return render(request, 'catalog/card.html', context)
+    return render(request, 'catalog/card.html', context=context)

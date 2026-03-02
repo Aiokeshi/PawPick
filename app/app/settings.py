@@ -16,13 +16,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
+# Quick-start development settings - unsuitable for cardion
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret key used in cardion secret!
 SECRET_KEY = 'django-insecure-%ppqe+1wsn8^-)8#boi8qc8-*t$xi!7t5+zeee)442z_9)72$%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in cardion!
 DEBUG = True
 
 ALLOWED_HOSTS = []

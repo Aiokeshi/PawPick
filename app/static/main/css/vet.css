@@ -1,0 +1,52 @@
+.vet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+.vet_img {
+    width: 150px;
+}
+
+.map {
+    width: 400px;
+    height: 300px;
+    align-self: center;
+}
+
+.vet_clin {
+    background-color: #FACA78;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+    border-radius: 5px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    border: solid 50px white;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+.vet_text {
+    font-size: 20px;
+    color: #2B3939;
+}
+
+.vet_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    h2 {
+        color: #2B3939;
+        text-align: center;
+    }
+}
+.vetul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

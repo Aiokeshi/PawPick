@@ -4,7 +4,7 @@
 
 {% block content %}
 <section class="sectionFil">
-    <div class="filters">
+    <div class="filters fade-in">
         <h2>Отличия</h2>
         <ul>
             <li>Размер</li>
@@ -20,19 +20,19 @@
         </ul>
     </div>
 
-    <div class="catalog">
-        {% for product in catalog %}
+    <div class="catalog fade-in">
+        {% for card in catalog %}
         <div class="card">
             <div class="card_image">
-                {% if product.image %}
-                <img src="{{ product.image.url }}" class="cmage" alt="">
+                {% if card.imageMain %}
+                <img src="{{ card.imageMain.url }}" class="cmage" alt="">
                 {% endif %}
             </div>
 
             <div class="info">
-                <a href="{% url 'catalog:product' %} " class="label">
+                <a href="{% url 'catalog:card' card.slug %} " class="label">
                     <p class="card_title">
-                        {{  product.name }}
+                        {{ card.name }}
                     </p>
 
                     <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">

@@ -1,14 +1,17 @@
-.cont_form{
+.cont_form {
     width: 680px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-label, input{
+
+label,
+input {
     font-size: 24px;
     color: #2B3939;
 }
-.form{
+
+.form {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -18,48 +21,55 @@ label, input{
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat;
     padding: 50px;
-    p{
-    color: black;
+
+    p {
+        color: #2B3939;
     }
 }
 
-.form_form{
-        display: flex;
+.form_form {
+    display: flex;
     flex-direction: column;
     row-gap: 20px;
     background-color: #FACA78;
     padding: 50px;
-    border-radius:20px;
+    border-radius: 20px;
 }
-.form_title{
+
+.form_title {
     display: inline-block;
-position: relative;
-align-self: center;
-background-color:white;
-padding: 40px;
-border-radius: 50%;
-z-index: 2;
-top: 50px;
-    h2{
+    position: relative;
+    align-self: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 50%;
+    z-index: 2;
+    top: 50px;
+
+    h2 {
         text-align: center;
         color: #2B3939;
     }
 }
-.form_input{
+
+.form_input {
     padding: 10px;
     border: 3px solid #6AC6C1;
     border-radius: 5px;
     background-color: white;
 }
-.btn_form{
+
+.btn_form {
     padding: 10px;
     height: 80px;
-    span{
+
+    span {
         width: 80%;
         padding: 10px;
     }
 }
-.back{
+
+.back {
     background-image: url(/static/main/img/regback.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -67,10 +77,11 @@ top: 50px;
     background-repeat: repeat-x;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-.abtn{
-     font-family:EBGaramond;
-     text-align: center;
-     color: #2B3939;
+
+.abtn {
+    font-family: EBGaramond;
+    text-align: center;
+    color: #2B3939;
 }
 
 
