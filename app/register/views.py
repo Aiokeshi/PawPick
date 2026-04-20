@@ -26,7 +26,6 @@ def register(request):
         username = request.POST.get('username')
         last_name = request.POST.get('name')
         email = request.POST.get('email')
-        id = request.POST.get('tel')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
   
@@ -64,4 +63,4 @@ def register(request):
 def logout_view(request):
     logout(request)
     messages.success(request, 'Вы вышли из системы.')
-    return redirect('main:index')
+    return redirect('register:login')

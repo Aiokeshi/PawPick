@@ -4,21 +4,29 @@
 
 {% block content %}
 <section class="sectionFil">
-    <div class="filters fade-in">
+  <form method="get" class="filters fade-in">
         <h2>Отличия</h2>
-        <ul>
-            <li>Размер</li>
-            <li>Тип шерсти</li>
-            <li>Тип породы/предназначение</li>
-            <li>Характер и поведение</li>
-            <li>Уровень ухода</li>
-            <li>Физическая активность</li>
-            <li>Условия содержания</li>
-            <li>Социальность</li>
-            <li>здоровье</li>
-            <li>Интеллект и обучение</li>
-        </ul>
-    </div>
+     
+    {% for category in categories %}
+        <div class="filter-group">
+            <h3 class="filTitle" >{{ category.name }}</h3>
+
+            {% for tag in category.tags.all %}
+                <label>
+                    <input class="fil"
+                        type="checkbox"
+                        name="tags"
+                        value="{{ tag.id }}"
+                        {% if tag.id in selected_tags %}checked{% endif %}
+                    >
+                    {{ tag.name }}
+                </label>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn">Применить</button>
+    </form>
 
     <div class="catalog fade-in">
         {% for card in catalog %}

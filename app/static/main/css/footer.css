@@ -6,7 +6,7 @@ footer{
 .footer{
 display: flex;
 flex-direction: column;
-    row-gap: 40px;
+    row-gap: 20px;
         margin: 50px auto;
     }
 .footer_sec1{
@@ -25,5 +25,10 @@ flex-direction: column;
 .footer_sec2{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center;
+    column-gap: 100px;
+    img{
+        width: 50px;
+    }
 }

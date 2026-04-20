@@ -5,8 +5,8 @@
     padding: 40px;
     background-image: url(/static/main/img/filter.svg);
     background-size: cover;
-    width: 200px;
-    height: 1026px;
+    width: 250px;
+
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 
     ul {
@@ -16,7 +16,9 @@
 
     }
 }
-
+.filTitle{
+    font-size: 20px;
+}
 .sectionFil {
     margin: auto 100px;
     display: grid;
@@ -173,4 +175,22 @@
     color: #2B3939;
     font-size: 24px;
     }
+}
+
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+    margin: 0;
 }

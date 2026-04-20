@@ -12,3 +12,5 @@ document.getElementById('prev').onclick = () => show(i - 1);
 
 setInterval(() => show(i + 1), 3000);
 
+
+ 
