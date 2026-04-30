@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'register',
     'catalog',
+    'qtest',
 ]
 
 MIDDLEWARE = [

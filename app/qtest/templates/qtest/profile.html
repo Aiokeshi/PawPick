@@ -1,0 +1,15 @@
+<h2>История тестов</h2>
+
+{% for result in results %}
+    <div>
+        <p>Дата: {{ result.created_at }}</p>
+
+        {% if result.best_card %}
+            <p>Лучший результат: {{ result.best_card.name }}</p>
+        {% endif %}
+
+        <hr>
+    </div>
+{% empty %}
+    <p>Вы ещё не проходили тест</p>
+{% endfor %}

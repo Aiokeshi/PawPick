@@ -1,0 +1,29 @@
+.test_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.qbtn{
+    padding: 20px;
+    
+}
+.quest{
+    display: flex;
+    flex-direction: column;
+}
+.qform{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.progress {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #4CAF50;
+}

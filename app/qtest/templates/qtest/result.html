@@ -1,0 +1,35 @@
+{% load static %}
+
+<h2>Результат теста</h2>
+
+{% if best_card %}
+    <h3>🏆 Лучшая порода для вас:</h3>
+
+    <div class="card highlight">
+        <h2>{{ best_card.name }}</h2>
+    </div>
+{% endif %}
+
+<div class="catalog fade-in">
+    {% for item in results %}
+    <div class="card">
+        <div class="card_image">
+            {% if item.card.imageMain %}
+            <img src="{{ item.card.imageMain.url }}" class="cmage" alt="">
+            {% endif %}
+        </div>
+
+        <div class="info">
+            <a href="{% url 'catalog:card' item.card.slug %}" class="label">
+                <p class="card_title">
+                    {{ item.card.name }}
+                </p>
+            </a>
+
+            <p>Совпадение: {{ item.percent }}%</p>
+        </div>
+    </div>
+    {% empty %}
+        <p>Ничего не найдено</p>
+    {% endfor %}
+</div>

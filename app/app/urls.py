@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('', include('register.urls')),
+    path('', include('qtest.urls')),
     path('catalog/', include('catalog.urls')),
 ]
 if settings.DEBUG:

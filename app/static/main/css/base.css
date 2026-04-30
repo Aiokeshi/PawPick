@@ -8,6 +8,7 @@
 @import url(/static/main/css/catalog.css);
 @import url(/static/main/css/maskot.css);
 @import url(/static/main/css/vet.css);
+@import url(/static/main/css/qtest.css);
 
 * {
     margin: 0;

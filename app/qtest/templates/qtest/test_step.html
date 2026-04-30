@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Тест{% endblock %}
+
+{% block content %}
+<section class="back">
+    <div class="container cont_form fade-in">
+
+        <!-- ПРОГРЕСС -->
+        <div class="progress">
+            <div class="progress-bar" style="width: {{ progress }}%;"></div>
+        </div>
+
+        <div class="form">
+            <form method="POST" class="form_form qform">
+                {% csrf_token %}
+
+                {% if error %}
+                    <p style="color:red;">{{ error }}</p>
+                {% endif %}
+
+                {% for question in questions %}
+                    <div class="quest">
+                        <h3>{{ question.text }}</h3>
+
+                        {% for answer in question.answers.all %}
+                            <label>
+                                <input type="radio"
+                                       name="question_{{ question.id }}"
+                                       value="{{ answer.id }}">
+                                {{ answer.text }}
+                            </label>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+                <div class="test_buttons">
+
+                    <!-- НАЗАД -->
+                    {% if step > 1 %}
+                        <button type="submit" name="back" class="btn qbtn">
+                            <span>← Назад</span>
+                        </button>
+                    {% endif %}
+
+                    <p>Шаг {{ step }} из {{ total_steps }}</p>
+
+                    <!-- ДАЛЕЕ / ЗАВЕРШИТЬ -->
+                    <button type="submit" name="next" class="btn qbtn">
+                        <span>
+                            {% if step == total_steps %}
+                                Завершить
+                            {% else %}
+                                Далее 
+                            {% endif %}
+                        </span>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
