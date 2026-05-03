@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
-  <link rel="shortcut icon" type="image/png" href="{% static 'main/css/img/favicon-32x32.png' %}">
+    <link rel="shortcut icon" href="{% static 'main/img/favicon.ico' %}" type="image/x-icon">
+
 </head>
 
 <body>
@@ -29,12 +30,16 @@
         </a>
         {% endif %}
 
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'register:logout' %}" class="button"> Выход</a>
-        {%else%}
-        <span class="reg"><a href="{% url 'register:login' %}">Вход</a>|<a
-                href="{% url  'register:register' %}">Регистрация</a></span>
-        {%endif%}
+   {% if request.user.is_authenticated %}
+<a href="{% url 'qtest:profile' %}" class="button">
+    {{ request.user.profile.display_name|default:request.user.username }}
+</a>
+{% else %}
+<span class="reg">
+    <a href="{% url 'register:login' %}">Вход</a> |
+    <a href="{% url 'register:register' %}">Регистрация</a>
+</span>
+{% endif %}
 
 
     </header>

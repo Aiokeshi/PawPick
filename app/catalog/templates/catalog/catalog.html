@@ -3,8 +3,10 @@
 {% block title %}{{'Каталог'}}{% endblock %}
 
 {% block content %}
-<section class="sectionFil">
-  <form method="get" class="filters fade-in">
+<section class="catback">
+<div class="sectionFil">
+    <div class="filflag  fade-in">
+  <form method="get" class="filters">
         <h2>Отличия</h2>
      
     {% for category in categories %}
@@ -23,10 +25,15 @@
                 </label>
             {% endfor %}
         </div>
+       
     {% endfor %}
 
     <button type="submit" class="btn"> <span>Применить</span></button>
     </form>
+      <svg class="label-tail-vertical" viewBox="0 0 63 21" preserveAspectRatio="none">
+    <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z"/>
+  </svg>
+</div>
 
     <div class="catalog fade-in">
         {% for card in catalog %}
@@ -53,5 +60,6 @@
         </div>
         {% endfor %}
     </div>
+</div>
 </section>
 {% endblock %}

@@ -64,3 +64,5 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'Вы вышли из системы.')
     return redirect('register:login')
+
+

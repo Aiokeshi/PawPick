@@ -13,4 +13,24 @@ document.getElementById('prev').onclick = () => show(i - 1);
 setInterval(() => show(i + 1), 3000);
 
 
- 
+ document.getElementById('editBtn').onclick = function() {
+
+    document.getElementById('nameText').style.display = 'none';
+    document.getElementById('nameInput').style.display = 'block';
+
+    document.getElementById('saveBtn').style.display = 'inline-block';
+    this.style.display = 'none';
+
+    // клик по аватару = загрузка
+    document.getElementById('avatarPreview').onclick = function() {
+        document.getElementById('avatarInput').click();
+    }
+}
+
+// превью аватара
+document.getElementById('avatarInput').onchange = function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        document.getElementById('avatarPreview').src = URL.createObjectURL(file);
+    }
+}

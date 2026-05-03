@@ -16,16 +16,7 @@
 }
 
 .vet_clin {
-    background-color: #FACA78;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
-    border-radius: 5px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    border: solid 50px white;
-    justify-content: space-between;
-    max-width: 500px;
+    width: 40%;
 }
 
 .vet_text {

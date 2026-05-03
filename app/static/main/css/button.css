@@ -28,3 +28,10 @@
         width: 70%;
     }
 }
+
+.sec1btn {
+    position: relative;
+    top: 200px;
+    left: -70px;
+    max-width: 350px;
+}

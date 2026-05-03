@@ -1,4 +1,8 @@
-{% load static %}
+{% extends 'main/base.html' %}
+{% load static%}
+{% block title %}{{'Результат'}}{% endblock %}
+
+{% block content %}
 
 <h2>Результат теста</h2>
 
@@ -33,3 +37,5 @@
         <p>Ничего не найдено</p>
     {% endfor %}
 </div>
+
+{% endblock %}

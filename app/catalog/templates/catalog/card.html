@@ -41,7 +41,24 @@
             <div class="tag_like">
                 <div class=" card_label">
                     <p class="card_title">
-                        {{ card.tages }}
+                        
+                        {% if selected_tags %}
+                            Выбранные теги: 
+                            {% for tag_id in selected_tags %}
+                                {% for cat in categories %}
+                                    {% for tag in cat.tags.all %}
+                                        {% if tag.id == tag_id %}
+                                            {{ tag.name }}{% if not forloop.parentloop.parentloop.last %}, {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            Теги породы:
+                            {% for tag in card_tags %}
+                                {{ tag.name }}{% if not forloop.last %} / {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     </p>
 
                     <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">

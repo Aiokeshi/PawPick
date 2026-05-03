@@ -17,12 +17,12 @@ def test_step(request, step):
     if request.method == 'POST':
         answers = request.session.get('answers', {})
 
-        # 🔴 НАЗАД
+        
         if 'back' in request.POST:
             prev_step = step - 1 if step > 1 else 1
             return redirect('qtest:test_step', step=prev_step)
 
-        # 🔴 ПРОВЕРКА ВЫБОРА
+       
         for question in questions:
             answer_id = request.POST.get(f'question_{question.id}')
             if not answer_id:
@@ -87,7 +87,7 @@ def test_result(request):
 
         best_card = cards.first()
 
-    # 🔥 СОХРАНЕНИЕ РЕЗУЛЬТАТА
+    
     result = TestResult.objects.create(
         user=request.user if request.user.is_authenticated else None,
         best_card=best_card
@@ -95,7 +95,7 @@ def test_result(request):
     result.tags.set(tags)
     result.cards.set([item['card'] for item in result_cards])
 
-    # 🔥 ОЧИСТКА СЕССИИ
+    
     request.session['answers'] = {}
 
     return render(request, 'qtest/result.html', {

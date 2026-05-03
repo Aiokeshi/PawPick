@@ -1,3 +1,22 @@
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#nameInput {
+    padding: 5px;
+    font-size: 18px;
+}
 .cont_form {
     width: 680px;
     display: flex;
