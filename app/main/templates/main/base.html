@@ -20,7 +20,7 @@
         <nav class="nav">
             <a href="{% url 'main:index' %}" class="button"> Главная </a>
             <a href="{% url 'catalog:catalog' %}" class="button"> Собаки </a>
-            <a href="{% url 'main:vet' %}" class="button"> Спасатели</a>
+            <a href="{% url 'main:vet' %}" class="button"> Партнеры</a>
 
         </nav>
 
@@ -56,7 +56,7 @@
                     <nav class="nav">
                         <a href="{% url 'main:index' %}" class="button"> Главная </a>
                         <a href="{% url 'catalog:catalog' %}" class="button"> Собаки </a>
-                        <a href="#" class="button"> Спасатели</a>
+                        <a href="{% url 'main:vet' %}" class="button"> Партнеры</a>
 
                     </nav>
                     <img src="/static/main/img/logo.png" class="logo" alt="">

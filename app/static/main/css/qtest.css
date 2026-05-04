@@ -27,3 +27,8 @@
     height: 100%;
     background: #4CAF50;
 }
+.qback{
+    display: flex;
+    flex-direction: row;
+    background-attachment: fixed;
+}

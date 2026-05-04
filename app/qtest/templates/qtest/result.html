@@ -1,41 +1,73 @@
 {% extends 'main/base.html' %}
 {% load static%}
+
 {% block title %}{{'Результат'}}{% endblock %}
 
 {% block content %}
 
-<h2>Результат теста</h2>
+<section class="catback result-back">
 
-{% if best_card %}
-    <h3>🏆 Лучшая порода для вас:</h3>
+ <div class="container">
 
-    <div class="card highlight">
-        <h2>{{ best_card.name }}</h2>
-    </div>
-{% endif %}
+  <div class="result-title fade-in">
+   <h2>Результат теста</h2>
 
-<div class="catalog fade-in">
-    {% for item in results %}
-    <div class="card">
-        <div class="card_image">
-            {% if item.card.imageMain %}
-            <img src="{{ item.card.imageMain.url }}" class="cmage" alt="">
-            {% endif %}
-        </div>
+   {% if best_card %}
+    <p>Мы подобрали варианты, у которых больше всего совпадений с вашими ответами.</p>
+   {% else %}
+    <p>По выбранным ответам пока не найдено совпадений. Проверьте, назначены ли теги ответам и карточкам.</p>
+   {% endif %}
+  </div>
 
-        <div class="info">
-            <a href="{% url 'catalog:card' item.card.slug %}" class="label">
-                <p class="card_title">
-                    {{ item.card.name }}
-                </p>
-            </a>
+  <div class="catalog fade-in">
 
-            <p>Совпадение: {{ item.percent }}%</p>
-        </div>
-    </div>
-    {% empty %}
-        <p>Ничего не найдено</p>
-    {% endfor %}
-</div>
+   {% for item in results %}
+
+    <a href="{% url 'catalog:card' item.card.slug %}" class="result-card-link">
+
+     <div class="card result-card">
+
+      <div class="card_image">
+
+       {% if item.card.imageMain %}
+        <img src="{{ item.card.imageMain.url }}" class="cmage" alt="{{ item.card.name }}">
+       {% endif %}
+
+      </div>
+
+      <div class="info">
+
+       <div class="label">
+
+        <p class="card_title">
+         {{ item.card.name }}
+        </p>
+
+        <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
+         <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+        </svg>
+
+       </div>
+
+       <p class="result-match">Совпадение: {{ item.percent }}%</p>
+       <p class="result-score">Баллы: {{ item.score }} из {{ max_test_score }}</p>
+
+      </div>
+
+     </div>
+
+    </a>
+
+   {% empty %}
+
+    <p>Ничего не найдено</p>
+
+   {% endfor %}
+
+  </div>
+
+ </div>
+
+</section>
 
 {% endblock %}

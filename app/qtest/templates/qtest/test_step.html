@@ -1,64 +1,95 @@
 {% extends 'main/base.html' %}
 {% load static %}
+
 {% block title %}{{'Тест'}}{% endblock %}
 
 {% block content %}
-<section class="back">
-    <div class="container cont_form fade-in">
 
-        <!-- ПРОГРЕСС -->
-        <div class="progress">
-            <div class="progress-bar" style="width: {{ progress }}%;"></div>
-        </div>
+<section class="back qback">
+       <div class="container qback">
+<img src="/static/main/img/sprite/rad3.png" class="sprite4" alt="">
+ <div class="container cont_form fade-in">
 
-        <div class="form">
-            <form method="POST" class="form_form qform">
-                {% csrf_token %}
+  <div class="progress">
+   <div class="progress-bar" style="width: {{ progress }}%;"></div>
+  </div>
 
-                {% if error %}
-                    <p style="color:red;">{{ error }}</p>
-                {% endif %}
+  <div class="form">
 
-                {% for question in questions %}
-                    <div class="quest">
-                        <h3>{{ question.text }}</h3>
+   {% if total_steps == 0 %}
 
-                        {% for answer in question.answers.all %}
-                            <label>
-                                <input type="radio"
-                                       name="question_{{ question.id }}"
-                                       value="{{ answer.id }}">
-                                {{ answer.text }}
-                            </label>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
+    <h2>Тест пока не заполнен</h2>
+    <p>Добавьте шаги, вопросы и ответы в админ-панели.</p>
 
-                <div class="test_buttons">
+   {% else %}
 
-                    <!-- НАЗАД -->
-                    {% if step > 1 %}
-                        <button type="submit" name="back" class="btn qbtn">
-                            <span>← Назад</span>
-                        </button>
-                    {% endif %}
+    <form method="POST" class="form_form qform">
+     {% csrf_token %}
 
-                    <p>Шаг {{ step }} из {{ total_steps }}</p>
+     {% if error %}
+      <p class="test-error">{{ error }}</p>
+     {% endif %}
 
-                    <!-- ДАЛЕЕ / ЗАВЕРШИТЬ -->
-                    <button type="submit" name="next" class="btn qbtn">
-                        <span>
-                            {% if step == total_steps %}
-                                Завершить
-                            {% else %}
-                                Далее 
-                            {% endif %}
-                        </span>
-                    </button>
+     <div class="test-step-head">
+      <p>Шаг {{ step }} из {{ total_steps }}</p>
+      <h2>{{ step_title }}</h2>
+     </div>
 
-                </div>
-            </form>
-        </div>
-    </div>
+     {% for question in questions %}
+
+      <div class="quest test-question">
+
+       <h3>{{ question.text }}</h3>
+
+       {% for answer in question.answers.all %}
+
+        <label class="test-answer">
+
+         <input type="radio"
+                name="question_{{ question.id }}"
+                value="{{ answer.id }}"
+                {% if answer.id == question.selected_answer_id %}checked{% endif %}
+                required>
+
+         <span>{{ answer.text }}</span>
+
+        </label>
+
+       {% endfor %}
+
+      </div>
+
+     {% empty %}
+
+      <p>В этом шаге пока нет вопросов.</p>
+
+     {% endfor %}
+
+     <div class="test_buttons">
+
+      {% if step > 1 %}
+       <button type="submit" name="back" value="1" formnovalidate class="btn qbtn">
+        <span>← Назад</span>
+       </button>
+      {% endif %}
+
+      <span class="test-step-counter">Шаг {{ step }} из {{ total_steps }}</span>
+
+      <button type="submit" class="btn qbtn">
+       <span>{% if step == total_steps %}Завершить{% else %}Далее{% endif %}</span>
+      </button>
+
+     </div>
+
+    </form>
+
+   {% endif %}
+
+  </div>
+
+ </div>
+<img src="/static/main/img/sprite/rad2.png" class="sprite5" alt="">
+</div>
 </section>
+
 {% endblock %}
