@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+
+{% load static%}
+
+{% block title %}{{'Избранное'}}{% endblock %}
+
+{% block content %}
+
+<section class="catback">
+
+ <div class="favorites-catalog">
+
+  <div class="catalog fade-in">
+
+   {% for card in favorites %}
+
+   <div class="card">
+
+    <div class="card_image">
+
+     {% if card.imageMain %}
+     <img src="{{ card.imageMain.url }}" class="cmage" alt="{{ card.name }}">
+     {% endif %}
+
+    </div>
+
+    <div class="info">
+
+     <a href="{% url 'catalog:card' card.slug %}" class="label">
+
+      <p class="card_title">
+
+       {{ card.name }}
+
+      </p>
+
+      <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
+
+       <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+
+      </svg>
+
+     </a>
+
+     {% include 'catalog/includes/favorite_button.html' with card=card %}
+
+    </div>
+
+   </div>
+
+   {% empty %}
+
+   <p class="unfound">Вы пока не добавили ни одной карточки в избранное.</p>
+
+   {% endfor %}
+
+  </div>
+
+ </div>
+
+</section>
+
+{% endblock %}

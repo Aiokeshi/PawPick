@@ -1,0 +1,21 @@
+<span class="like">
+  <form method="post" action="{% url 'catalog:toggle_favorite' card.slug %}" class="favorite-form">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+
+    <button
+      type="submit"
+      class="favorite-button {% if card.id in favorite_card_ids %}is-favorite{% endif %}"
+      aria-label="{% if card.id in favorite_card_ids %}Убрать из избранного{% else %}Добавить в избранное{% endif %}"
+      title="{% if card.id in favorite_card_ids %}Убрать из избранного{% else %}Добавить в избранное{% endif %}"
+    >
+      <svg class="favorite-icon" width="149" height="135" viewBox="0 0 149 135" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M102.1 7.1425C108.645 9.87689 111.889 19.1804 108.476 28.3622C105.063 37.5438 96.7034 41.9989 90.1587 39.2651C83.6138 36.531 80.3684 27.2279 83.7816 18.046C87.1951 8.86393 95.5554 4.40832 102.1 7.1425Z" stroke="currentColor" stroke-width="3" fill="none" />
+        <path d="M138.349 43.3418C142.953 49.1086 141.583 58.9242 134.545 65.2386C127.507 71.553 118.148 71.363 113.544 65.5963C108.94 59.8295 110.309 50.0126 117.348 43.6981C124.386 37.3839 133.745 37.5751 138.349 43.3418Z" stroke="currentColor" stroke-width="3" fill="none" />
+        <path d="M47.7431 7.1425C41.1984 9.87689 37.9539 19.1804 41.3673 28.3622C44.7807 37.5438 53.1399 41.9989 59.6847 39.2651C66.2296 36.531 69.475 27.2279 66.0618 18.046C62.6483 8.86393 54.288 4.40832 47.7431 7.1425Z" stroke="currentColor" stroke-width="3" fill="none" />
+        <path d="M10.6511 43.3418C6.04727 49.1086 7.41714 58.9242 14.455 65.2386C21.4931 71.553 30.8523 71.363 35.4564 65.5963C40.0605 59.8295 38.6906 50.0126 31.6524 43.6981C24.6142 37.3839 15.2551 37.5751 10.6511 43.3418Z" stroke="currentColor" stroke-width="3" fill="none" />
+        <path d="M58.4895 74.7324C65.7227 63.0539 82.7123 63.0539 89.9456 74.7324L104.399 98.0684C112.791 111.618 101.263 128.731 85.553 126.045L77.8401 124.727C75.4422 124.317 72.9918 124.317 70.594 124.727L62.8811 126.045C47.171 128.73 35.6444 111.618 44.0364 98.0684L58.4895 74.7324Z" stroke="currentColor" stroke-width="3" fill="none" />
+      </svg>
+    </button>
+  </form>
+</span>

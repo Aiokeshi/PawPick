@@ -127,3 +127,4 @@ STATICFILES_DIRS: list[Path] =[
     BASE_DIR /'static'
 ]
 
+
