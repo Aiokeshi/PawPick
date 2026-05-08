@@ -65,7 +65,7 @@
                         <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
                     </svg>
                 </div>
-                <span class="like">{% include 'catalog/includes/favorite_button.html' with card=card %}</span>
+                {% include 'catalog/includes/favorite_button.html' with card=card %}
             </div>
             <div class="description">
                 <p>{{ card.description }}</p>

@@ -23,7 +23,7 @@
         padding: 20px;
         text-align: center;
         color: #2B3939;
-        font-size: 24px;
+        font-size: 21px;
         border-radius: 20px;
         width: 70%;
     }
@@ -35,3 +35,12 @@
     left: -70px;
     max-width: 350px;
 }
+@media screen and (min-width: 1280px) and (max-width: 1700px){
+
+    .btn{
+        span{
+            font-size:17px;
+        }
+    }
+}
+

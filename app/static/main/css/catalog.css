@@ -35,7 +35,8 @@
   
 }
 .catback{
-    background-image: url(/static/main/img/catback.svg);
+    /* background-image: url(/static/main/img/catback.svg); */
+    margin-bottom: 50px;
 }
 .unfound {
     margin: 50px;
@@ -44,13 +45,14 @@
 .catalog {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
+    gap: 100px;
     grid-auto-rows: 400px;
+    justify-items: center;
 }
 .card_image {
     width: 90%;
     align-self: center;
-    height: 80%;
+    height: 70%;
      object-fit: cover;
 }
 .cmage {
@@ -61,16 +63,16 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    padding: 20px;
-    max-width: 400px;
+    justify-content: space-between;
+    padding: 30px 10px;
+    width: 100%;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5)); 
 }
 .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    height: 50px;
 }
 .label {
     display: flex;
@@ -192,31 +194,19 @@
   stroke: #2B3939;
   stroke-width: 2;
 }
-
-/* Вставить в конец app/static/main/css/catalog.css */
-
-/* Страница избранного: тот же каталог, но без блока фильтров */
 .favorites-catalog {
     margin: auto 100px;
     padding: 40px 0;
 }
-
-/* Лайк остаётся тем самым местом в карточке */
-/* Вставить в конец app/static/main/css/catalog.css */
-
-/*
-  Важно:
-  span.like остаётся тем же местом, где раньше был <img>.
-  Мы не прячем .like и не меняем кардинально карточку.
-*/
-
-/* Вставить в самый конец app/static/main/css/catalog.css */
-
-/* Не меняем расположение лайка, только заставляем SVG быть видимым */
 .like {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #6BC6C0;
+    border-radius: 50%;
+    border:3px solid #D0542E;
+    padding: 10px;
+    height: 100%;
 }
 
 .like .favorite-form {
@@ -258,10 +248,7 @@
     fill: #D0542E !important;
 }
 
-
-
 @media screen and (min-width: 1280px) and (max-width: 1700px){
-
 .filflag{
  max-width: 250px;
 }
@@ -302,13 +289,9 @@
     grid-auto-rows: 300px;
 }
 .card_image {
-    width: 90%;
-    height: 100%;
+    
 }
-.cmage {
-    width: 100%;
-    height: 100%;
-}
+
 .card {
     background-color: white;
     display: flex;
@@ -329,7 +312,7 @@
     position: relative;
     left: -30px;
     max-height: 88px;
-    max-width: 25px;
+    max-width: none;
 }
 .card_title {
 
@@ -430,12 +413,9 @@
 
   stroke-width: 2;
 }
-
 }
 
-
 @media screen and (min-width: 1024px) and (max-width: 1279px){
-
 .filflag{
  max-width: 200px;
 }
@@ -476,13 +456,9 @@
     grid-auto-rows: 250px;
 }
 .card_image {
-    width: 90%;
-    height: 100%;
+   
 }
-.cmage {
-    width: 100%;
-    height: 100%;
-}
+
 .card {
     background-color: white;
     display: flex;
@@ -503,7 +479,7 @@
     position: relative;
     left: -30px;
     max-height: 88px;
-    max-width: 25px;
+    max-width: none;
 }
 .card_title {
 
@@ -527,12 +503,8 @@
     width: 60px;
     height: 60px;
 }
-
-
 }
-
 @media screen and (min-width: 768px) and (max-width: 1023px){
-
 .filflag{
  max-width: 200px;
  
@@ -582,8 +554,6 @@
     padding: 10px;
     max-width: 300px;
 }
-
-
 .card_title {
 
     min-width: 100px;
@@ -593,7 +563,6 @@
     font-size: 15px;
   
 }
-
 .like {
     width: 60px;
     height: 60px;
@@ -673,10 +642,7 @@
 }
 
 }
-
-
-
-@media screen and (min-width: 480px) and (max-width: 767px){
+@media screen and (max-width: 767px){
 
 .filflag{
  max-width: 200px;
@@ -699,7 +665,7 @@
     font-size: 15px;
 }
 .sectionFil {
-    margin: auto 50px;
+    margin: auto 20px;
     grid-template-columns: 2fr;
     grid-template-rows: repeat(1);
     column-gap: 50px;
@@ -716,7 +682,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr ;
     gap: 30px;
-    grid-auto-rows: 250px;
+    grid-auto-rows: 200px;
 }
 
 .card {
@@ -725,18 +691,15 @@
     flex-direction: column;
     row-gap: 10px;
     padding: 10px;
-    max-width: 300px;
+    max-width: 150px;
 }
 
 
 .card_title {
-
-    min-width: 100px;
+    min-width: 50px;
     margin: 0;
-    padding: 10px 10px;
-
+    padding: 5px 5px;
     font-size: 15px;
-  
 }
 
 .label-tail {
@@ -824,16 +787,12 @@
 }
 
 }
-/* Вставить в самый конец app/static/main/css/catalog.css
-   Важно: именно в самый конец, чтобы перебить старые mobile-стили каталога.
-*/
-
 .mobile-filter-button,
 .mobile-filter-overlay {
     display: none;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1279px) {
 
     .catback {
         position: relative;
@@ -956,9 +915,6 @@
         overflow: hidden;
     }
 }
-/* Вставить в самый конец app/static/main/css/catalog.css */
-
-/* Верхняя строка фильтров */
 .filters-head {
     display: flex;
     align-items: center;
@@ -973,8 +929,6 @@
     text-decoration: underline;
     text-underline-offset: 4px;
 }
-
-/* Сворачиваемые категории */
 .filter-group-collapsible {
     margin-bottom: 12px;
 }
@@ -1029,7 +983,6 @@
     text-decoration: none;
 }
 
-/* На мобильной версии чуть компактнее, чтобы фильтры занимали меньше места */
 @media screen and (max-width: 767px) {
 
     .sectionFil .filflag {
@@ -1058,15 +1011,10 @@
         margin-bottom: 8px;
     }
 }
-/* Вставить в самый конец app/static/main/css/catalog.css */
-
-/* Страница избранного: та же сетка карточек, что и каталог, только без фильтров */
 .favorites-catalog {
     margin: auto 100px;
     padding: 40px 0;
 }
-
-/* Лайк на странице избранного и в каталоге */
 .like {
     display: flex;
     align-items: center;
@@ -1112,11 +1060,9 @@
 .like .favorite-button:hover .favorite-icon {
     transform: scale(1.05);
 }
-
 .like .favorite-button.is-favorite .favorite-icon path {
     fill: #D0542E !important;
 }
-
 @media screen and (max-width: 767px) {
     .favorites-catalog {
         margin: auto 18px;

@@ -1,22 +1,5 @@
 
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-}
 
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#nameInput {
-    padding: 5px;
-    font-size: 18px;
-}
 .cont_form {
     width: 680px;
     display: flex;
@@ -119,4 +102,112 @@ input {
 .alert.success {
     background-color: white;
     color: #6AC6C1;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px){
+.cont_form {
+    width: 500px;
+}
+
+label,
+input {
+    font-size: 20px;
+}
+
+.form {
+    row-gap: 20px;
+    padding: 40px;
+}
+
+.form_form {
+    row-gap: 20px;
+    padding: 50px;
+    border-radius: 20px;
+}
+.form_title {
+    padding: 30px;
+    border-radius: 50%;
+    top: 40px;
+    h2{
+        font-size: 18px;
+    }
+}
+
+.form_input {
+    border-radius: 5px;
+   
+}
+ .abtn{
+        font-size: 20px;
+    }
+.btn_form {
+    padding: 10px;
+    height: 60px;
+    span {
+        width: 80%;
+        padding: 5px;
+    }
+    span{
+        font-size: 18px;
+    }
+}
+
+.alert {
+    font-size: 20px;
+}
+}
+
+@media screen and (max-width: 768px) {
+.cont_form {
+    width: 300px;
+}
+.back{
+   background-size: 1300px;
+}
+label,
+input {
+    font-size: 15px;
+}
+
+.form {
+    row-gap: 20px;
+    padding: 30px;
+}
+
+.form_form {
+    row-gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.form_title {
+    padding: 20px;
+    border-radius: 50%;
+    top: 30px;
+    h2{
+        font-size: 15px;
+    }
+}
+
+.form_input {
+    border-radius: 5px;
+   padding: 5px;
+}
+ .abtn{
+        font-size: 15px;
+    }
+.btn_form {
+    padding: 8px;
+    height: 60px;
+    span {
+        width: 80%;
+        padding: 5px;
+    }
+    span{
+        font-size: 15px;
+    }
+}
+
+.alert {
+    font-size: 15px;
+}
 }
