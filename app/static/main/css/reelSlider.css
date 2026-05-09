@@ -1,35 +1,117 @@
 :root {
-  --c-1: #333;
-  --c-2: #333;
+  --c-1: #794A3A;
+  --c-2: #794A3A;
 }
 .reel {
-  background-color: #FACA78;
-  border: 15px dashed var(--c-2);
-  border-left: none;
-  border-right: none;
-  margin: 50px 0px;
+    margin: 50px 0;
+    overflow: hidden;
+    background-color: #FACA78;
+    border: 15px dashed var(--c-2);
+    border-left: none;
+    border-right: none;
 }
-.reel::before {
-   display: block;
-    margin-top: -29px;
-    content: '';
-    padding: 6px;
-    border-top: 15px solid var(--c-2);
-    border-bottom: 15px solid var(--c-2);
-}
+
+/* Верхняя и нижняя часть пленки не двигаются */
+.reel::before,
 .reel::after {
-  display: block;
-    margin-bottom: -29px;
+    display: block;
     content: '';
     padding: 6px;
     border-top: 15px solid var(--c-2);
     border-bottom: 15px solid var(--c-2);
 }
-.sec3slider{
+
+.reel::before {
+    margin-top: -29px;
+}
+
+.reel::after {
+    margin-bottom: -29px;
+}
+
+/* Двигается только ряд фотографий */
+.sec3slider {
     display: flex;
     flex-direction: row;
-    img{
-        border-left: 15px solid var(--c-2);
-        border-right: 15px solid var(--c-2);
+    width: max-content;
+    will-change: transform;
+}
+
+.sec3slider.is-running {
+    animation: filmReelMove 28s linear infinite;
+}
+
+.sec3slider:hover {
+    animation-play-state: paused;
+}
+
+.sec3slider img {
+    width: 420px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    flex: 0 0 auto;
+    border-left: 15px solid var(--c-2);
+    border-right: 15px solid var(--c-2);
+}
+
+/*
+  JS дублирует изображения один раз.
+  Поэтому сдвигаем дорожку ровно на половину её ширины.
+*/
+@keyframes filmReelMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .sec3slider img {
+        width: 360px;
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .reel {
+        margin: 34px 0;
+        border-width: 10px;
+    }
+
+    .reel::before,
+    .reel::after {
+        padding: 5px;
+        border-top-width: 10px;
+        border-bottom-width: 10px;
+    }
+
+    .reel::before {
+        margin-top: -22px;
+    }
+
+    .reel::after {
+        margin-bottom: -22px;
+    }
+
+    .sec3slider.is-running {
+        animation-duration: 22s;
+    }
+
+    .sec3slider img {
+        width: 280px;
+        height: 190px;
+        border-left-width: 10px;
+        border-right-width: 10px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .sec3slider img {
+        width: 240px;
+        height: 170px;
     }
 }

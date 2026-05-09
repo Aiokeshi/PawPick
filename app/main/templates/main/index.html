@@ -1,137 +1,148 @@
-{% extends 'main/base.html' %}
-{% load static%}
-{% block title %}{{'Главная страница'}}{% endblock %}
-
+{% extends 'main/base.html' %} 
+{% load static%} 
+{% block title %}{{'Главнаястраница'}}{% endblock %} 
 {% block content %}
 <section class="section1">
-    <div class="container">
-        <div class="wrapper">
-            <div class="flagban fade-in">
-            <div class="section1_banner ">
-                <h1>PawPick</h1>
-                <p>Это место, где начинается дружба на всю жизнь.
-                    Мы помогаем вам найти верного друга из собачьего приюта — осознанно, удобно и с любовью.
-
-                    Каждая собака заслуживает дом. И, возможно, именно здесь вас уже ждёт тот самый хвостатый друг.</p>
-                <div class="butr">
-                    <a href="{% url 'qtest:test_step' 1 %}" class="btn sec1btn"><span>Пройти ТЕСТ</span></a>
-                    <img src="/static/main/img/sprite/rad1.png" class="sprite1" alt="">
-                </div>
-
-            </div>
-                   <svg class="label-tail-vertical-ban" viewBox="0 0 63 21" preserveAspectRatio="none">
-    <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z"/>
-  </svg>
-            </div>
-            <div class="section1_slider fade-in">
-                <div class="slider">
-                    <button id="prev" class="arrow">‹</button>
-                    <img src="/static/main/img/dog1_1024x678.jpg" class="active">
-                    <img src="/static/main/img/dog2_1024x678.jpg">
-                    <img src="/static/main/img/dog3_1024x678.jpg">
-                    <img src="/static/main/img/dog4_1024x678.jpg">
-                    <button id="next" class="arrow">›</button>
-                </div>
-                <img src="/static/main/img/slider.png" alt="">
-            </div>
+  <div class="container">
+    <div class="wrapper">
+      <div class="flagban fade-in">
+        <div class="section1_banner">
+          <h1>PawPick</h1>
+          <p>
+            Это место, где начинается дружба на всю жизнь. Мы помогаем вам найти
+            верного друга из собачьего приюта — осознанно, удобно и с любовью.
+            Каждая собака заслуживает дом. И, возможно, именно здесь вас уже
+            ждёт тот самый хвостатый друг.
+          </p>
+          <div class="butr">
+            <a href="{% url 'qtest:test_step' 1 %}" class="btn sec1btn"
+              ><span>Пройти ТЕСТ</span></a
+            >
+            <img
+              src="/static/main/img/sprite/rad1.png"
+              class="sprite1"
+              alt=""
+            />
+          </div>
         </div>
+        <svg
+          class="label-tail-vertical-ban"
+          viewBox="0 0 63 21"
+          preserveAspectRatio="none"
+        >
+          <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z" />
+        </svg>
+      </div>
+      <div class="section1_slider fade-in">
+        <div class="slider">
+          <button id="prev" class="arrow">‹</button>
+          <img src="/static/main/img/dog1_1024x678.jpg" class="active" />
+          <img src="/static/main/img/dog2_1024x678.jpg" />
+          <img src="/static/main/img/dog3_1024x678.jpg" />
+          <img src="/static/main/img/dog4_1024x678.jpg" />
+          <button id="next" class="arrow">›</button>
+        </div>
+        <img src="/static/main/img/slider.png" alt="" />
+      </div>
     </div>
+  </div>
 </section>
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 
-<img src="/static/main/img/divider1.svg" alt="" class="divider1">
+<img src="/static/main/img/divider1.svg" alt="" class="divider1" />
 <section class="section2 sec2">
-    <img src="/static/main/img/sprite/rad7.png" class="sprite2" alt="">
-    <div class="container " style="width:100%">
-
-        <div class="wrapper">
-            <div class="section2_testbtn fade-in">
-                <img src="/static/main/img/testbtn.svg" alt="">
-            </div>
-            <div class="section2_navbtn fade-in">
-                <a href="{% url 'catalog:catalog' %}" class="ticket">
-                    <div class="navbtn">
-                        <h2>Наши Собачки</h2>
-                        <div class="mini_divider"></div>
-                        <p>Список всех доступных <br>на нашем сайте пород</p>
-                    </div>
-                </a>
-                <a href="{% url 'main:vet' %}" class="ticket">
-                    <div class="navbtn navbtn2">
-                        <h2>Ветклиники и приюты</h2>
-                        <div class="mini_divider"></div>
-                        <p>Главные помощники для <br> наших друзей младших</p>
-                    </div>
-
-                </a>
-            </div>
-
-        </div>
+  <img src="/static/main/img/sprite/rad7.png" class="sprite2" alt="" />
+  <div class="container" style="width: 100%">
+    <div class="wrapper">
+      <div class="section2_testbtn fade-in">
+        <img src="/static/main/img/testbtn.svg" alt="" />
+      </div>
+      <div class="section2_navbtn fade-in">
+        <a href="{% url 'catalog:catalog' %}" class="ticket">
+          <div class="navbtn">
+            <h2>Наши Собачки</h2>
+            <div class="mini_divider"></div>
+            <p>Список всех доступных <br />на нашем сайте пород</p>
+          </div>
+        </a>
+        <a href="{% url 'main:vet' %}" class="ticket">
+          <div class="navbtn navbtn2">
+            <h2>Ветклиники и приюты</h2>
+            <div class="mini_divider"></div>
+            <p>
+              Главные помощники для <br />
+              наших друзей младших
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
-    <img src="/static/main/img/sprite/rad7.2.png" class="sprite2" alt="">
+  </div>
+  <img src="/static/main/img/sprite/rad7.2.png" class="sprite2" alt="" />
+
+
 </section>
 
-<img src="/static/main/img/divider2.svg" alt="" class="dividers">
+<img src="/static/main/img/divider2.svg" alt="" class="dividers" />
+
+  <img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
 <section class="section3">
-    <p>Почему PawPick?
-        Потому что выбор питомца — это не случайность, а важное решение.
-
-        Мы собираем информацию о породах, характере, особенностях ухода и помогаем понять, какая собака подойдёт именно
-        вам — по образу жизни, опыту и ожиданиям.
-
-        Наша цель — чтобы каждая собака нашла своего человека, а каждый человек — своего лучшего друга.</p>
-    <div class="reel">
-        <div class="sec3slider">
-
-            <img src="/static/main/img/img1.png" alt="">
-            <img src="/static/main/img/img2.png" alt="">
-            <img src="/static/main/img/img3.png" alt="">
-        </div>
+  <p>
+    Почему PawPick? Потому что выбор питомца — это не случайность, а важное
+    решение. Мы собираем информацию о породах, характере, особенностях ухода и
+    помогаем понять, какая собака подойдёт именно вам — по образу жизни, опыту и
+    ожиданиям. Наша цель — чтобы каждая собака нашла своего человека, а каждый
+    человек — своего лучшего друга.
+  </p>
+  <div class="reel">
+    <div class="sec3slider">
+      <img src="/static/main/img/img1.png" alt="" />
+      <img src="/static/main/img/img2.png" alt="" />
+      <img src="/static/main/img/img3.png" alt="" />
     </div>
-    <p>Истории счастливых встреч вдохновляют больше любых слов.
-        Люди, которые уже нашли своего питомца через PawPick, делятся опытом, эмоциями и советами.
-
-        Ваш отзыв может помочь кому-то сделать важный шаг — подарить дом собаке из приюта.</p>
+  </div>
+  <p>
+    Истории счастливых встреч вдохновляют больше любых слов. Люди, которые уже
+    нашли своего питомца через PawPick, делятся опытом, эмоциями и советами. Ваш
+    отзыв может помочь кому-то сделать важный шаг — подарить дом собаке из
+    приюта.
+  </p>
 </section>
-
-
-<img src="/static/main/img/divider1.svg" alt="" class="divider1">
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
+<img src="/static/main/img/divider1.svg" alt="" class="divider1" />
 <section class="section4">
-    <div class="container">
-        <div class="wrapper sec4_wrap">
-            <div class="sec4_form fade-in">
-                <span class="form_title">
-                    <h2>Отзыв</h2>
-                </span>
-                <div class="form">
-
-                    <form method="POST" class="form_form">
-                        {% if messages %}
-                        {% for message in messages %}
-                        {% if forloop.last %}
-                        <p class="alert {{ message.tags }}">
-                            {{ message }}
-                        </p>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-
-                        {% csrf_token %}
-                        {{ review_form.as_p }}
-                        <button type="submit" class="btn btn_form" method="POST"><span>Отправить</span></button>
-                    </form>
-                </div>
-            </div>
-            <img src="/static/main/img/sprite/rad4.png" class="sprite3" alt="">
-            <div class="section4_info fade-in">
-                <p>Нашли друга с помощью PawPick?
-                    Поделитесь своей историей!
-
-                    Расскажите, как проходил выбор, как прошла адаптация и как изменилась ваша жизнь.
-                    Ваш опыт может стать поддержкой для тех, кто только начинает этот путь.</p>
-
-            </div>
+  <div class="container">
+    <div class="wrapper sec4_wrap">
+      <div class="sec4_form fade-in">
+        <span class="form_title">
+          <h2>Отзыв</h2>
+        </span>
+        <div class="form">
+          <form method="POST" class="form_form">
+            {% if messages %} {% for message in messages %} {% if forloop.last%}
+            <p class="alert {{ message.tags }}">{{ message }}</p>
+            {% endif %} 
+            {% endfor %} 
+            {% endif %} 
+            {% csrf_token %} 
+            {{review_form.as_p }}
+            <button type="submit" class="btn btn_form" method="POST">
+              <span>Отправить</span>
+            </button>
+          </form>
         </div>
+      </div>
+      <img src="/static/main/img/sprite/rad4.png" class="sprite3" alt="" />
+      <div class="section4_info fade-in">
+        <p>
+          Нашли друга с помощью PawPick? Поделитесь своей историей! Расскажите,
+          как проходил выбор, как прошла адаптация и как изменилась ваша жизнь.
+          Ваш опыт может стать поддержкой для тех, кто только начинает этот
+          путь.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers">
+<img src="/static/main/img/divider2.svg" alt="" class="dividers" />
 {% endblock %}

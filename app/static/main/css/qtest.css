@@ -2,33 +2,79 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 .qbtn{
     padding: 20px;
-    
+    cursor:pointer;
+}
+.prg{
+        width: 60%;
 }
 .quest{
     display: flex;
     flex-direction: column;
+    h3{
+        font-family: EBGaramond;
+    }
+}
+.qdivid{
+     height: 3px;
+    border-radius: 5px;
+    min-width: 350px;
+    max-width: 1480px;
+    background-color:#D0542E;
+   
 }
 .qform{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 .progress {
     width: 100%;
     height: 10px;
-    background: #eee;
+    background: #FCEBCD;
     margin-bottom: 20px;
+    border-radius:5px;
 }
 
 .progress-bar {
     height: 100%;
-    background: #4CAF50;
+    background: #6BC6C0;
+    border-radius:5px;
 }
 .qback{
     display: flex;
     flex-direction: row;
     background-attachment: fixed;
+}
+
+.qquestion{
+    color:#2B3939;
+    margin-bottom:10px;
+} 
+.qtitle{
+text-align:center;
+    color: #D0542E;
+}
+.qanswer{
+    font-size:24px;
+    color:#2B3939;
+}
+.qcounter{
+    font-size:21px;
+    color:#2B3939;
+    text-align:center;
+}
+.backbtn{
+    font-size:21px;
+     
+    background-color:transparent;
+    border:none;
+    span{
+    color:#2B3939 ;
+    }
+    cursor:pointer;
 }

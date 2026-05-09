@@ -11,17 +11,22 @@
   }
 }
 
+/* Старый дизайн главного слайдера */
 .slider {
-  width: 700px;
+  width: 820px;
   position: relative;
   border-radius: 2px;
   border: 5px solid #a5a4a4;
   background-color: rgb(41, 41, 41);
   padding: 50px;
+  box-sizing: border-box;
 }
 
 .slider img {
   width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
   display: none;
   border-radius: 5px;
 }
@@ -49,21 +54,83 @@
 #next {
   right: 10px;
 }
+
+/* Старый дизайн слайдера карточки */
 .card_slider {
   position: relative;
   border-radius: 2px;
 }
+
 .card_slider_cont {
   width: 60%;
-  
 }
 
+/* Фикс одинакового размера фото в карточке */
 .card_slider img {
   width: 100%;
+  height: 430px;
+  object-fit: cover;
+  object-position: center;
   display: none;
   border-radius: 5px;
 }
 
 .card_slider img.active {
   display: block;
+}
+
+@media screen and (max-width: 1700px) {
+  .slider {
+    width: 700px;
+  }
+
+  .slider img {
+    height: 380px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .slider {
+    width: 620px;
+  }
+
+  .slider img {
+    height: 340px;
+  }
+
+  .card_slider img {
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .slider img {
+    height: 260px;
+  }
+
+  .card_slider_cont {
+    width: 100%;
+  }
+
+  .card_slider img {
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .slider {
+    padding: 22px;
+  }
+
+  .slider img {
+    height: 220px;
+  }
+
+  .card_slider img {
+    height: 240px;
+  }
 }

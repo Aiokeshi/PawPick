@@ -1,95 +1,98 @@
-{% extends 'main/base.html' %}
-{% load static %}
-
-{% block title %}{{'Тест'}}{% endblock %}
+{% extends 'main/base.html' %} 
+{% load static %} 
+{% block title %}{{'Тест'}}{%endblock %} 
 
 {% block content %}
 
 <section class="back qback">
-       <div class="container qback">
-<img src="/static/main/img/sprite/rad3.png" class="sprite4" alt="">
- <div class="container cont_form fade-in">
+  <div class="container qback">
+    <img src="/static/main/img/sprite/rad3.png" class="sprite4" alt="" />
+    <div class="container cont_form fade-in">
+      <span class="form_title prg">
+        <div class="progress">
+          <div class="progress-bar" style="width: {{ progress }}%;"></div>
+        </div>
+      </span>
+      <div class="form">
+        {% if total_steps == 0 %}
 
-  <div class="progress">
-   <div class="progress-bar" style="width: {{ progress }}%;"></div>
-  </div>
+        <h2 class="qcounter">Тест пока не заполнен</h2>
+        <p class="qcounter">Добавьте шаги, вопросы и ответы в админ-панели.</p>
 
-  <div class="form">
+        {% else %}
 
-   {% if total_steps == 0 %}
+        <form method="POST" class="form_form qform">
+          {% csrf_token %} 
+          {% if error %}
+          <p class="test-error">{{ error }}</p>
+          {% endif %}
 
-    <h2>Тест пока не заполнен</h2>
-    <p>Добавьте шаги, вопросы и ответы в админ-панели.</p>
+          <div class="test-step-head">
+            <h2 class="qtitle">{{ step_title }}</h2>
+          </div>
+          
+          {% for question in questions %}
+ <div class="qdivid"></div>
+          <div class="quest test-question">
+            <h3 class="qquestion">{{ question.text }}</h3>
 
-   {% else %}
+            {% for answer in question.answers.all %}
 
-    <form method="POST" class="form_form qform">
-     {% csrf_token %}
-
-     {% if error %}
-      <p class="test-error">{{ error }}</p>
-     {% endif %}
-
-     <div class="test-step-head">
-      <p>Шаг {{ step }} из {{ total_steps }}</p>
-      <h2>{{ step_title }}</h2>
-     </div>
-
-     {% for question in questions %}
-
-      <div class="quest test-question">
-
-       <h3>{{ question.text }}</h3>
-
-       {% for answer in question.answers.all %}
-
-        <label class="test-answer">
-
-         <input type="radio"
+            <label class="qanswer">
+              <input
+                type="radio"
                 name="question_{{ question.id }}"
                 value="{{ answer.id }}"
-                {% if answer.id == question.selected_answer_id %}checked{% endif %}
-                required>
+                {%
+                if
+                answer.id=""
+                ="question.selected_answer_id"
+                %}checked{%
+                endif
+                %}
+                required
+              />
 
-         <span>{{ answer.text }}</span>
+              <span class="qanswer">{{ answer.text }}</span>
+            </label>
 
-        </label>
+            {% endfor %}
+            
+          </div>
 
-       {% endfor %}
+          {% empty %}
 
+          <p class="qcounter">В этом шаге пока нет вопросов.</p>
+
+          {% endfor %}
+
+          <div class="test_buttons">
+            {% if step > 1 %}
+            <button
+              type="submit"
+              name="back"
+              value="1"
+              formnovalidate
+              class="button backbtn"
+            >
+              <span><Назад</span>
+            </button>
+            {% endif %}
+
+            <span class="qcounter">Шаг <br> {{ step }} из {{ total_steps }}</span>
+
+            <button type="submit" class="btn qbtn">
+              <span
+                >{% if step == total_steps %}Завершить{% else %}Далее{% endif%}</span>
+            </button>
+          </div>
+        </form>
+
+        {% endif %}
       </div>
-
-     {% empty %}
-
-      <p>В этом шаге пока нет вопросов.</p>
-
-     {% endfor %}
-
-     <div class="test_buttons">
-
-      {% if step > 1 %}
-       <button type="submit" name="back" value="1" formnovalidate class="btn qbtn">
-        <span>← Назад</span>
-       </button>
-      {% endif %}
-
-      <span class="test-step-counter">Шаг {{ step }} из {{ total_steps }}</span>
-
-      <button type="submit" class="btn qbtn">
-       <span>{% if step == total_steps %}Завершить{% else %}Далее{% endif %}</span>
-      </button>
-
-     </div>
-
-    </form>
-
-   {% endif %}
-
+    </div>
+    <img src="/static/main/img/sprite/rad2.png" class="sprite5" alt="" />
   </div>
-
- </div>
-<img src="/static/main/img/sprite/rad2.png" class="sprite5" alt="">
-</div>
 </section>
 
 {% endblock %}
