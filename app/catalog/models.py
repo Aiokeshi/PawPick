@@ -42,6 +42,7 @@ class Cards(models.Model):
     imageScnd = models.ImageField(upload_to='card_images', blank=True, null=True, verbose_name='Изображение')
     imageThrd = models.ImageField(upload_to='card_images', blank=True, null=True, verbose_name='Изображение')
     description = models.TextField(blank=True, null=True, verbose_name='Описание')
+    health = models.TextField(blank=True, null=True, verbose_name='Здоровье')
 
     tags = models.ManyToManyField(
         Tag,
