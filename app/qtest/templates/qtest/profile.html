@@ -1,24 +1,134 @@
-{% extends 'main/base.html' %}
-{% load static%}
-{% block title %}{{'Личный кабинет'}}{% endblock %}
-
+{% extends 'main/base.html' %} 
+{% load static %} 
+{% block title %}Профиль{%endblock %} 
 {% block content %}
 
-<h2>История тестов</h2>
+<link rel="stylesheet" href="{% static 'main/css/profile.css' %}" />
 
-{% for result in results %}
-    <div>
-        <p>Дата: {{ result.created_at }}</p>
+<section class="profile_back">
+  <div class="container proforms">
+    <div class="profile_page fade-in">
+      <div class="form_title proftitle">
+        <h1>
+          {{ request.user.profile.display_name|default:request.user.username }}
+        </h1>
+      </div>
 
-        {% if result.best_card %}
-            <p>Лучший результат: {{ result.best_card.name }}</p>
-        {% endif %}
+      <div class="form">
+        <div class="form_form">
+          <div class="profile_info">
+            <h2>Профиль</h2>
 
-        <hr>
+            <p>
+              Здесь отображаются данные аккаунта, избранные карточки и история
+              прохождения теста.
+            </p>
+
+            <div class="profile_data">
+              <div class="profile_data_item">
+                <span>Логин</span>
+                <strong>{{ request.user.username }}</strong>
+              </div>
+
+              <div class="profile_data_item">
+                <span>Email</span>
+                <strong>
+                  {% if request.user.email %} {{ request.user.email }} {% else%} Не указан {% endif %}
+                </strong>
+              </div>
+
+              <div class="profile_data_item">
+                <span>Тестов</span>
+                <strong>{{ results|length }}</strong>
+              </div>
+
+              <div class="profile_data_item">
+                <span>Избранное</span>
+                <strong>{{ favorite_count }}</strong>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="profile_actions">
+          <a href="{% url 'catalog:favorites' %}" class="btn "
+              ><span>Избранное</span></a>
+          <a
+            href="{% url 'register:logout' %}"
+            class="profile_action"
+          >
+            <span>Выход></span>
+          </a>
+        </div>
+      </div>
     </div>
-{% empty %}
-    <p>Вы ещё не проходили тест</p>
-{% endfor %}
+      <div class="profile_page fade-in">
+      <div class="form_title proftitle">
+        <h1>
+          <h2>История тестов</h2>
+        </h1>
+      </div>
+      <div class="form">
 
-<a href="{% url 'register:logout' %}" class="button"> Выход</a>
+        {% for result in results %}
+
+        <article class="form_form">
+          <div class="profile_history_date">
+            <span>{{ result.created_at|date:"d.m.Y" }}</span>
+          </div>
+
+          <div class="profile_history_content">
+            <div class="profile_history_top">
+              <div class="profile_history_result">
+                {% if result.best_card %}
+                <span>Лучший результат</span>
+                <h3>{{ result.best_card.name }}</h3>
+                {% else %}
+                <span>Результат</span>
+                <h3>Не определён</h3>
+                {% endif %}
+              </div>
+
+              <div class="profile_percent">
+                <strong>{{ result.percent }}%</strong>
+              </div>
+            </div>
+
+            <div class="profile_history_bottom">
+              {% if result.best_card %}
+              <a
+                href="{% url 'catalog:card' result.best_card.slug %}"
+                class="profile_history_link"
+              >
+                Открыть
+              </a>
+              {% endif %} {% if result.top_cards %}
+
+              <div class="profile_history_cards">
+                {% for card in result.top_cards %}
+                <a href="{% url 'catalog:card' card.slug %}">
+                  {{ card.name }}
+                </a>
+                {% endfor %}
+              </div>
+
+              {% endif %}
+            </div>
+          </div>
+        </article>
+
+        {% empty %}
+
+        <div class="profile_empty">
+          <h3>История пока пуста</h3>
+          <p>После прохождения теста здесь появятся результаты.</p>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

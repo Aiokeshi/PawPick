@@ -16,7 +16,6 @@ def _get_step_weights():
 
 def _get_total_steps():
     steps_count = TestStep.objects.count()
-
     if steps_count:
         return steps_count
 
@@ -27,9 +26,11 @@ def _get_max_test_score():
     """
     Максимальный балл считается динамически:
     каждый вопрос даёт вес своего шага.
-    Если тест будет заполнен по схеме 60 вопросов из описания, получится 144 балла.
+    Если тест будет заполнен по схеме 60 вопросов из описания,
+    получится 144 балла.
     """
     step_weights = _get_step_weights()
+
     max_score = 0
 
     for question in Question.objects.all():
@@ -62,6 +63,7 @@ def test_step(request, step):
         return redirect('qtest:test_result')
 
     step_object = TestStep.objects.filter(order=step).first()
+
     questions = list(
         Question.objects
         .filter(step=step)
@@ -70,6 +72,7 @@ def test_step(request, step):
     )
 
     progress = int((step / total_steps) * 100)
+
     saved_answers = request.session.get('answers', {})
 
     for question in questions:
@@ -147,6 +150,7 @@ def test_result(request):
 
     step_weights = _get_step_weights()
     max_test_score = _get_max_test_score()
+
     user_tag_scores = defaultdict(int)
 
     for answer in selected_answers:
@@ -198,8 +202,21 @@ def test_result(request):
 
 @login_required
 def profile(request):
-    results = TestResult.objects.filter(user=request.user).order_by('-created_at')
+    max_test_score = _get_max_test_score()
+
+    results = list(
+        TestResult.objects
+        .filter(user=request.user)
+        .select_related('best_card')
+        .prefetch_related('cards')
+        .order_by('-created_at')
+    )
+
+    for result in results:
+        result.percent = min(round(result.total_score / max_test_score * 100), 100)
+        result.top_cards = list(result.cards.all()[:3])
 
     return render(request, 'qtest/profile.html', {
         'results': results,
+        'favorite_count': request.user.favorite_cards.count(),
     })
