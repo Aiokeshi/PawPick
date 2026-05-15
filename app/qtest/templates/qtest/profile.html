@@ -71,61 +71,78 @@
       </div>
       <div class="form">
 
-        {% for result in results %}
+       {% for result in results %}
 
-        <article class="form_form">
-          <div class="profile_history_date">
-            <span>{{ result.created_at|date:"d.m.Y" }}</span>
-          </div>
+            <article class="profile_history_item">
 
-          <div class="profile_history_content">
-            <div class="profile_history_top">
-              <div class="profile_history_result">
+              <div class="profile_history_main">
+
                 {% if result.best_card %}
-                <span>Лучший результат</span>
-                <h3>{{ result.best_card.name }}</h3>
+
+                  <a href="{% url 'catalog:card' result.best_card.slug %}" class="profile_result_flag label">
+                    <span class="card_title">{{ result.best_card.name }}</span>
+
+                    <svg
+              class="label-tail"
+              viewBox="0 0 21 63"
+              preserveAspectRatio="none"
+            >
+              <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+            </svg>
+                  </a>
+
                 {% else %}
-                <span>Результат</span>
-                <h3>Не определён</h3>
+
+                  <div class="profile_result_flag label">
+                    <span class="card_title">Не определён</span>
+
+                    <svg class="label-tail" viewBox="0 0 35 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0 L35 44 L0 88 Z"></path>
+                    </svg>
+                  </div>
+
                 {% endif %}
+
+                {% if result.similar_cards %}
+
+                  <div class="profile_similar">
+                    <span>Ещё похожие:</span>
+
+                    <div class="profile_similar_list">
+                      {% for card in result.similar_cards %}
+                        <a href="{% url 'catalog:card' card.slug %}">
+                          {{ card.name }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                {% endif %}
+
               </div>
 
-              <div class="profile_percent">
-                <strong>{{ result.percent }}%</strong>
+              <div class="profile_history_aside">
+
+                <div class="profile_percent">
+                  <strong>{{ result.percent }}%</strong>
+                </div>
+
+                <div class="profile_history_date">
+                  <span>{{ result.created_at|date:"d.m.Y" }}</span>
+                </div>
+
               </div>
+
+            </article>
+
+          {% empty %}
+
+            <div class="profile_empty">
+              <h3>История пока пуста</h3>
+              <p>После прохождения теста здесь появятся результаты.</p>
             </div>
 
-            <div class="profile_history_bottom">
-              {% if result.best_card %}
-              <a
-                href="{% url 'catalog:card' result.best_card.slug %}"
-                class="profile_history_link"
-              >
-                Открыть
-              </a>
-              {% endif %} {% if result.top_cards %}
-
-              <div class="profile_history_cards">
-                {% for card in result.top_cards %}
-                <a href="{% url 'catalog:card' card.slug %}">
-                  {{ card.name }}
-                </a>
-                {% endfor %}
-              </div>
-
-              {% endif %}
-            </div>
-          </div>
-        </article>
-
-        {% empty %}
-
-        <div class="profile_empty">
-          <h3>История пока пуста</h3>
-          <p>После прохождения теста здесь появятся результаты.</p>
-        </div>
-
-        {% endfor %}
+          {% endfor %}
       </div>
     </div>
   </div>

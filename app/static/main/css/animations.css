@@ -11,7 +11,6 @@
   }
 }
 
-/* Старый дизайн главного слайдера */
 .slider {
   width: 820px;
   position: relative;
@@ -21,7 +20,6 @@
   padding: 50px;
   box-sizing: border-box;
 }
-
 .slider img {
   width: 100%;
   height: 460px;
@@ -55,7 +53,6 @@
   right: 10px;
 }
 
-/* Старый дизайн слайдера карточки */
 .card_slider {
   position: relative;
   border-radius: 2px;
@@ -65,7 +62,6 @@
   width: 60%;
 }
 
-/* Фикс одинакового размера фото в карточке */
 .card_slider img {
   width: 100%;
   height: 430px;

@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %} 
 {% load static%} 
-{% block title %}{{'Главнаястраница'}}{% endblock %} 
+{% block title %}{{'Главная'}}{% endblock %} 
 {% block content %}
 <section class="section1">
   <div class="container">
@@ -46,9 +46,9 @@
     </div>
   </div>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
+<img src="/static/main/img/divider2.svg" alt="" class="dividers " />
 
-<img src="/static/main/img/divider1.svg" alt="" class="divider1" />
+<img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
 <section class="section2 sec2">
   <img src="/static/main/img/sprite/rad7.png" class="sprite2" alt="" />
   <div class="container" style="width: 100%">
@@ -65,12 +65,12 @@
           </div>
         </a>
         <a href="{% url 'main:vet' %}" class="ticket">
-          <div class="navbtn navbtn2">
-            <h2>Ветклиники и приюты</h2>
+          <div class="navbtn ">
+            <h2>Партнеры</h2>
             <div class="mini_divider"></div>
             <p>
-              Главные помощники для <br />
-              наших друзей младших
+              Ветеринарные организации <br />
+              и приюты
             </p>
           </div>
         </a>
@@ -82,9 +82,9 @@
 
 </section>
 
-<img src="/static/main/img/divider2.svg" alt="" class="dividers" />
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 
-  <img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
+  <img src="/static/main/img/divider1.svg" alt="" class="divider1 " />
 <section class="section3">
   <p>
     Почему PawPick? Потому что выбор питомца — это не случайность, а важное
@@ -107,17 +107,18 @@
     приюта.
   </p>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
-<img src="/static/main/img/divider1.svg" alt="" class="divider1" />
+<img src="/static/main/img/divider2.svg" alt="" class="dividers " />
+<img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
 <section class="section4">
   <div class="container">
     <div class="wrapper sec4_wrap">
+     <div class="sec4sprite">
       <div class="sec4_form fade-in">
         <span class="form_title">
           <h2>Отзыв</h2>
         </span>
-        <div class="form">
-          <form method="POST" class="form_form">
+        <div class="form rev_form">
+          <form method="POST" class="form_form rev_form" >
             {% if messages %} {% for message in messages %} {% if forloop.last%}
             <p class="alert {{ message.tags }}">{{ message }}</p>
             {% endif %} 
@@ -130,8 +131,10 @@
             </button>
           </form>
         </div>
+        
       </div>
       <img src="/static/main/img/sprite/rad4.png" class="sprite3" alt="" />
+      </div>
       <div class="section4_info fade-in">
         <p>
           Нашли друга с помощью PawPick? Поделитесь своей историей! Расскажите,
@@ -143,5 +146,5 @@
     </div>
   </div>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers" />
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 {% endblock %}

@@ -3,6 +3,7 @@
   background-repeat: repeat-x;
   background-position: center;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.35));
+  background-attachment: fixed;
 }
 .proforms{
   display:flex;
@@ -130,45 +131,79 @@
 
 .profile_history_item {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 92px;
   gap: 14px;
   padding: 16px;
   border-radius: 20px;
   background-color: #FACA78;
-
 }
 
-.profile_history_date {
-  padding: 12px;
-  border-radius: 14px;
-  background-color: white;
-  align-self: start;
-  text-align: center;
-}
-
-.profile_history_content {
+.profile_history_main {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  justify-content: center;
+  row-gap: 14px;
   min-width: 0;
 }
 
-.profile_history_top {
+.profile_result_flag {
+  width: fit-content;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.profile_result_flag.label {
+  left: -30px;
+}
+
+.profile_result_flag .card_title {
+  min-width: 0;
+  font-size: 17px;
+  padding: 8px 10px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.profile_result_flag .label-tail {
+  width: 21px;
+  min-width: 21px;
+}
+
+.profile_similar {
   display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  min-width: 0;
+}
+
+.profile_similar span {
+  display: block;
+  color: #794A3A;
+  font-family: EBGaramond;
+  font-size: 18px;
+}
+
+.profile_similar_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile_similar_list a {
+  padding: 7px 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: #2B3939;
+  font-family: EBGaramond;
+  font-size: 16px;
+}
+
+.profile_history_aside {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-}
-
-.profile_history_result {
-  min-width: 0;
-}
-
-.profile_history_result h3 {
-  margin-top: 4px;
-  font-size: 20px;
-  line-height: 1.2;
-  overflow-wrap: anywhere;
+  gap: 10px;
 }
 
 .profile_percent {
@@ -189,33 +224,16 @@
   font-size: 17px;
 }
 
-.profile_history_bottom {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-      flex-direction: column;
-    align-items: flex-start;
-}
-
-.profile_history_link {
-  padding: 8px 12px;
+.profile_history_date {
+  padding: 7px 9px;
   border-radius: 12px;
-  background-color: #D0542E;
-  color: white;
-  font-size: 15px;
-}
-
-.profile_history_cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.profile_history_cards a {
-  padding: 7px 10px;
-  border-radius: 10px;
   background-color: white;
-  color: #2B3939;
+  text-align: center;
+}
+
+.profile_history_date span {
+  display: block;
+  color: #794A3A;
   font-family: EBGaramond;
   font-size: 16px;
 }
@@ -300,24 +318,6 @@
     padding: 14px;
   }
 
-  .profile_history_date {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .profile_history_date strong {
-    margin-top: 0;
-  }
-
-  .profile_history_top {
-    align-items: flex-start;
-  }
-
-  .profile_history_result h3 {
-    font-size: 18px;
-  }
-
   .profile_percent {
     width: 64px;
     height: 64px;
@@ -328,7 +328,30 @@
     font-size: 15px;
   }
 
-  .profile_history_bottom {
-    justify-content: center;
+  .profile_history_aside {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .profile_result_flag.label {
+    left: -18px;
+  }
+
+  .profile_result_flag .card_title {
+    font-size: 15px;
+    padding: 7px 9px;
+  }
+
+  .profile_result_flag .label-tail {
+    width: 21px;
+    min-width: 21px;
+  }
+
+  .profile_similar span {
+    font-size: 17px;
+  }
+
+  .profile_similar_list a {
+    font-size: 15px;
   }
 }

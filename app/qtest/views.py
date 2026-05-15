@@ -199,7 +199,6 @@ def test_result(request):
         'max_test_score': max_test_score,
     })
 
-
 @login_required
 def profile(request):
     max_test_score = _get_max_test_score()
@@ -214,7 +213,16 @@ def profile(request):
 
     for result in results:
         result.percent = min(round(result.total_score / max_test_score * 100), 100)
-        result.top_cards = list(result.cards.all()[:3])
+
+        similar_cards = list(result.cards.all())
+
+        if result.best_card:
+            similar_cards = [
+                card for card in similar_cards
+                if card.id != result.best_card.id
+            ]
+
+        result.similar_cards = similar_cards[:2]
 
     return render(request, 'qtest/profile.html', {
         'results': results,

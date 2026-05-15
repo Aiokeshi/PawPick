@@ -11,28 +11,26 @@
 @import url(/static/main/css/qtest.css);
 @import url(/static/main/css/profile.css);
 * {
-    margin: 0;
-    padding: 0;
-    color: white;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-decoration: none;
 }
 
 .form_form input,
 .form_form textarea {
-    color: #2B3939;
-    font-size: 15px;
+  color: #2b3939;
+  font-size: 15px;
 }
 
 @font-face {
-    font-family: SeymourOne;
-    src: url(/static/main/fonts/SeymourOne-Regular.ttf);
-
+  font-family: SeymourOne;
+  src: url(/static/main/fonts/SeymourOne-Regular.ttf);
 }
 
 @font-face {
-    font-family: EBGaramond;
-    src: url(/static/main/fonts//EBGaramond-VariableFont_wght.ttf);
-
+  font-family: EBGaramond;
+  src: url(/static/main/fonts//EBGaramond-VariableFont_wght.ttf);
 }
 
 h1,
@@ -40,60 +38,53 @@ h2,
 h3,
 a,
 button {
-    font-family: SeymourOne;
-    font-size: 24px;
+  font-family: SeymourOne;
+  font-size: 24px;
 }
 
 p,
 label,
 input {
-    font-family: EBGaramond;
+  font-family: EBGaramond;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 body {
-    background-image: url(/static/main/img/background.svg);
-    background-size: cover;
-    background-position: center;
-    filter: sepia(20%);
-
+  background-image: url(/static/main/img/background.svg);
+  background-size: cover;
+  background-position: center;
+  filter: sepia(20%);
 }
 
 .container {
-    max-width: 1480px;
-    margin: 0 auto;
-
+  max-width: 1480px;
+  margin: 0 auto;
 }
 
-
-@media screen and (min-width: 1280px) and (max-width: 1700px){
-    .container {
+@media screen and (min-width: 1280px) and (max-width: 1700px) {
+  .container {
     max-width: 1280px;
     margin: 0 auto;
-
+  }
 }
-}
-@media screen and (min-width: 1024px) and (max-width: 1279px){
-    .container {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .container {
     max-width: 1024px;
     margin: 0 auto;
-
+  }
 }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px){
-    .container {
-    max-width: 768px;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 700px;
     margin: 0 auto;
-
+  }
 }
-}
-    @media screen and (min-width: 480px) and (max-width: 767px){
-        .container {
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
     max-width: 480px;
     margin: 0 auto;
-
+  }
 }
-    }

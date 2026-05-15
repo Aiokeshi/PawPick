@@ -1,4 +1,3 @@
-
 .catback {
   margin-bottom: 50px;
   background-image: url(/static/main/img/catback.svg);
@@ -11,22 +10,22 @@
   column-gap: 50px;
 }
 .filter-group input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    min-height: 18px;
-    margin: 0;
-    border: 2px solid #FACA78;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  margin: 0;
+  border: 2px solid #faca78;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .filter-group input[type="checkbox"]:checked {
-    background-color: #FACA78;
-    box-shadow: inset 0 0 0 4px #794A3A;
+  background-color: #faca78;
+  box-shadow: inset 0 0 0 4px #794a3a;
 }
 .filflag {
   max-width: 350px;
@@ -154,7 +153,6 @@
   stroke-width: 2;
 }
 
-
 .catalog {
   display: grid;
   grid-template-columns: repeat(3, minmax(260px, 1fr));
@@ -192,7 +190,6 @@
   object-fit: cover;
   object-position: center;
 }
-
 
 .info {
   display: flex;
@@ -324,9 +321,7 @@
 
 .favorites-catalog {
   margin: auto 100px;
-  padding: 40px 0;
 }
-
 
 .card_full {
   background-color: white;
@@ -707,13 +702,13 @@
   .sectionFil .filflag {
     display: block !important;
     position: fixed !important;
-      top: 115px !important;
+    top: 115px !important;
     left: 18px !important;
     right: 18px !important;
     z-index: 1000 !important;
     width: auto !important;
     max-width: none !important;
-        max-height: calc(100vh - 135px) !important;
+    max-height: calc(100vh - 135px) !important;
     overflow-y: auto !important;
     opacity: 0;
     visibility: hidden;
@@ -736,8 +731,8 @@
     width: 100% !important;
     max-height: none !important;
     border-radius: 24px !important;
-     padding: 12px !important;
-        row-gap: 8px !important;
+    padding: 12px !important;
+    row-gap: 8px !important;
   }
 
   .sectionFil .label-tail-vertical {
@@ -753,20 +748,19 @@
   }
 
   .filter-category-toggle {
-     padding: 7px 9px !important;
+    padding: 7px 9px !important;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.08);
   }
 
   .filter-options {
-     padding: 6px 5px 0 !important;
+    padding: 6px 5px 0 !important;
   }
 
   .filter-options label {
-    
-     margin-bottom: 4px !important;
-        font-size: 15px !important;
-        line-height: 1.15 !important;
+    margin-bottom: 4px !important;
+    font-size: 15px !important;
+    line-height: 1.15 !important;
   }
 
   .catalog {
@@ -918,235 +912,231 @@
   }
 }
 @media screen and (max-width: 767px) {
-    .sectionFil .filflag {
-        left: 12px !important;
-        right: 12px !important;
-        width: auto !important;
-        max-width: calc(100vw - 24px) !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-    }
+  .sectionFil .filflag {
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
 
-    .sectionFil .filflag .filters {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-    }
+  .sectionFil .filflag .filters {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
 
-    .filters-head,
-    .filters-actions,
-    .filter-group,
-    .filter-group-collapsible,
-    .filter-category-toggle,
-    .filter-options {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-    }
+  .filters-head,
+  .filters-actions,
+  .filter-group,
+  .filter-group-collapsible,
+  .filter-category-toggle,
+  .filter-options {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
 
-    .filter-category-toggle {
-        min-width: 0 !important;
-    }
+  .filter-category-toggle {
+    min-width: 0 !important;
+  }
 
-    .filter-category-toggle .filTitle,
-    .filter-options label,
-    .filter-group label {
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        overflow-wrap: anywhere !important;
-        word-break: normal !important;
-        white-space: normal !important;
-    }
+  .filter-category-toggle .filTitle,
+  .filter-options label,
+  .filter-group label {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
 
-    .filter-options label,
-    .filter-group label {
-        display: flex !important;
-        align-items: flex-start !important;
-    }
+  .filter-options label,
+  .filter-group label {
+    display: flex !important;
+    align-items: flex-start !important;
+  }
 
-    .filter-options input[type="checkbox"],
-    .filter-group input[type="checkbox"],
-    .filters input[type="checkbox"] {
-        flex: 0 0 auto !important;
-    }
+  .filter-options input[type="checkbox"],
+  .filter-group input[type="checkbox"],
+  .filters input[type="checkbox"] {
+    flex: 0 0 auto !important;
+  }
 }
 
 @media screen and (max-width: 420px) {
-    .sectionFil .filflag {
-        left: 8px !important;
-        right: 8px !important;
-        max-width: calc(100vw - 16px) !important;
-    }
+  .sectionFil .filflag {
+    left: 8px !important;
+    right: 8px !important;
+    max-width: calc(100vw - 16px) !important;
+  }
 
-    .sectionFil .filflag .filters {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
+  .sectionFil .filflag .filters {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
 }
 @media screen and (max-width: 1023px) {
-    .catback {
-        position: relative;
-    }
+  .catback {
+    position: relative;
+  }
 
-    .mobile-filter-button {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
+  .mobile-filter-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 
-        width: calc(100% - 36px);
-        margin: 14px auto 14px;
-        padding: 12px 16px;
+    width: calc(100% - 36px);
+    margin: 14px auto 14px;
+    padding: 12px 16px;
 
-        border: 2px solid #FACA78;
-        border-radius: 16px;
-        background: #2B3939;
-        color: #FFFFFF;
+    border: 2px solid #faca78;
+    border-radius: 16px;
+    background: #2b3939;
+    color: #ffffff;
 
-        font-family: SeymourOne;
-        font-size: 16px;
-        cursor: pointer;
-        filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.25));
-    }
+    font-family: SeymourOne;
+    font-size: 16px;
+    cursor: pointer;
+    filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.25));
+  }
 
-    .mobile-filter-button::after {
-        content: '⌄';
-        margin-left: 10px;
-        color: #FACA78;
-        transition: transform .22s ease;
-    }
+  .mobile-filter-button::after {
+    content: "⌄";
+    margin-left: 10px;
+    color: #faca78;
+    transition: transform 0.22s ease;
+  }
 
-    .mobile-filter-button.is-open::after {
-        transform: rotate(180deg);
-    }
+  .mobile-filter-button.is-open::after {
+    transform: rotate(180deg);
+  }
 
-    .mobile-filter-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: 900;
+  .mobile-filter-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
 
-        display: block !important;
-        background: rgba(0, 0, 0, 0.42);
+    display: block !important;
+    background: rgba(0, 0, 0, 0.42);
 
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-        transition: opacity .22s ease, visibility .22s ease;
-    }
+    transition:
+      opacity 0.22s ease,
+      visibility 0.22s ease;
+  }
 
-    .mobile-filter-overlay.is-open {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
+  .mobile-filter-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
-    .sectionFil {
-        display: block !important;
-        position: relative;
-    }
+  .sectionFil {
+    display: block !important;
+    position: relative;
+  }
 
-    .sectionFil .filflag {
-        display: block !important;
-        position: fixed !important;
+  .sectionFil .filflag {
+    display: block !important;
+    position: fixed !important;
 
-        top: 112px !important;
-        left: 14px !important;
-        right: 14px !important;
-        z-index: 1000 !important;
+    top: 112px !important;
+    left: 14px !important;
+    right: 14px !important;
+    z-index: 1000 !important;
 
-        width: auto !important;
-        max-width: calc(100vw - 28px) !important;
-        max-height: calc(100vh - 128px) !important;
+    width: auto !important;
+    max-width: calc(100vw - 28px) !important;
+    max-height: calc(100vh - 128px) !important;
 
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
 
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px);
 
-        transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
-    }
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      visibility 0.22s ease;
+  }
 
-    .sectionFil .filflag.is-open {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        transform: translateY(0) !important;
-    }
+  .sectionFil .filflag.is-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
 
-    .sectionFil .filflag .filters {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
+  .sectionFil .filflag .filters {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 
-        padding: 12px !important;
-        row-gap: 8px !important;
-        border-radius: 20px !important;
+    padding: 12px !important;
+    row-gap: 8px !important;
+    border-radius: 20px !important;
 
-        overflow-x: hidden !important;
-    }
+    overflow-x: hidden !important;
+  }
 
-    .sectionFil .label-tail-vertical {
-        display: none !important;
-    }
+  .sectionFil .label-tail-vertical {
+    display: none !important;
+  }
 
-    .filters-head,
-    .filters-actions,
-    .filter-group,
-    .filter-group-collapsible,
-    .filter-category-toggle,
-    .filter-options {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
+  .filters-head,
+  .filters-actions,
+  .filter-group,
+  .filter-group-collapsible,
+  .filter-category-toggle,
+  .filter-options {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
-    .filter-options label,
-    .filter-group label {
-        max-width: 100% !important;
-        overflow-wrap: anywhere !important;
-        white-space: normal !important;
-    }
+  .filter-options label,
+  .filter-group label {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
 
-    body.filters-open {
-        overflow: hidden;
-    }
+  body.filters-open {
+    overflow: hidden;
+  }
 }
 
-/* На ширине от 1024px возвращаем обычные фильтры сбоку */
 @media screen and (min-width: 1024px) {
-    .mobile-filter-button,
-    .mobile-filter-overlay {
-        display: none !important;
-    }
+  .mobile-filter-button,
+  .mobile-filter-overlay {
+    display: none !important;
+  }
 
-    .sectionFil .filflag {
-        position: static !important;
-        display: block !important;
+  .sectionFil .filflag {
+    position: static !important;
+    display: block !important;
 
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
 
-        width: auto !important;
-        max-height: none !important;
-        overflow: visible !important;
-    }
+    width: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
 }
-/* =========================================================
-   АДАПТИВ РАЗВЕРНУТОЙ КАРТОЧКИ
-   Флажок тегов:
-   - десктоп: left: -60px;
-   - планшеты: left: -30px;
-   - телефоны: left: 0.
-   Каталог, фильтры и обычные карточки не трогаются.
-   ========================================================= */
 
 .card_full,
 .card_full * {
@@ -1160,8 +1150,7 @@
 
 .card_full .short_info,
 .card_full .short_desc,
-.card_full .description,
- {
+.card_full .description {
   min-width: 0;
 }
 
@@ -1173,13 +1162,11 @@
   overflow: visible;
 }
 
-/* Десктопный исходный сдвиг */
 .card_full .card_label {
   left: -60px;
   overflow: visible;
 }
 
-/* 1280–1700: оставляем исходный сдвиг -60px */
 @media screen and (min-width: 1280px) and (max-width: 1700px) {
   .card_full {
     padding: 34px;
@@ -1217,7 +1204,6 @@
   }
 }
 
-/* 1024–1279: планшетный сдвиг -30px */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .card_full {
     padding: 28px;
@@ -1265,7 +1251,6 @@
   }
 }
 
-/* 768–1023: планшетный сдвиг -30px */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .card_full {
     padding: 24px;
@@ -1318,7 +1303,6 @@
   }
 }
 
-/* До 767: телефон, сдвига нет */
 @media screen and (max-width: 767px) {
   .card_full {
     margin: 28px 14px;
@@ -1401,7 +1385,6 @@
   }
 }
 
-/* Очень маленькие телефоны: сдвига тоже нет */
 @media screen and (max-width: 479px) {
   .card_full {
     margin: 24px 10px;
