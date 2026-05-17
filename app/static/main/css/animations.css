@@ -64,7 +64,7 @@
 
 .card_slider img {
   width: 100%;
-  height: 430px;
+  height: 500px;
   object-fit: cover;
   object-position: center;
   display: none;
@@ -96,6 +96,9 @@
   .card_slider img {
     height: 360px;
   }
+  .card_slider_cont {
+  width: 100%;
+}
 }
 
 @media screen and (max-width: 767px) {
