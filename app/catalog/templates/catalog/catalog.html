@@ -1,142 +1,142 @@
 {% extends 'main/base.html' %} 
 {% load static%} 
-{% block title %}{{'Каталог'}}{%endblock %} 
+{% block title%}{{'Каталог'}}{%endblock %} 
 {% block content %}
+<section class="backgroundcat">
+  <section class="catback">
+    <button
+      class="mobile-filter-button"
+      type="button"
+      aria-label="Открыть фильтры"
+      aria-expanded="false"
+      data-filter-button
+    >
+      <span>Фильтры</span>
+    </button>
 
-<section class="catback">
-  <button
-    class="mobile-filter-button"
-    type="button"
-    aria-label="Открыть фильтры"
-    aria-expanded="false"
-    data-filter-button
-  >
-    <span>Фильтры</span>
-  </button>
+    <div class="mobile-filter-overlay" data-filter-overlay></div>
 
-  <div class="mobile-filter-overlay" data-filter-overlay></div>
+    <div class="sectionFil">
+      <div class="filflag fade-in" data-filter-panel>
+        <form method="get" class="filters">
+          <div class="filters-head">
+            <h2>Отличия</h2>
 
-  <div class="sectionFil">
-    <div class="filflag fade-in" data-filter-panel>
-      <form method="get" class="filters">
-        <div class="filters-head">
-          <h2>Отличия</h2>
+            {% if selected_tags %}
+            <a href="{% url 'catalog:catalog' %}" class="filters-reset"
+              >Сбросить</a
+            >
+            {% endif %}
+          </div>
 
-          {% if selected_tags %}
-          <a href="{% url 'catalog:catalog' %}" class="filters-reset"
-            >Сбросить</a
+          {% for category in categories %}
+
+          <div
+            class="filter-group filter-group-collapsible {% if forloop.first %}is-open{% endif %}"
+            data-filter-group
           >
-          {% endif %}
-        </div>
+            <button
+              type="button"
+              class="filter-category-toggle"
+              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+              data-filter-toggle
+            >
+              <span class="filTitle">{{ category.name }}</span>
+              <span class="filter-toggle-icon">⌄</span>
+            </button>
 
-        {% for category in categories %}
+            <div class="filter-options" data-filter-options>
+              {% for tag in category.tags.all %}
 
-        <div
-          class="filter-group filter-group-collapsible {% if forloop.first %}is-open{% endif %}"
-          data-filter-group
+              <label>
+                <input
+                  class="fil"
+                  type="checkbox"
+                  name="tags"
+                  value="{{ tag.id }}"
+                  {%
+                  if
+                  tag.id
+                  in
+                  selected_tags
+                  %}checked{%
+                  endif
+                  %}
+                />
+
+                {{ tag.name }}
+              </label>
+
+              {% endfor %}
+            </div>
+          </div>
+
+          {% endfor %}
+
+          <div class="filters-actions">
+            <button type="submit" class="btn"><span>Применить</span></button>
+
+            {% if selected_tags %}
+            <a href="{% url 'catalog:catalog' %}" class="btn filters-reset-btn"
+              ><span>Сбросить</span></a
+            >
+            {% endif %}
+          </div>
+        </form>
+
+        <svg
+          class="label-tail-vertical"
+          viewBox="0 0 63 21"
+          preserveAspectRatio="none"
         >
-          <button
-            type="button"
-            class="filter-category-toggle"
-            aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
-            data-filter-toggle
-          >
-            <span class="filTitle">{{ category.name }}</span>
-            <span class="filter-toggle-icon">⌄</span>
-          </button>
+          <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z" />
+        </svg>
+      </div>
 
-          <div class="filter-options" data-filter-options>
-            {% for tag in category.tags.all %}
+      <div class="catalog fade-in">
+        {% for card in catalog %}
 
-            <label>
-              <input
-                class="fil"
-                type="checkbox"
-                name="tags"
-                value="{{ tag.id }}"
-                {%
-                if
-                tag.id
-                in
-                selected_tags
-                %}checked{%
-                endif
-                %}
-              />
+        <div class="card">
+          <div class="card_image">
+            {% if card.imageMain %}
+            <img
+              src="{{ card.imageMain.url }}"
+              class="cmage"
+              alt="{{ card.name }}"
+            />
 
-              {{ tag.name }}
-            </label>
+            {% endif %}
+          </div>
 
-            {% endfor %}
+          <div class="info">
+            <a
+              href="{% url 'catalog:card' card.slug %}{% if selected_tags_query %}?{{ selected_tags_query }}{% endif %}"
+              class="label"
+            >
+              <p class="card_title">{{ card.name }}</p>
+
+              <svg
+                class="label-tail"
+                viewBox="0 0 21 63"
+                preserveAspectRatio="none"
+              >
+                <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+              </svg>
+            </a>
+
+            {% include 'catalog/includes/favorite_button.html' with card=card %}
           </div>
         </div>
 
+        {% empty %}
+
+        <p class="unfound">По выбранным фильтрам карточки не найдены.</p>
+
         {% endfor %}
-
-        <div class="filters-actions">
-          <button type="submit" class="btn"><span>Применить</span></button>
-
-          {% if selected_tags %}
-          <a href="{% url 'catalog:catalog' %}" class="btn filters-reset-btn"
-            ><span>Сбросить</span></a
-          >
-          {% endif %}
-        </div>
-      </form>
-
-      <svg
-        class="label-tail-vertical"
-        viewBox="0 0 63 21"
-        preserveAspectRatio="none"
-      >
-        <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z" />
-      </svg>
-    </div>
-
-    <div class="catalog fade-in">
-      {% for card in catalog %}
-
-      <div class="card">
-        <div class="card_image">
-          {% if card.imageMain %}
-          <img
-            src="{{ card.imageMain.url }}"
-            class="cmage"
-            alt="{{ card.name }}"
-          />
-
-          {% endif %}
-        </div>
-
-        <div class="info">
-          <a
-            href="{% url 'catalog:card' card.slug %}{% if selected_tags_query %}?{{ selected_tags_query }}{% endif %}"
-            class="label"
-          >
-            <p class="card_title">{{ card.name }}</p>
-
-            <svg
-              class="label-tail"
-              viewBox="0 0 21 63"
-              preserveAspectRatio="none"
-            >
-              <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
-            </svg>
-          </a>
-
-          {% include 'catalog/includes/favorite_button.html' with card=card %}
-        </div>
       </div>
-
-      {% empty %}
-
-      <p class="unfound">По выбранным фильтрам карточки не найдены.</p>
-
-      {% endfor %}
     </div>
-  </div>
+  </section>
 </section>
-
 <script src="{% static 'main/js/catalog_filters.js' %}"></script>
 
 {% endblock %}
