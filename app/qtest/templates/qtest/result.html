@@ -1,73 +1,281 @@
-{% extends 'main/base.html' %}
-{% load static%}
-
-{% block title %}{{'Результат'}}{% endblock %}
-
+{% extends 'main/base.html' %} 
+{% load static %} 
+{% block title %}Результат теста{% endblock %} 
 {% block content %}
 
-<section class="catback result-back">
+<section class="q_result_intro">
+  <div class="container">
+    <div class="q_result_page fade-in">
+        <div class="flagban fade-in">
+        <div class="section1_banner qbanner">
+            {% if best_card and results %} {% with best=results.0 %}
+          <span>Лучший вариант</span>
 
- <div class="container">
+          <h2>{{ best.card.name }}</h2>
 
-  <div class="result-title fade-in">
-   <h2>Результат теста</h2>
+          <p>
+            {% if best.card.qresult %} {{ best.card.qresult }} {% else %} Эта
+            порода оказалась наиболее подходящей по вашим ответам. 
+             {% endif %}
+          </p>
 
-   {% if best_card %}
-    <p>Мы подобрали варианты, у которых больше всего совпадений с вашими ответами.</p>
-   {% else %}
-    <p>По выбранным ответам пока не найдено совпадений. Проверьте, назначены ли теги ответам и карточкам.</p>
-   {% endif %}
-  </div>
-
-  <div class="catalog fade-in">
-
-   {% for item in results %}
-
-    <a href="{% url 'catalog:card' item.card.slug %}" class="result-card-link">
-
-     <div class="card result-card">
-
-      <div class="card_image">
-
-       {% if item.card.imageMain %}
-        <img src="{{ item.card.imageMain.url }}" class="cmage" alt="{{ item.card.name }}">
-       {% endif %}
-
+          <a
+            href="{% url 'catalog:card' best.card.slug %}"
+            class="q_result_link"
+          >
+            Подробнее о породе
+          </a>
+          
+        </div>
+        <svg
+          class="label-tail-vertical-ban"
+          viewBox="0 0 63 21"
+          preserveAspectRatio="none"
+        >
+          <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z" />
+        </svg>
       </div>
+     
 
-      <div class="info">
+      <section class="q_result_hero">
+        <div class="q_result_card q_catalog_card">
+          <a
+            href="{% url 'catalog:card' best.card.slug %}"
+            class="q_catalog_card_image"
+          >
+            {% if best.card.imageMain %}
+            <img
+              src="{{ best.card.imageMain.url }}"
+              alt="{{ best.card.name }}"
+              class="q_catalog_cmage"
+            />
+            {% endif %}
+          </a>
 
-       <div class="label">
+          <div class="q_catalog_info">
+            <a
+              href="{% url 'catalog:card' best.card.slug %}"
+              class="q_catalog_label"
+            >
+              <span class="q_catalog_card_title">{{ best.card.name }}</span>
 
-        <p class="card_title">
-         {{ item.card.name }}
+              <svg
+                class="q_catalog_label_tail"
+                viewBox="0 0 21 63"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z"></path>
+              </svg>
+            </a>
+
+            <div class="q_percent">
+              <strong>{{ best.percent }}%</strong>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="q_result_text">
+          <span>Лучший вариант</span>
+
+          <h2>{{ best.card.name }}</h2>
+
+          <p>
+            {% if best.card.qresult %} {{ best.card.qresult }} {% else %} Эта
+            порода оказалась наиболее подходящей по вашим ответам. 
+             {% endif %}
+          </p>
+
+          <a
+            href="{% url 'catalog:card' best.card.slug %}"
+            class="q_result_link"
+          >
+            Подробнее о породе
+          </a>
+        </div> -->
+      </section>
+
+      {% endwith %} {% else %}
+
+      <section class="q_result_empty">
+        <h2>Подходящие варианты не найдены</h2>
+
+        <p>
+          По выбранным ответам пока не найдено совпадений. Проверьте, назначены
+          ли теги ответам и карточкам.
         </p>
 
-        <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
-         <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
-        </svg>
+        <a href="{% url 'qtest:test_start' %}" class="q_result_link">
+          Пройти тест заново
+        </a>
+      </section>
 
-       </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<img src="/static/main/img/divider2.svg" alt="" class="dividers " />
 
-       <p class="result-match">Совпадение: {{ item.percent }}%</p>
-       <p class="result-score">Баллы: {{ item.score }} из {{ max_test_score }}</p>
+  <img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
+{% if best_card and results %}
 
+
+<section class="q_dark_section">
+  <div class="container">
+    <div class="q_dark_grid">
+      <div class="q_dark_panel">
+        <div class="q_section_head">
+          <h2>Ещё подходящие варианты</h2>
+          <p>Две породы, которые тоже хорошо совпали с вашими ответами.</p>
+        </div>
+
+        <div class="q_similar_list">
+          {% for item in results|slice:"1:3" %}
+
+          <a
+            href="{% url 'catalog:card' item.card.slug %}"
+            class="q_similar_item"
+          >
+            <div class="q_similar_image">
+              {% if item.card.imageMain %}
+              <img
+                src="{{ item.card.imageMain.url }}"
+                alt="{{ item.card.name }}"
+              />
+              {% endif %}
+            </div>
+
+            <div class="q_similar_info">
+              <strong>{{ item.card.name }}</strong>
+              <span>{{ item.percent }}% совпадение</span>
+            </div>
+          </a>
+
+          {% empty %}
+
+          <div class="q_similar_empty">
+            Дополнительные варианты пока не найдены.
+          </div>
+
+          {% endfor %}
+        </div>
       </div>
 
-     </div>
+      {% if analytics %}
 
-    </a>
+      <div class="q_dark_panel">
+        <div class="q_section_head">
+          <h2>Аналитика ответов</h2>
+          <p>Какие шаги сильнее всего повлияли на подбор.</p>
+        </div>
 
-   {% empty %}
+        <div class="q_analysis_list">
+          {% for item in analytics %}
 
-    <p>Ничего не найдено</p>
+          <div class="q_analysis_item">
+            <div class="q_analysis_top">
+              <span>{{ item.title }}</span>
+              <strong>{{ item.percent }}%</strong>
+            </div>
 
-   {% endfor %}
+            <div class="q_analysis_bar">
+              <div style="width: {{ item.percent }}%;"></div>
+            </div>
+          </div>
 
+          {% endfor %}
+        </div>
+      </div>
+
+      {% endif %}
+    </div>
   </div>
-
- </div>
-
 </section>
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 
+  <img src="/static/main/img/divider1.svg" alt="" class="divider1 " />
+
+{% with card=results.0.card %}
+
+<section class="q_detail_back">
+  <div class="container">
+
+    <div class="container">
+      <section class="card_full fade-in">
+        <div class="short_info">
+          <div class="card_slider_cont fade-in">
+            <div class="card_slider">
+              <button id="prev" class="arrow">‹</button>
+
+              {% if card.imageMain %}
+              <img
+                src="{{ card.imageMain.url }}"
+                class="active"
+                alt="{{ card.name }}"
+              />
+              {% endif %} {% if card.imageScnd %}
+              <img src="{{ card.imageScnd.url }}" alt="{{ card.name }}" />
+              {% endif %} {% if card.imageThrd %}
+              <img src="{{ card.imageThrd.url }}" alt="{{ card.name }}" />
+              {% endif %}
+
+              <button id="next" class="arrow">›</button>
+            </div>
+          </div>
+
+          <div class="short_desc">
+            <h2>{{ card.name }}</h2>
+
+            <p>Краткая информация:</p>
+
+            <ul>
+              <li>Рост: {{ card.height }}</li>
+              <li>Вес: {{ card.weight }}</li>
+              <li>Продолжительность жизни: {{ card.age }}</li>
+              <li>Окрасы: {{ card.furrColors }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tag_like">
+          <div class="card_label">
+            <p class="card_title">
+              Теги породы: 
+              {% for tag in card.tags.all %} 
+              {% if tag.category.name != 'Скрытые теги' %} 
+              {{ tag.name }}{% if notforloop.last %} / 
+              {% endif %} 
+                {% endif %} 
+              {% empty %} теги неназначены {% endfor %}
+            </p>
+
+            <svg
+              class="label-tail"
+              viewBox="0 0 21 63"
+              preserveAspectRatio="none"
+            >
+              <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z"></path>
+            </svg>
+          </div>
+
+          {% include 'catalog/includes/favorite_button.html' with card=card %}
+        </div>
+
+        <div class="description">
+          <p>{{ card.description }}</p>
+
+          <div class="divider"></div>
+
+          <p>{{ card.health }}</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+<img src="/static/main/img/divider2.svg" alt="" class="dividers " />
+
+
+{% endwith %} 
+{% endif %} 
 {% endblock %}

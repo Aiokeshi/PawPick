@@ -10,6 +10,7 @@
 @import url(/static/main/css/vet.css);
 @import url(/static/main/css/qtest.css);
 @import url(/static/main/css/profile.css);
+@import url(/static/main/css/result.css);
 * {
   margin: 0;
   padding: 0;

@@ -115,7 +115,7 @@
 
 .filter-toggle-icon {
   flex: 0 0 auto;
-  color: #d0542e;
+  color: #faca78;
   font-size: 22px;
   line-height: 1;
   transition: transform 0.22s ease;
@@ -238,7 +238,7 @@
 .label-tail {
   width: 35px;
   min-width: 35px;
-  margin-left: -3px;
+  margin-left: -4px;
   flex: 0 0 auto;
 }
 
@@ -329,7 +329,7 @@
   flex-direction: column;
   row-gap: 40px;
   padding: 40px;
-  margin: 40px auto;
+
 }
 
 .short_info {

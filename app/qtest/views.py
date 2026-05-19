@@ -152,9 +152,18 @@ def test_result(request):
     max_test_score = _get_max_test_score()
 
     user_tag_scores = defaultdict(int)
+    step_scores = defaultdict(int)
+    step_titles = {
+        step.order: step.title
+        for step in TestStep.objects.all()
+    }
 
     for answer in selected_answers:
-        user_tag_scores[answer.tag_id] += step_weights.get(answer.question.step, 1)
+        question_step = answer.question.step
+        answer_weight = step_weights.get(question_step, 1)
+
+        user_tag_scores[answer.tag_id] += answer_weight
+        step_scores[question_step] += answer_weight
 
     card_results = []
 
@@ -178,6 +187,19 @@ def test_result(request):
     card_results.sort(key=lambda item: item['score'], reverse=True)
     card_results = card_results[:RESULT_LIMIT]
 
+    total_user_score = sum(step_scores.values()) or 1
+
+    analytics = []
+
+    for step, score in sorted(step_scores.items()):
+        analytics.append({
+            'title': step_titles.get(step, f'Шаг {step}'),
+            'percent': round(score / total_user_score * 100),
+        })
+
+    analytics.sort(key=lambda item: item['percent'], reverse=True)
+    analytics = analytics[:4]
+
     best_card = card_results[0]['card'] if card_results else None
     total_score = card_results[0]['score'] if card_results else 0
 
@@ -190,6 +212,11 @@ def test_result(request):
     result.tags.set(user_tag_scores.keys())
     result.cards.set([item['card'] for item in card_results])
 
+    q_card_tags = []
+
+    if best_card:
+        q_card_tags = best_card.tags.exclude(category__name='Скрытые теги')
+
     request.session['answers'] = {}
     request.session.modified = True
 
@@ -197,6 +224,8 @@ def test_result(request):
         'results': card_results,
         'best_card': best_card,
         'max_test_score': max_test_score,
+        'analytics': analytics,
+        'q_card_tags': q_card_tags,
     })
 
 @login_required

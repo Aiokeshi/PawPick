@@ -42,6 +42,7 @@ input {
   background-color: #faca78;
   padding: 50px;
   border-radius: 20px;
+  height: 100%;
 }
 
 .form_title {
