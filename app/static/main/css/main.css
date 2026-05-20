@@ -89,7 +89,7 @@
   padding: 40px 20px;
   margin: 40px;
   background-color: #2b3939;
-  border-radius: 5px;
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -112,7 +112,7 @@
 
 .mini_divider {
   height: 3px;
-  border-radius: 5px;
+  border-radius: 2px;
   width: 100%;
   background-color: #faca78;
 }
@@ -235,7 +235,7 @@
   .navbtn {
     padding: 20px 20px;
     margin: 30px;
-    border-radius: 5px;
+    border-radius: 2px;
     row-gap: 10px;
 
     h2 {
@@ -341,7 +341,7 @@
   .navbtn {
     padding: 10px 10px;
     margin: 30px;
-    border-radius: 5px;
+    border-radius: 2px;
     row-gap: 10px;
 
     h2 {
@@ -446,7 +446,7 @@
   .navbtn {
     padding: 10px 10px;
     margin: 30px;
-    border-radius: 5px;
+    border-radius: 2px;
     row-gap: 10px;
 
     h2 {

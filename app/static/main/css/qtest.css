@@ -39,7 +39,7 @@ input[type="radio"]:checked {
 }
 .qdivid{
      height: 3px;
-    border-radius: 5px;
+    border-radius: 2px;
     min-width: 350px;
     max-width: 1480px;
     background-color:#D0542E;

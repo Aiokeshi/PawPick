@@ -64,7 +64,7 @@ input {
 .form_input {
   padding: 10px;
   border: 3px solid #6ac6c1;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: white;
 }
 
@@ -140,7 +140,7 @@ input {
   }
 
   .form_input {
-    border-radius: 5px;
+    border-radius: 2px;
   }
   .abtn {
     font-size: 20px;
@@ -194,7 +194,7 @@ input {
   }
 
   .form_input {
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 5px;
   }
   .abtn {

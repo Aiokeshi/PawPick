@@ -25,14 +25,15 @@
   font-size: 28px;
   text-align: center;
 }
-.qbanner{
-    width: auto;
-    height: auto;
+
+.qbanner {
+  width: auto;
+  height: auto;
 }
+
 .q_result_hero,
 .q_result_empty,
 .q_detail_head {
-
   background-size: 51% 51%;
   background-position: top left, top right, bottom left, bottom right;
   background-repeat: no-repeat;
@@ -336,7 +337,14 @@
   align-items: center;
 }
 
+/* Ниже только адаптация существующего дизайна. Основные стили и секции не меняются. */
+
 @media screen and (max-width: 1279px) {
+  .q_result_page {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .q_result_hero {
     grid-template-columns: 340px minmax(0, 1fr);
     gap: 28px;
@@ -380,6 +388,20 @@
     max-width: 360px;
     justify-self: center;
   }
+
+  .q_result_text {
+    max-width: 100%;
+  }
+
+  .q_catalog_label {
+    left: -24px;
+    max-width: calc(100% - 82px);
+  }
+
+  .q_dark_panel {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -421,7 +443,7 @@
   }
 
   .q_catalog_label {
-    left: -18px;
+    left: 0;
     max-width: calc(100% - 62px);
   }
 
@@ -489,6 +511,21 @@
   .q_similar_info strong {
     font-size: 15px;
   }
+
+  .q_similar_info span,
+  .q_similar_empty,
+  .q_analysis_top span {
+    font-size: 16px;
+  }
+
+  .q_analysis_top {
+    align-items: flex-start;
+  }
+
+  .q_analysis_top strong {
+    min-width: 48px;
+    text-align: right;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -508,5 +545,14 @@
 
   .q_similar_image {
     height: 150px;
+  }
+
+  .q_analysis_top {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .q_analysis_top strong {
+    align-self: flex-end;
   }
 }

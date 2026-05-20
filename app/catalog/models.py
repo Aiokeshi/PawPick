@@ -51,7 +51,7 @@ class Cards(models.Model):
         verbose_name='Теги'
     )
 
-    health = models.TextField(blank=True, null=True, verbose_name='Результат')
+    qresult = models.TextField(blank=True, null=True, verbose_name='Результат')
     class Meta:
         db_table = 'card'
         verbose_name = 'Карточки'
