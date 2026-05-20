@@ -12,6 +12,7 @@ input {
 }
 
 .form {
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -82,7 +83,7 @@ input {
   background-image: url(/static/main/img/regback.svg);
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: 100px;
+  
   background-repeat: repeat-x;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }

@@ -8,7 +8,7 @@
 .proforms{
   display:flex;
   flex-direction:row;
-  margin-bottom:100px;
+  margin-bottom:50px;
   gap:50px;
 }
 .profile_page {

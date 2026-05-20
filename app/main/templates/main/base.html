@@ -52,19 +52,22 @@
 
   <nav class="mobile-menu" data-mobile-menu>
    <a href="{% url 'qtest:test_step' 1 %}" class="button">Тест</a>
+   <div class="divider"></div>
    <a href="{% url 'catalog:catalog' %}" class="button">Собаки</a>
+   <div class="divider"></div>
    <a href="{% url 'main:vet' %}" class="button">Партнеры</a>
-
+<div class="divider"></div>
    {% if request.user.is_authenticated and request.user.is_staff %}
    <a href="{% url 'admin:index' %}" class="buttom">Админ панель</a>
    {% endif %}
-
+<div class="divider"></div>
    {% if request.user.is_authenticated %}
    <a href="{% url 'qtest:profile' %}" class="button">
     {{ request.user.profile.display_name|default:request.user.username }}
    </a>
    {% else %}
    <a href="{% url 'register:login' %}" class="button">Вход</a>
+   <div class="divider"></div>
    <a href="{% url 'register:register' %}" class="button">Регистрация</a>
    {% endif %}
   </nav>

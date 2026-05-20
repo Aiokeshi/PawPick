@@ -180,7 +180,9 @@
   stroke: #2b3939;
   stroke-width: 1;
 }
-
+.rev_form{
+   margin-bottom: 0 !important;
+}
 @media screen and (min-width: 1280px) and (max-width: 1700px) {
   .wrapper {
     display: flex;
@@ -258,6 +260,7 @@
   }
   .rev_form {
     padding: 40px !important;
+   
   }
   .sec4_wrap {
     margin: 0px 100px;

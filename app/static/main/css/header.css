@@ -111,9 +111,9 @@ header {
   z-index: 70;
   width: 48px;
   height: 48px;
-  border: 2px solid #FACA78;
+  border: none;
   border-radius: 16px;
-  background: rgba(250, 202, 120, 0.08);
+  background: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,11 +124,11 @@ header {
  }
 
  .burger-button:hover {
-  background: rgba(250, 202, 120, 0.18);
+  background: none;
  }
 
  .burger-button span {
-  width: 24px;
+  width: 30px;
   height: 3px;
   border-radius: 999px;
   background-color: #FACA78;
@@ -173,7 +173,7 @@ header {
   z-index: 60;
   padding: 18px;
   border: 2px solid #FACA78;
-  border-radius: 24px;
+  border-radius: 10px;
   background: rgba(43, 57, 57, 0.98);
   filter: drop-shadow(0px 12px 24px rgba(0, 0, 0, 0.35));
   display: flex;
@@ -201,7 +201,7 @@ header {
   box-sizing: border-box;
   padding: 14px 16px;
   border-radius: 16px;
-  background-color: rgba(250, 202, 120, 0.1);
+  background-color: none;
   color: #2B3939F;
   font-size: 16px;
   text-align: center;

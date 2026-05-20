@@ -17,83 +17,277 @@ input[type="radio"]:checked {
   box-shadow: inset 0 0 0 4px #faca78;
 }
 
-.test_buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.test_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.qbtn{
-    padding: 20px;
-    cursor:pointer;
+
+.qbtn {
+  padding: 20px;
+  cursor: pointer;
 }
-.prg{
-        width: 60%;
+
+.prg {
+  width: 60%;
 }
-.quest{
-    display: flex;
-    flex-direction: column;
-    h3{
-        font-family: EBGaramond;
-    }
+
+.quest {
+  display: flex;
+  flex-direction: column;
 }
-.qdivid{
-     height: 3px;
-    border-radius: 2px;
-    min-width: 350px;
-    max-width: 1480px;
-    background-color:#D0542E;
-   
+
+.quest h3 {
+  font-family: EBGaramond;
 }
-.qform{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
+
+.qdivid {
+  height: 3px;
+  border-radius: 5px;
+  min-width: 350px;
+  max-width: 1480px;
+  background-color: #D0542E;
 }
+
+.qform {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .progress {
-    width: 100%;
-    height: 10px;
-    background: #FCEBCD;
-    margin-bottom: 20px;
-    border-radius:5px;
+  width: 100%;
+  height: 10px;
+  background: #FCEBCD;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .progress-bar {
-    height: 100%;
-    background: #6BC6C0;
-    border-radius:5px;
-}
-.qback{
-    display: flex;
-    flex-direction: row;
-    background-attachment: fixed;
+  height: 100%;
+  background: #6BC6C0;
+  border-radius: 5px;
 }
 
-.qquestion{
-    color:#2B3939;
-    margin-bottom:10px;
-} 
-.qtitle{
-text-align:center;
-    color: #D0542E;
+.qback {
+  display: flex;
+  flex-direction: row;
+  background-attachment: fixed;
+
+  margin-bottom:50px;
 }
-.qanswer{
-    font-size:24px;
-    color:#2B3939;
+
+.qquestion {
+  color: #2B3939;
+  margin-bottom: 10px;
 }
-.qcounter{
-    font-size:21px;
-    color:#2B3939;
-    text-align:center;
+
+.qtitle {
+  text-align: center;
+  color: #D0542E;
 }
-.backbtn{
-    font-size:21px;
-     
-    background-color:transparent;
-    border:none;
-    span{
-    color:#2B3939 ;
-    }
-    cursor:pointer;
+
+.qanswer {
+  font-size: 24px;
+  color: #2B3939;
+}
+
+.qcounter {
+  font-size: 21px;
+  color: #2B3939;
+  text-align: center;
+}
+
+.backbtn {
+  font-size: 21px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.backbtn span {
+  color: #2B3939;
+}
+
+/* Адаптив страницы теста. Спрайты вынесены в sprite.css */
+
+@media screen and (max-width: 1279px) {
+  .qback {
+    align-items: center;
+  }
+
+
+
+  .qtitle {
+    font-size: 26px;
+  }
+
+  .qquestion {
+    font-size: 22px;
+  }
+
+  .qanswer {
+    font-size: 22px;
+  }
+
+  .qcounter,
+  .backbtn {
+    font-size: 19px;
+  }
+
+  .qbtn {
+    padding: 16px 18px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .qback {
+    justify-content: center;
+  }
+
+  .cont_form {
+    max-width: calc(100% - 40px);
+  }
+
+
+
+  .qform {
+    gap: 18px;
+  }
+
+  .qdivid {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .qtitle {
+    font-size: 24px;
+  }
+
+  .qquestion {
+    font-size: 20px;
+  }
+
+  .qanswer {
+    font-size: 20px;
+  }
+
+  .test_buttons {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .qback {
+    flex-direction: column;
+  }
+
+  .cont_form {
+    max-width: calc(100% - 24px);
+  }
+
+
+  .progress {
+    height: 8px;
+    margin-bottom: 14px;
+  }
+
+  .qform {
+    gap: 14px;
+  }
+
+  .qtitle {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .qquestion {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .qanswer {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .qanswer span {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+  }
+
+  input[type="radio"]:checked {
+    box-shadow: inset 0 0 0 3px #faca78;
+  }
+
+  .qcounter,
+  .backbtn {
+    font-size: 17px;
+  }
+
+  .test_buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .qbtn {
+    padding: 12px 14px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .cont_form {
+    max-width: calc(100% - 18px);
+  }
+
+
+  .qtitle {
+    font-size: 18px;
+  }
+
+  .qquestion {
+    font-size: 17px;
+  }
+
+  .qanswer,
+  .qanswer span {
+    font-size: 17px;
+  }
+
+  .test_buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .qtitle {
+    font-size: 17px;
+  }
+
+  .qquestion {
+    font-size: 16px;
+  }
+
+  .qanswer,
+  .qanswer span {
+    font-size: 16px;
+  }
+
+  .qcounter,
+  .backbtn {
+    font-size: 16px;
+  }
+
+  .qbtn {
+    padding: 10px 12px;
+  }
 }

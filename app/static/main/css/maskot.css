@@ -57,14 +57,28 @@
     height: 250px;
     
 }
+ .sprite4,
+  .sprite5 {
+    display: none;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
 .logo {
     width: 100px;
 }
+.sprite4,
+  .sprite5 {
+    display: none;
+  }
 }
     @media screen and (max-width: 767px){
 .logo {
     width: 100px;
 }
+.sprite4,
+  .sprite5 {
+    display: none;
+  }
     }
+
+
