@@ -63,7 +63,7 @@ body {
   background-image: url(/static/main/img/backgroundbig.svg);
   background-size: cover;
   background-position: center;
-  
+  background-repeat: no-repeat;
 }
 
 .container {
