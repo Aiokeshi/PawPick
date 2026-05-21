@@ -59,8 +59,9 @@
 <div class="divider"></div>
    {% if request.user.is_authenticated and request.user.is_staff %}
    <a href="{% url 'admin:index' %}" class="buttom">Админ панель</a>
+   <div class="divider"></div>
    {% endif %}
-<div class="divider"></div>
+
    {% if request.user.is_authenticated %}
    <a href="{% url 'qtest:profile' %}" class="button">
     {{ request.user.profile.display_name|default:request.user.username }}

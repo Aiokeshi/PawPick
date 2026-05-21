@@ -486,6 +486,7 @@
   }
   .catback {
     background-size: 1114px;
+    
 
   }
   .filflag {
@@ -554,7 +555,8 @@
     column-gap: 20px;
   }
   .catback {
-    background-size: 1190px;
+    background-size: 984px;
+    background-image: url(/static/main/img/mobcat.svg);
   }
   .filflag {
     max-width: 200px;
@@ -648,6 +650,8 @@
 @media screen and (max-width: 767px) {
   .catback {
     position: relative;
+    background-size: 936px;
+    background-image: url(/static/main/img/mobcat.svg);
   }
 
   .mobile-filter-button {
@@ -864,7 +868,10 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 26px;
   }
-
+  .catback{
+    background-size: 1178px;
+    background-image: url(/static/main/img/mobcat.svg);
+  }
   .card {
     max-width: 310px;
     min-height: 315px;
