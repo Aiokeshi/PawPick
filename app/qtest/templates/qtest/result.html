@@ -6,7 +6,7 @@
 <section class="q_result_intro">
   <div class="container">
     <div class="q_result_page fade-in">
-        <div class="flagban fade-in">
+        <div class="flagban fade-in qbanner">
         <div class="section1_banner qbanner">
             {% if best_card and results %} {% with best=results.0 %}
           <span>Лучший вариант</span>
@@ -19,12 +19,6 @@
              {% endif %}
           </p>
 
-          <a
-            href="{% url 'catalog:card' best.card.slug %}"
-            class="q_result_link"
-          >
-            Подробнее о породе
-          </a>
           
         </div>
         <svg
@@ -57,7 +51,7 @@
               href="{% url 'catalog:card' best.card.slug %}"
               class="q_catalog_label"
             >
-              <span class="q_catalog_card_title">{{ best.card.name }}</span>
+              <p class="q_catalog_card_title">{{ best.card.name }}</p>
 
               <svg
                 class="q_catalog_label_tail"
@@ -69,10 +63,7 @@
               </svg>
             </a>
 
-            <div class="q_percent">
-              <strong>{{ best.percent }}%</strong>
-              
-            </div>
+            
           </div>
         </div>
 
@@ -108,6 +99,7 @@
   <div class="container">
     <div class="q_dark_grid">
       <div class="q_dark_panel">
+        <div class="q_light_panel">
         <div class="q_section_head">
           <h2>Ещё подходящие варианты</h2>
           <p>Две породы, которые тоже хорошо совпали с вашими ответами.</p>
@@ -143,11 +135,13 @@
 
           {% endfor %}
         </div>
+        </div>
       </div>
 
       {% if analytics %}
 
       <div class="q_dark_panel">
+        <div class="q_light_panel">
         <div class="q_section_head">
           <h2>Аналитика ответов</h2>
           <p>Какие шаги сильнее всего повлияли на подбор.</p>
@@ -173,6 +167,7 @@
 
       {% endif %}
     </div>
+    </div>
   </div>
 </section>
 <img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
@@ -181,7 +176,7 @@
 
 {% with card=results.0.card %}
 
-<section class="q_detail_back">
+<section class="q_dark_section">
   <div class="container">
 
     <div class="container">
@@ -227,8 +222,7 @@
               Теги породы: 
               {% for tag in card.tags.all %} 
               {% if tag.category.name != 'Скрытые теги' %} 
-              {{ tag.name }}{% if notforloop.last %} / 
-              {% endif %} 
+              {{ tag.name }}{% if notforloop.last %} / {% endif %} 
                 {% endif %} 
               {% empty %} теги неназначены {% endfor %}
             </p>

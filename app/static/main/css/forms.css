@@ -165,7 +165,7 @@ input {
 
 @media screen and (max-width: 768px) {
   .cont_form {
-    width: 300px;
+    width: 400px;
   }
   .back {
     background-size: 1300px;
@@ -215,5 +215,10 @@ input {
 
   .alert {
     font-size: 15px;
+  }
+}
+@media screen and (max-width: 488px) {
+   .cont_form {
+    width: 300px;
   }
 }

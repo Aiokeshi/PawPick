@@ -171,7 +171,7 @@ header {
   right: 18px;
   left: 18px;
   z-index: 60;
-  padding: 18px;
+padding: 25px 50px;
   border: 2px solid #FACA78;
   border-radius: 10px;
   background: rgba(43, 57, 57, 0.98);
