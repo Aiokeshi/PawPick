@@ -78,7 +78,7 @@
 .profile_history_result span {
   display: block;
   color: #794A3A;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 18px;
 }
 
@@ -180,7 +180,7 @@
 .profile_similar span {
   display: block;
   color: #794A3A;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 18px;
 }
 
@@ -195,7 +195,7 @@
   border-radius: 10px;
   background-color: white;
   color: #2B3939;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 16px;
 }
 
@@ -235,7 +235,7 @@
 .profile_history_date span {
   display: block;
   color: #794A3A;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 16px;
 }
 

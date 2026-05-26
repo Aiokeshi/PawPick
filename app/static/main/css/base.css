@@ -30,7 +30,7 @@
 }
 
 @font-face {
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   src: url(/static/main/fonts/Vollkorn-VariableFont_wght.ttf);
 }
 
@@ -46,7 +46,7 @@ button {
 p,
 label,
 input {
-  font-family: EBGaramond;
+  font-family: Vollkorn;
 }
 
 img {

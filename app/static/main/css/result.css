@@ -72,7 +72,7 @@
 .q_section_head p,
 .q_detail_head p {
   color: #794A3A;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 20px;
 }
 
@@ -206,7 +206,7 @@
 
 .q_percent span {
   color: #2B3939;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 14px;
 }
 
@@ -297,7 +297,7 @@
 .q_similar_info span,
 .q_similar_empty {
   color: #794A3A;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 18px;
 }
 
@@ -316,7 +316,7 @@
 
 .q_analysis_top span {
   color: #2B3939;
-  font-family: EBGaramond;
+  font-family: Vollkorn;
   font-size: 18px;
 }
 
