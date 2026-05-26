@@ -158,10 +158,11 @@
 
 .profile_result_flag .card_title {
   min-width: 0;
-  font-size: 17px;
+  font-size: 20px;
   padding: 8px 10px;
   line-height: 1.15;
   overflow-wrap: anywhere;
+  color: white;
 }
 
 .profile_result_flag .label-tail {

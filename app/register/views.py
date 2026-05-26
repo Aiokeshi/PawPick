@@ -29,12 +29,11 @@ def login_view(request):
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username', '').strip()
-        last_name = request.POST.get('name', '').strip()
         email = request.POST.get('email', '').strip()
         password = request.POST.get('password', '')
         confirm_password = request.POST.get('confirm_password', '')
 
-        if not username or not last_name or not email or not password or not confirm_password:
+        if not username or not email or not password or not confirm_password:
             messages.error(request, 'Все поля обязательны для заполнения!')
             return render(request, 'register/register.html')
 
@@ -62,7 +61,6 @@ def register(request):
 
         user = User.objects.create(
             username=username,
-            last_name=last_name,
             email=email,
             password=password_hash
         )

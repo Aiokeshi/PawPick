@@ -77,7 +77,7 @@
                 {% if result.best_card %}
 
                   <a href="{% url 'catalog:card' result.best_card.slug %}" class="profile_result_flag label">
-                    <span class="card_title">{{ result.best_card.name }}</span>
+                    <p class="card_title">{{ result.best_card.name }}</p>
 
                     <svg
               class="label-tail"
@@ -120,9 +120,7 @@
 
               <div class="profile_history_aside">
 
-                <div class="profile_percent">
-                  <strong>{{ result.percent }}%</strong>
-                </div>
+                
 
                 <div class="profile_history_date">
                   <span>{{ result.created_at|date:"d.m.Y" }}</span>
