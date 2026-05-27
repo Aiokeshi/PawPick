@@ -90,13 +90,9 @@
 </section>
 <img src="/static/main/img/divider2.svg" alt="" class="dividers " />
 
-  <img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
 {% if best_card and results %}
 
-
-<section class="q_dark_section">
-  <div class="container">
-    <div class="q_dark_grid">
+    
       <div class="q_dark_panel">
         <div class="q_light_panel">
         <div class="q_section_head">
@@ -136,41 +132,10 @@
         </div>
       </div>
 
-      {% if analytics %}
+  
 
-      <div class="q_dark_panel">
-        <div class="q_light_panel">
-        <div class="q_section_head">
-          <h2>Аналитика ответов</h2>
-          <p>Какие шаги сильнее всего повлияли на подбор.</p>
-        </div>
 
-        <div class="q_analysis_list">
-          {% for item in analytics %}
-
-          <div class="q_analysis_item">
-            <div class="q_analysis_top">
-              <span>{{ item.title }}</span>
-              <strong>{{ item.percent }}%</strong>
-            </div>
-
-            <div class="q_analysis_bar">
-              <div style="width: {{ item.percent }}%;"></div>
-            </div>
-          </div>
-
-          {% endfor %}
-        </div>
-      </div>
-
-      {% endif %}
-    </div>
-    </div>
-  </div>
-</section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
-
-  <img src="/static/main/img/divider1.svg" alt="" class="divider1 " />
+  <img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
 
 {% with card=results.0.card %}
 
@@ -248,7 +213,7 @@
     </div>
   </div>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers " />
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 
 
 {% endwith %} 
