@@ -9,23 +9,28 @@ from main import views
 from .forms import ReviewForm
 
 
-# Create your views here.
 def index(request):
-    context= {
+    context = {
         'title': 'Home',
         'content': 'Главная страница'
     }
+
     if request.method == "POST":
+        if not request.user.is_authenticated:
+            messages.error(request, "Оставить отзыв можно только после авторизации.")
+            return redirect('register:login')
+
         review_form = ReviewForm(request.POST)
+
         if review_form.is_valid():
             review = review_form.save(commit=False)
             review.user = request.user
             review.save()
+
             messages.success(request, "Отзыв отправлен!")
             return redirect('main:index')
     else:
         review_form = ReviewForm()
-        
 
     return render(request, 'main/index.html', {
         'review_form': review_form

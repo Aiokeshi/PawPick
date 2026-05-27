@@ -32,29 +32,29 @@
      
 
       <section class="q_result_hero">
-        <div class="q_result_card q_catalog_card">
+        <div class="card ">
           <a
             href="{% url 'catalog:card' best.card.slug %}"
-            class="q_catalog_card_image"
+            class="card_image"
           >
             {% if best.card.imageMain %}
             <img
               src="{{ best.card.imageMain.url }}"
               alt="{{ best.card.name }}"
-              class="q_catalog_cmage"
+              class="cmage"
             />
             {% endif %}
           </a>
 
-          <div class="q_catalog_info">
+          <div class="info">
             <a
               href="{% url 'catalog:card' best.card.slug %}"
-              class="q_catalog_label"
+              class="label"
             >
-              <p class="q_catalog_card_title">{{ best.card.name }}</p>
+              <p class="card_title">{{ best.card.name }}</p>
 
               <svg
-                class="q_catalog_label_tail"
+                class="label-tail"
                 viewBox="0 0 21 63"
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,6 @@
           </div>
         </div>
 
-       
       </section>
 
       {% endwith %} {% else %}
