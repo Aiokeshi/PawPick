@@ -25,6 +25,7 @@ def index(request):
             return redirect('main:index')
     else:
         review_form = ReviewForm()
+        
 
     return render(request, 'main/index.html', {
         'review_form': review_form

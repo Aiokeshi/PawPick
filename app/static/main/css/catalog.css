@@ -660,11 +660,11 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 36px);
+    width: calc(100% - 30px);
     margin: 18px auto 22px;
     padding: 16px 20px;
     border: 3px solid #2b3939;
-    border-radius: 18px;
+    border-radius: 5px;
     background: #794a3a;
     color: #ffffff;
     font-family: SeymourOne;
@@ -713,7 +713,7 @@
   .sectionFil .filflag {
     display: block !important;
     position: fixed !important;
-    top: 115px !important;
+    top: 76px !important;
     left: 18px !important;
     right: 18px !important;
     z-index: 1000 !important;
@@ -741,7 +741,7 @@
   .sectionFil .filflag .filters {
     width: 100% !important;
     max-height: none !important;
-    border-radius: 24px !important;
+    border-radius: 5px !important;
     padding: 12px !important;
     row-gap: 8px !important;
   }
@@ -761,7 +761,6 @@
   .filter-category-toggle {
     padding: 7px 9px !important;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
   }
 
   .filter-options {
@@ -1004,12 +1003,12 @@
     align-items: center;
     justify-content: center;
 
-    width: calc(100% - 36px);
+    width: calc(100% - 30px);
     margin: 0px 14px 14px 14px;
     padding: 12px 16px;
 
     border: 3px solid #2b3939;
-    border-radius: 16px;
+    border-radius: 5px;
     background: #794a3a;
     color: #ffffff;
 
@@ -1062,7 +1061,7 @@
     display: block !important;
     position: fixed !important;
 
-    top: 112px !important;
+    top: 85px !important;
     left: 14px !important;
     right: 14px !important;
     z-index: 1000 !important;
