@@ -6,21 +6,19 @@
 <section class="q_result_intro">
   <div class="container">
     <div class="q_result_page fade-in">
-        <div class="flagban fade-in qbanner">
+      <div class="flagban fade-in qbanner">
         <div class="section1_banner qbanner">
-            {% if best_card and results %} {% with best=results.0 %}
+          {% if best_card and results %} {% with best=results.0 %}
           <span>Лучший вариант</span>
 
           <h2>{{ best.card.name }}</h2>
 
           <p>
             {% if best.card.qresult %} {{ best.card.qresult }} {% else %} Эта
-            порода оказалась наиболее подходящей по вашим ответам. 
-             {% endif %}
+            порода оказалась наиболее подходящей по вашим ответам. {% endif %}
           </p>
-
-          
         </div>
+
         <svg
           class="label-tail-vertical-ban"
           viewBox="0 0 63 21"
@@ -29,14 +27,10 @@
           <path d="M0 0V20.6857L32.0727 0L63 20.6857V0H0Z" />
         </svg>
       </div>
-     
 
       <section class="q_result_hero">
-        <div class="card ">
-          <a
-            href="{% url 'catalog:card' best.card.slug %}"
-            class="card_image"
-          >
+        <div class="card">
+          <a href="{% url 'catalog:card' best.card.slug %}" class="card_image">
             {% if best.card.imageMain %}
             <img
               src="{{ best.card.imageMain.url }}"
@@ -47,10 +41,7 @@
           </a>
 
           <div class="info">
-            <a
-              href="{% url 'catalog:card' best.card.slug %}"
-              class="label"
-            >
+            <a href="{% url 'catalog:card' best.card.slug %}" class="label">
               <p class="card_title">{{ best.card.name }}</p>
 
               <svg
@@ -62,11 +53,47 @@
                 <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z"></path>
               </svg>
             </a>
-
-            
           </div>
         </div>
 
+        <div class="q_dark_panel">
+          <div class="q_light_panel">
+            <div class="q_section_head">
+              
+              <p>Ещё две породы, которые тоже хорошо совпали с вашими ответами.</p>
+            </div>
+
+            <div class="q_similar_list">
+              {% for item in results|slice:"1:3" %}
+
+              <a
+                href="{% url 'catalog:card' item.card.slug %}"
+                class="q_similar_item"
+              >
+                <div class="q_similar_image">
+                  {% if item.card.imageMain %}
+                  <img
+                    src="{{ item.card.imageMain.url }}"
+                    alt="{{ item.card.name }}"
+                  />
+                  {% endif %}
+                </div>
+
+                <div class="q_similar_info">
+                  <strong>{{ item.card.name }}</strong>
+                </div>
+              </a>
+
+              {% empty %}
+
+              <div class="q_similar_empty">
+                Дополнительные варианты пока не найдены.
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
       </section>
 
       {% endwith %} {% else %}
@@ -88,60 +115,17 @@
     </div>
   </div>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers " />
+
+<img src="/static/main/img/divider2.svg" alt="" class="dividers" />
 
 {% if best_card and results %}
 
-    
-      <div class="q_dark_panel">
-        <div class="q_light_panel">
-        <div class="q_section_head">
-          <h2>Ещё подходящие варианты</h2>
-          <p>Две породы, которые тоже хорошо совпали с вашими ответами.</p>
-        </div>
-
-        <div class="q_similar_list">
-          {% for item in results|slice:"1:3" %}
-
-          <a
-            href="{% url 'catalog:card' item.card.slug %}"
-            class="q_similar_item"
-          >
-            <div class="q_similar_image">
-              {% if item.card.imageMain %}
-              <img
-                src="{{ item.card.imageMain.url }}"
-                alt="{{ item.card.name }}"
-              />
-              {% endif %}
-            </div>
-
-            <div class="q_similar_info">
-              <strong>{{ item.card.name }}</strong>
-            </div>
-          </a>
-
-          {% empty %}
-
-          <div class="q_similar_empty">
-            Дополнительные варианты пока не найдены.
-          </div>
-
-          {% endfor %}
-        </div>
-        </div>
-      </div>
-
-  
-
-
-  <img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
+<img src="/static/main/img/divider1.svg" alt="" class="divider1 rev" />
 
 {% with card=results.0.card %}
 
 <section class="q_dark_section">
   <div class="container">
-
     <div class="container">
       <section class="card_full fade-in">
         <div class="short_info">
@@ -182,12 +166,11 @@
         <div class="tag_like">
           <div class="card_label">
             <p class="card_title">
-              Теги породы: 
-              {% for tag in card.tags.all %} 
-              {% if tag.category.name != 'Скрытые теги' %} 
-              {{ tag.name }}{% if notforloop.last %} / {% endif %} 
-                {% endif %} 
-              {% empty %} теги неназначены {% endfor %}
+              Теги породы: {% for tag in card.tags.all %} {% if tag.category.name != 'Скрытые теги' %} 
+              {{ tag.name }}
+              {% if not forloop.last %} / {% endif %} {% endif %} 
+              {% empty %} теги не назначены 
+              {% endfor %}
             </p>
 
             <svg
@@ -213,8 +196,8 @@
     </div>
   </div>
 </section>
-<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 
+<img src="/static/main/img/divider2.svg" alt="" class="dividers rev" />
 
 {% endwith %} 
 {% endif %} 
