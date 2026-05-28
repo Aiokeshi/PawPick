@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -132,7 +133,17 @@ def toggle_favorite(request, card_slug):
         card=card
     )
 
-    if not created:
+    if created:
+        is_favorite = True
+    else:
         favorite.delete()
+        is_favorite = False
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({
+            'is_favorite': is_favorite,
+            'card_id': card.id,
+            'card_slug': card.slug,
+        })
 
     return redirect(_safe_next_url(request))

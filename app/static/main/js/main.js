@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   initSliders();
   initFilmReelCarousel();
+  initFavoriteButtons();
 });
 
 function initSliders() {
@@ -85,4 +86,80 @@ function initFilmReelCarousel() {
   });
 
   reelTrack.classList.add('is-running');
+}
+
+function initFavoriteButtons() {
+  const favoriteForms = document.querySelectorAll('.favorite-form');
+
+  favoriteForms.forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const button = form.querySelector('.favorite-button');
+
+      if (!button || button.disabled) {
+        return;
+      }
+
+      button.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        credentials: 'same-origin'
+      })
+        .then(function (response) {
+          if (response.redirected) {
+            window.location.href = response.url;
+            return null;
+          }
+
+          if (!response.ok) {
+            throw new Error('Favorite request failed');
+          }
+
+          return response.json();
+        })
+        .then(function (data) {
+          if (!data) {
+            return;
+          }
+
+          if (data.is_favorite) {
+            button.classList.add('is-favorite');
+            button.setAttribute('aria-label', 'Убрать из избранного');
+            button.setAttribute('title', 'Убрать из избранного');
+          } else {
+            button.classList.remove('is-favorite');
+            button.setAttribute('aria-label', 'Добавить в избранное');
+            button.setAttribute('title', 'Добавить в избранное');
+
+            removeCardFromFavoritesPage(form);
+          }
+        })
+        .catch(function () {
+          form.submit();
+        })
+        .finally(function () {
+          button.disabled = false;
+        });
+    });
+  });
+}
+
+function removeCardFromFavoritesPage(form) {
+  const favoritesCatalog = form.closest('.favorites-catalog');
+
+  if (!favoritesCatalog) {
+    return;
+  }
+
+  const card = form.closest('.card');
+
+  if (card) {
+    card.remove();
+  }
 }
