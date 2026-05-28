@@ -15,30 +15,30 @@
 
  <header class="site-header">
 
-  <a href="{% url 'main:index' %}" class="header-logo-link">
+  <a href="{% url 'main:index' %}" class="header-logo-link  anim_btn_tilt">
    <img src="/static/main/img/logo.png" class="logo" alt="PawPick">
   </a>
 
   <nav class="nav desktop-nav">
-   <a href="{% url 'qtest:test_step' 1 %}" class="button"> Тест </a>
-   <a href="{% url 'catalog:catalog' %}" class="button"> Собаки </a>
-   <a href="{% url 'main:vet' %}" class="button"> Партнеры</a>
+   <a href="{% url 'qtest:test_step' 1 %}" class="button anim_btn_tilt"> Тест </a>
+   <a href="{% url 'catalog:catalog' %}" class="button anim_btn_tilt"> Собаки </a>
+   <a href="{% url 'main:vet' %}" class="button anim_btn_tilt"> Партнеры</a>
   </nav>
 
   <div class="desktop-user-menu">
 
    {% if request.user.is_authenticated and request.user.is_staff %}
-   <a href="{% url 'admin:index' %}" class="buttom">Админ панель</a>
+   <a href="{% url 'admin:index' %}" class="buttom anim_btn_tilt" >Админ панель</a>
    {% endif %}
 
    {% if request.user.is_authenticated %}
-   <a href="{% url 'qtest:profile' %}" class="button">
+   <a href="{% url 'qtest:profile' %}" class="button anim_btn_tilt">
     {{ request.user.profile.display_name|default:request.user.username }}
    </a>
    {% else %}
    <span class="reg">
-    <a href="{% url 'register:login' %}  "class="buttom">Вход</a> |
-    <a href="{% url 'register:register' %}  "class="buttom">Регистрация</a>
+    <a href="{% url 'register:login' %}  "class="buttom anim_btn_tilt">Вход</a> |
+    <a href="{% url 'register:register' %}  "class="buttom anim_btn_tilt">Регистрация</a>
    </span>
    {% endif %}
 
@@ -51,25 +51,25 @@
   </button>
 
   <nav class="mobile-menu" data-mobile-menu>
-   <a href="{% url 'qtest:test_step' 1 %}" class="button">Тест</a>
+   <a href="{% url 'qtest:test_step' 1 %}" class="button anim_btn_tilt">Тест</a>
    <div class="divider burdiv"></div>
-   <a href="{% url 'catalog:catalog' %}" class="button">Собаки</a>
+   <a href="{% url 'catalog:catalog' %}" class="button anim_btn_tilt">Собаки</a>
    <div class="divider burdiv"></div>
-   <a href="{% url 'main:vet' %}" class="button">Партнеры</a>
+   <a href="{% url 'main:vet' %}" class="button anim_btn_tilt">Партнеры</a>
 <div class="divider burdiv"></div>
    {% if request.user.is_authenticated and request.user.is_staff %}
-   <a href="{% url 'admin:index' %}" class="buttom">Админ панель</a>
+   <a href="{% url 'admin:index' %}" class="buttom anim_btn_tilt">Админ панель</a>
    <div class="divider"></div>
    {% endif %}
 
    {% if request.user.is_authenticated %}
-   <a href="{% url 'qtest:profile' %}" class="button">
+   <a href="{% url 'qtest:profile' %}" class="button anim_btn_tilt">
     {{ request.user.profile.display_name|default:request.user.username }}
    </a>
    {% else %}
-   <a href="{% url 'register:login' %}" class="button">Вход</a>
+   <a href="{% url 'register:login' %}" class="button anim_btn_tilt">Вход</a>
    <div class="divider burdiv"></div>
-   <a href="{% url 'register:register' %}" class="button">Регистрация</a>
+   <a href="{% url 'register:register' %}" class="button anim_btn_tilt">Регистрация</a>
    {% endif %}
   </nav>
 
@@ -87,11 +87,11 @@
    <div class="footer">
     <div class="footer_sec1">
      <nav class="nav">
-      <a href="{% url 'qtest:test_step' 1 %}" class="button"> Тест </a>
-      <a href="{% url 'catalog:catalog' %}" class="button"> Собаки </a>
-      <a href="{% url 'main:vet' %}" class="button"> Партнеры</a>
+      <a href="{% url 'qtest:test_step' 1 %}" class="button anim_btn_tilt"> Тест </a>
+      <a href="{% url 'catalog:catalog' %}" class="button anim_btn_tilt"> Собаки </a>
+      <a href="{% url 'main:vet' %}" class="button anim_btn_tilt"> Партнеры</a>
      </nav>
-     <a href="{% url 'main:index' %}" class="header-logo-link">
+     <a href="{% url 'main:index' %}" class="header-logo-link anim_btn_tilt">
    <img src="/static/main/img/logo.png" class="logo" alt="PawPick">
   </a>
     </div>

@@ -1,78 +1,65 @@
-{% extends 'main/base.html' %}
-{% load static%}
-{% block title %}{{ card.name }}{% endblock %}
-
+{% extends 'main/base.html' %} 
+{% load static%} 
+{% block title %}
+{{ card.name }}
+{% endblock %} 
 {% block content %}
 <section class="back">
-    <div class="container">
-        <section class="card_full fade-in">
-            <div class="short_info">
-                <div class="card_slider_cont fade-in">
-                    <div class="card_slider">
-                        <button id="prev" class="arrow">‹</button>
-                        {% if card.imageMain %}
-                        <img src="{{ card.imageMain.url }}" class="active">
-                        {% endif %}
+  <div class="container">
+    <section class="card_full fade-in">
+      <div class="short_info">
+        <div class="card_slider_cont fade-in">
+          <div class="card_slider">
+            <button id="prev" class="arrow">‹</button>
+            {% if card.imageMain %}
+            <img src="{{ card.imageMain.url }}" class="active" />
+            {% endif %} {% if card.imageScnd %}
+            <img src="{{ card.imageScnd.url }}" />
+            {% endif %} {% if card.imageThrd %}
+            <img src="{{ card.imageThrd.url }}" />
+            {% endif %}
+            <button id="next" class="arrow">›</button>
+          </div>
+        </div>
 
-                        {% if card.imageScnd %}
-                        <img src="{{ card.imageScnd.url }}">
-                        {% endif %}
+        <div class="short_desc">
+          <h2>{{ card.name }}</h2>
+          <p>Краткая информация:</p>
+          <ul>
+            <li>Рост: {{ card.height }}</li>
+            <li>Вес: {{ card.weight }}</li>
+            <li>Продолжительность жизни: {{ card.age }}</li>
+            <li>Окрасы: {{ card.furrColors }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tag_like">
+        <div class="card_label">
+          <p class="card_title">
+            Теги породы: {% for tag in card_tags %} 
+            {{ tag.name }}
+            {% if not forloop.last %} / {% endif %} 
+            {% empty %} 
+            теги не назначены 
+            {% endfor %}
+          </p>
 
-                        {% if card.imageThrd %}
-                        <img src="{{ card.imageThrd.url }}">
-                        {% endif %}
-                        <button id="next" class="arrow">›</button>
-                    </div>
-                </div>
-
-                <div class="short_desc">
-                    <h2>{{ card.name }}</h2>
-                    <p>Краткая информация:</p>
-                    <ul>
-
-                        <li> Рост: {{ card.height }} </li>
-                        <li> Вес: {{ card.weight }} </li>
-                        <li> Продолжительность жизни: {{ card.age }} </li>
-                        <li> Окрасы: {{ card.furrColors }} </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tag_like">
-                <div class=" card_label">
-                    <p class="card_title">
-                        
-                        {% if selected_tags %}
-                            Выбранные теги: 
-                            {% for tag_id in selected_tags %}
-                                {% for cat in categories %}
-                                    {% for tag in cat.tags.all %}
-                                        {% if tag.id == tag_id %}
-                                            {{ tag.name }}{% if not forloop.parentloop.parentloop.last %}, {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                {% endfor %}
-                            {% endfor %}
-                        {% else %}
-                            Теги породы:
-                            {% for tag in card_tags %}
-                                {{ tag.name }}{% if not forloop.last %} / {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    </p>
-
-                    <svg class="label-tail" viewBox="0 0 21 63" preserveAspectRatio="none">
-                        <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
-                    </svg>
-                </div>
-                {% include 'catalog/includes/favorite_button.html' with card=card %}
-            </div>
-            <div class="description">
-                <p>{{ card.description }}</p>
-                <div class="divider"></div>
-                <p>{{ card.health }}</p>
-            </div>
-    </div>
-</section>
-</div>
+          <svg
+            class="label-tail"
+            viewBox="0 0 21 63"
+            preserveAspectRatio="none"
+          >
+            <path d="M0 0H20.6857L0 32.0727L20.6857 63H0V0Z" />
+          </svg>
+        </div>
+        {% include 'catalog/includes/favorite_button.html' with card=card %}
+      </div>
+      <div class="description">
+        <p>{{ card.description }}</p>
+        <div class="divider"></div>
+        <p>{{ card.health }}</p>
+      </div>
+    </section>
+  </div>
 </section>
 {% endblock %}

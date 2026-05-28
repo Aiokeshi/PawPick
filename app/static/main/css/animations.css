@@ -133,3 +133,49 @@
     height: 240px;
   }
 }
+
+
+
+
+
+/* Вариант 1 — мягкий подъём */
+.anim_btn_lift {
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.anim_btn_lift:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.28));
+}
+
+.anim_btn_lift:active {
+  transform: translateY(-1px);
+}
+
+
+/* Вариант 2 — лёгкое увеличение */
+.anim_btn_scale {
+  transition: transform 0.22s ease;
+}
+
+.anim_btn_scale:hover {
+  transform: scale(1.04);
+}
+
+.anim_btn_scale:active {
+  transform: scale(0.98);
+}
+
+
+/* Вариант 5 — лёгкий поворот, хорошо для круглых кнопок */
+.anim_btn_tilt {
+  transition: transform 0.22s ease;
+}
+
+.anim_btn_tilt:hover {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+.anim_btn_tilt:active {
+  transform: rotate(0deg) scale(0.98);
+}

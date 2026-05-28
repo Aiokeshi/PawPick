@@ -74,10 +74,10 @@
           {% endfor %}
 
           <div class="filters-actions">
-            <button type="submit" class="btn"><span>Применить</span></button>
+            <button type="submit" class="btn anim_btn_scale"><span>Применить</span></button>
 
             {% if selected_tags %}
-            <a href="{% url 'catalog:catalog' %}" class="btn filters-reset-btn"
+            <a href="{% url 'catalog:catalog' %}" class="btn filters-reset-btn anim_btn_scale"
               ><span>Сбросить</span></a
             >
             {% endif %}
@@ -111,7 +111,7 @@
           <div class="info">
             <a
               href="{% url 'catalog:card' card.slug %}{% if selected_tags_query %}?{{ selected_tags_query }}{% endif %}"
-              class="label"
+              class="label anim_btn_scale"
             >
               <p class="card_title">{{ card.name }}</p>
 

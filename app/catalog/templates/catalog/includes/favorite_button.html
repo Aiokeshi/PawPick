@@ -1,4 +1,4 @@
-<span class="like">
+<span class="like anim_btn_scale">
   <form method="post" action="{% url 'catalog:toggle_favorite' card.slug %}" class="favorite-form">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ request.get_full_path }}">
