@@ -34,6 +34,16 @@ class Tag(models.Model):
 class Cards(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name='Название')
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name='URl')
+
+    owner = models.ForeignKey(
+    settings.AUTH_USER_MODEL,
+    on_delete=models.SET_NULL,
+    null=True,
+    blank=True,
+    related_name='created_cards',
+    verbose_name='Создатель карточки'
+)
+    
     height = models.TextField(blank=True, null=True, verbose_name='Рост')
     weight = models.TextField(blank=True, null=True, verbose_name='Вес')
     age = models.TextField(blank=True, null=True, verbose_name='Продолжительность жизни')
