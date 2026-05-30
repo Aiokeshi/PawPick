@@ -54,7 +54,13 @@ function initSliders() {
       });
     }
 
-    if (slider.classList.contains('slider')) {
+    if (
+      slides.length > 1 &&
+      (
+        slider.classList.contains('slider') ||
+        slider.classList.contains('card_slider')
+      )
+    ) {
       setInterval(function () {
         showSlide(currentIndex + 1);
       }, 3000);

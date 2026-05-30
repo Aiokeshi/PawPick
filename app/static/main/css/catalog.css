@@ -1309,3 +1309,19 @@
     overflow: visible !important;
   }
 }
+
+.card_slider {
+  overflow: hidden;
+}
+
+.card_slider img {
+  display: none;
+}
+
+.card_slider img.active {
+  display: block;
+}
+
+.card_slider img:not(.active) {
+  display: none !important;
+}
