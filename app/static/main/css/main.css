@@ -268,7 +268,7 @@
     justify-content: space-between;
 
     p {
-      font-size: 24px;
+      font-size: 21px;
       text-align: center;
     }
   }
@@ -300,15 +300,15 @@
   .section1_banner {
     row-gap: 30px;
     padding: 40px;
-    width: 300px;
-    height: 426px;
+    width: 360px;
+    height: 420px;
     border-left: 5px solid #2b3939;
     border-right: 5px solid #2b3939;
     h1 {
       font-size: 40px;
     }
     p {
-      font-size: 21px;
+      font-size: 18px;
     }
   }
   .section1_slider {
@@ -348,7 +348,7 @@
     row-gap: 10px;
 
     h2 {
-      font-size: 21px;
+      font-size: 18px;
     }
 
     p {
@@ -370,17 +370,17 @@
   }
   .sec4_wrap {
     margin: 0px 100px;
-    flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: space-between;
 
     p {
-      font-size: 24px;
+      font-size: 18px;
       text-align: center;
     }
   }
 
   .section4_info {
-    max-width: 500px;
+    max-width: 100%;
   }
 
   .section3 {
@@ -398,22 +398,28 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
   }
-
+.butr{
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.section1{
+  background-color:#2b3939;
+}
   .section1_banner {
     row-gap: 30px;
     padding: 40px;
-    width: 300px;
-    height: 426px;
+            width: auto;
+    height: 420px;
     border-left: 5px solid #2b3939;
     border-right: 5px solid #2b3939;
     h1 {
       font-size: 40px;
     }
     p {
-      font-size: 21px;
+      font-size: 20px;
     }
   }
   .section1_slider {
@@ -453,7 +459,7 @@
     row-gap: 10px;
 
     h2 {
-      font-size: 21px;
+      font-size: 18px;
     }
 
     p {
@@ -475,17 +481,17 @@
   }
   .sec4_wrap {
     margin: 0px 100px;
-    flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: space-between;
 
     p {
-      font-size: 24px;
+      font-size: 18px;
       text-align: center;
     }
   }
 
   .section4_info {
-    max-width: 500px;
+    max-width: 100%;
   }
 
   .section3 {
@@ -501,8 +507,227 @@
   }
 }
 @media screen and (max-width: 767px) {
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+.butr{
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.section1{
+  background-color:#2b3939;
+}
+  .section1_banner {
+    row-gap: 30px;
+    padding: 40px;
+            width: auto;
+    height: 480px;
+    border-left: 5px solid #2b3939;
+    border-right: 5px solid #2b3939;
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .section1_slider {
+    margin-bottom: 70px;
+  }
+  .divider1 {
+    top: 5px;
+  }
+
+  .section2 {
+    background-color: #2b3939;
+    background-image: url(/static/main/img/sec4back.svg);
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  .ticket {
+    width: 350px;
+    height: 166px;
+  }
+
+  .section2_navbtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 65px;
+  }
+  .sec2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbtn {
+    padding: 10px 10px;
+    margin: 30px;
+    border-radius: 2px;
+    row-gap: 10px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .navbtn2 {
+    padding: 20px 20px;
+  }
+
+  .sec4_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .rev_form {
+    padding: 40px !important;
+  }
+  .sec4_wrap {
+    margin: 0px 10px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding: 20px 0px;
+    p {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .section4_info {
+    max-width: 100%;
+  }
+
+  .section3 {
+    background-color: #2b3939;
+
+    p {
+      font-size: 18px;
+      max-width: 800px;
+    }
+  }
+  .sec4sprite {
+    display: flex;
+  }
+
 }
 @media screen and (max-width: 479px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+.butr{
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.section1{
+  background-color:#2b3939;
+}
+  .section1_banner {
+    row-gap: 30px;
+    padding: 20px;
+            width: auto;
+    height: 480px;
+    border-left: 5px solid #2b3939;
+    border-right: 5px solid #2b3939;
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .section1_slider {
+    margin-bottom: 70px;
+  }
+  .divider1 {
+    top: 5px;
+  }
+
+  .section2 {
+    background-color: #2b3939;
+    background-image: url(/static/main/img/sec4back.svg);
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  .ticket {
+    width: 350px;
+    height: 166px;
+  }
+
+  .section2_navbtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 65px;
+  }
+  .sec2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbtn {
+    padding: 10px 10px;
+    margin: 30px;
+    border-radius: 2px;
+    row-gap: 10px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .navbtn2 {
+    padding: 20px 20px;
+  }
+
+  .sec4_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .rev_form {
+    padding: 40px !important;
+  }
+  .sec4_wrap {
+    margin: 0px 10px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding: 20px 0px;
+    p {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .section4_info {
+    max-width: 100%;
+  }
+
+  .section3 {
+    background-color: #2b3939;
+
+    p {
+      font-size: 18px;
+      max-width: 800px;
+    }
+  }
+  .sec4sprite {
+    display: flex;
+  }
 }
 
 
@@ -530,7 +755,7 @@
 
 @media screen and (max-width: 1279px) {
   .section1_slider {
-    width: min(680px, 100%);
+    width: min(500px, 100%);
   }
 
   .section1_slider .slider {

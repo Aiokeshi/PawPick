@@ -48,13 +48,13 @@
     width: 100px;
 }
 .sprite1{
-        width: 250px;
-    left: 130px;
-    bottom: 117px;
+                width: 240px;
+        left: 182px;
+        bottom: 120px;
 }
 .sprite2{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     
 }
  .sprite4,
@@ -70,6 +70,19 @@
   .sprite5 {
     display: none;
   }
+  .sprite1{
+                width: 240px;
+
+
+                left: 75px;
+      
+        bottom: 40px;
+}
+.sprite2{
+    width: 200px;
+    height: 200px;
+    
+}
 }
     @media screen and (max-width: 767px){
 .logo {
@@ -79,6 +92,39 @@
   .sprite5 {
     display: none;
   }
+
+   .sprite1{
+               width: 220px;
+        left: 40px;
+        bottom: 15px;
+
+}
+.sprite2{
+    width: 200px;
+    height: 200px;
+    display:none;
+}
+.sprite3{
+    
+    display:none;
+}
     }
 
 
+   @media screen and (max-width: 479px){
+   .sprite1{
+              width: 200px;
+        left: -10px;
+        bottom: 15px;
+
+}
+.sprite2{
+    width: 200px;
+    height: 200px;
+    display:none;
+}
+.sprite3{
+    
+    display:none;
+}
+    }
