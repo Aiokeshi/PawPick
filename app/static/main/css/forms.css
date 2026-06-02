@@ -76,6 +76,8 @@ input {
   span {
     width: 80%;
     padding: 10px;
+    word-break: break-all;
+    
   }
 }
 
@@ -219,6 +221,6 @@ input {
 }
 @media screen and (max-width: 488px) {
    .cont_form {
-    width: 300px;
+    width: 340px;
   }
 }

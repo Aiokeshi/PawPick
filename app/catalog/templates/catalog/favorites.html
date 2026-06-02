@@ -16,13 +16,13 @@
 
    <div class="card">
 
-    <div class="card_image">
+    <a href="{% url 'catalog:card' card.slug %}" class="card_image">
 
      {% if card.imageMain %}
      <img src="{{ card.imageMain.url }}" class="cmage" alt="{{ card.name }}">
      {% endif %}
 
-    </div>
+    </a>
 
     <div class="info">
 

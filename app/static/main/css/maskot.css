@@ -3,37 +3,47 @@
 }
 .sprite1{
      position: relative;
-    width: 350px;
+    width: 320px;
     left: 270px;
     bottom: 170px;
+     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 .sprite2{
    width: 270px;
     height: 370px;
     align-self: center;
+     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 .sprite3{
     width: 300px;
     align-self: flex-end;
+     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 .sprite4{
    width: 270px;
     height: 370px;
      top: 30%;
    position: sticky;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 .sprite5{
    width: 270px;
     height: 370px;
     top: 30%;
     position: sticky;
+     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+}
+.sprite6{
+   width: 270px;
+    height: 370px;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 @media screen and (min-width: 1280px) and (max-width: 1700px){
 .logo {
     width: 100px;
 }
 .sprite1{
-    width: 290px;
+    width: 240px;
     left: 200px;
     bottom: 122px;
 }
@@ -48,7 +58,7 @@
     width: 100px;
 }
 .sprite1{
-                width: 240px;
+                width: 210px;
         left: 182px;
         bottom: 120px;
 }
@@ -71,7 +81,7 @@
     display: none;
   }
   .sprite1{
-                width: 240px;
+                width: 220px;
 
 
                 left: 75px;
@@ -94,8 +104,8 @@
   }
 
    .sprite1{
-               width: 220px;
-        left: 40px;
+               width: 200px;
+        left: 20px;
         bottom: 15px;
 
 }
@@ -113,9 +123,9 @@
 
    @media screen and (max-width: 479px){
    .sprite1{
-              width: 200px;
+                     width: 180px;
         left: -10px;
-        bottom: 15px;
+        bottom: 34px;
 
 }
 .sprite2{

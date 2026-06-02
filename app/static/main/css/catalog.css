@@ -58,9 +58,9 @@
 
 .filters-reset {
   font-family: Vollkorn;
-  font-size: 16px;
-  color: #d0542e;
-  text-decoration: underline;
+  font-size: 18px;
+  color: #faca78;
+  text-decoration: none;
   text-underline-offset: 4px;
 }
 
@@ -97,7 +97,8 @@
 
 .filTitle {
   margin: 0;
-  font-size: 20px;
+  font-size: 19px;
+  word-break: break-all;
 }
 
 .filter-category-toggle {
@@ -303,7 +304,9 @@
   stroke: #d0542e !important;
   stroke-width: 3 !important;
   fill: transparent !important;
-  transition: fill 0.2s ease, transform 0.2s ease;
+  transition:
+    fill 0.2s ease,
+    transform 0.2s ease;
 }
 
 .like .favorite-button:hover .favorite-icon {
@@ -315,8 +318,10 @@
 }
 
 .unfound {
-  margin: 50px;
-  color: #2b3939;
+  margin: 50px 100px 100px 100px;
+  font-size: 18px;
+  text-align: center;
+  align-self: center;
 }
 
 .favorites-catalog {
@@ -419,7 +424,7 @@
   }
 
   .filter-group label {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .catalog {
@@ -508,7 +513,9 @@
   .filTitle {
     font-size: 13px;
   }
-
+  .filter-group label {
+    font-size: 16px;
+  }
   .catalog {
     grid-template-columns: repeat(3, minmax(210px, 1fr));
     gap: 30px;
@@ -567,14 +574,12 @@
   .filflag {
     max-width: 200px;
   }
-
+  .filters h2 {
+    font-size: 16px;
+  }
   .filters {
     row-gap: 20px;
     padding: 20px;
-  }
-
-  .filters h2 {
-    font-size: 20px;
   }
 
   .filTitle {
@@ -677,12 +682,16 @@
     padding: 10px 10px 16px;
     row-gap: 12px;
   }
-
+  .filters h2 {
+    font-size: 16px;
+  }
   .card_image {
     height: 165px;
     flex: 0 0 165px;
   }
-
+  .filTitle {
+    font-size: 15px;
+  }
   .info {
     min-height: 58px;
     margin-bottom: 0;
@@ -763,14 +772,18 @@
     background-size: 1178px;
     background-image: url(/static/main/img/mobcat.svg);
   }
-
+  .filters h2 {
+    font-size: 16px;
+  }
   .card {
     max-width: 310px;
     min-height: 315px;
     justify-self: center;
     padding: 12px 12px 18px;
   }
-
+  .filTitle {
+    font-size: 15px;
+  }
   .card_image {
     height: 215px;
     flex: 0 0 215px;
@@ -851,7 +864,9 @@
     row-gap: 34px;
     overflow: visible;
   }
-
+.filters-reset {
+  font-size: 15px;
+}
   .card_full .short_info {
     column-gap: 36px;
   }
@@ -888,7 +903,9 @@
     row-gap: 30px;
     overflow: visible;
   }
-
+.filters-reset {
+  font-size: 12px;
+}
   .card_full .short_info {
     column-gap: 26px;
     align-items: stretch;
@@ -1159,7 +1176,9 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.22s ease, visibility 0.22s ease;
+    transition:
+      opacity 0.22s ease,
+      visibility 0.22s ease;
   }
 
   .mobile-filter-overlay.is-open {
@@ -1190,7 +1209,10 @@
     visibility: hidden;
     pointer-events: none;
     transform: translateY(-12px);
-    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      visibility 0.22s ease;
   }
 
   .sectionFil .filflag.is-open {
@@ -1206,7 +1228,7 @@
     box-sizing: border-box !important;
     padding: 12px !important;
     row-gap: 8px !important;
-    border-radius: 20px !important;
+    border-radius: 5px !important;
     overflow-x: hidden !important;
   }
 

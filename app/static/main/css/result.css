@@ -65,21 +65,21 @@
 }
 
 .q_dark_panel {
-  padding: 30px;
+  padding: 25px;
   border-radius: 2px;
   background-color: white;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.35));
 }
 
 .q_light_panel {
-  padding: 20px;
+  padding: 15px;
   border-radius: 2px;
   background-color: #faca78;
 }
 
 .q_section_head {
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 5px;
 }
 
 .q_section_head p {

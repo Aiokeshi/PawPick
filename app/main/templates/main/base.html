@@ -36,7 +36,7 @@
     {{ request.user.profile.display_name|default:request.user.username }}
    </a>
    {% else %}
-   <span class="reg">
+   <span class="reg anim_btn_tilt">
     <a href="{% url 'register:login' %}  "class="buttom anim_btn_tilt">Вход</a> |
     <a href="{% url 'register:register' %}  "class="buttom anim_btn_tilt">Регистрация</a>
    </span>

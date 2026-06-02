@@ -11,7 +11,7 @@
       aria-expanded="false"
       data-filter-button
     >
-      <span>Фильтры</span>
+      <span>Отличия</span>
     </button>
 
     <div class="mobile-filter-overlay" data-filter-overlay></div>
@@ -74,10 +74,10 @@
           {% endfor %}
 
           <div class="filters-actions">
-            <button type="submit" class="btn anim_btn_scale"><span>Применить</span></button>
+            <button type="submit" class="btn filtbtn anim_btn_scale"><span>Применить</span></button>
 
             {% if selected_tags %}
-            <a href="{% url 'catalog:catalog' %}" class="btn filters-reset-btn anim_btn_scale"
+            <a href="{% url 'catalog:catalog' %}" class="btn filtbtn filters-reset-btn anim_btn_scale"
               ><span>Сбросить</span></a
             >
             {% endif %}
@@ -97,7 +97,7 @@
         {% for card in catalog %}
 
         <div class="card">
-          <div class="card_image">
+          <a href="{% url 'catalog:card' card.slug %}{% if selected_tags_query %}?{{ selected_tags_query }}{% endif %}" class="card_image">
             {% if card.imageMain %}
             <img
               src="{{ card.imageMain.url }}"
@@ -106,7 +106,7 @@
             />
 
             {% endif %}
-          </div>
+          </a>
 
           <div class="info">
             <a
@@ -129,9 +129,9 @@
         </div>
 
         {% empty %}
-
+        <span></span>
         <p class="unfound">По выбранным фильтрам карточки не найдены.</p>
-
+        
         {% endfor %}
       </div>
     </div>

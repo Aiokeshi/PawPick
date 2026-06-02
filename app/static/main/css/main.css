@@ -121,7 +121,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
 
 .section4 {
@@ -180,10 +179,9 @@
   stroke: #2b3939;
   stroke-width: 1;
 }
-.rev_form{
-   margin-bottom: 0 !important;
+.rev_form {
+  margin-bottom: 0 !important;
 }
-
 
 @media screen and (min-width: 1280px) and (max-width: 1700px) {
   .wrapper {
@@ -262,7 +260,6 @@
   }
   .rev_form {
     padding: 40px !important;
-   
   }
   .sec4_wrap {
     margin: 0px 100px;
@@ -298,10 +295,9 @@
     flex-direction: row;
     justify-content: space-around;
   }
-#id_message {
-  width:300px;
-  
-}
+  #id_message {
+    width: 300px;
+  }
   .section1_banner {
     row-gap: 30px;
     padding: 40px;
@@ -401,26 +397,26 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .wrapper {
+  .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
   }
   #id_message {
-  width:250px;
-  
-}
-.butr{
-      display: grid;
+    width: 250px;
+  }
+  .butr {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-}
-.section1{
-  background-color:#2b3939;
-}
+  }
+  .section1 {
+    background-color: #2b3939;
+  }
   .section1_banner {
     row-gap: 30px;
     padding: 40px;
-            width: auto;
+    width: auto;
     height: 420px;
     border-left: 5px solid #2b3939;
     border-right: 5px solid #2b3939;
@@ -516,26 +512,26 @@
   }
 }
 @media screen and (max-width: 767px) {
-.wrapper {
+  .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
   }
   #id_message {
-  width:200px;
-  
-}
-.butr{
-      display: grid;
+    width: 200px;
+  }
+  .butr {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-}
-.section1{
-  background-color:#2b3939;
-}
+  }
+  .section1 {
+    background-color: #2b3939;
+  }
   .section1_banner {
     row-gap: 30px;
     padding: 40px;
-            width: auto;
+    width: auto;
     height: 480px;
     border-left: 5px solid #2b3939;
     border-right: 5px solid #2b3939;
@@ -629,25 +625,25 @@
   .sec4sprite {
     display: flex;
   }
-
 }
 @media screen and (max-width: 479px) {
   .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
   }
-.butr{
-      display: grid;
+  .butr {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-}
-.section1{
-  background-color:#2b3939;
-}
+  }
+  .section1 {
+    background-color: #2b3939;
+  }
   .section1_banner {
     row-gap: 30px;
     padding: 20px;
-            width: auto;
+    width: 300px;
     height: 480px;
     border-left: 5px solid #2b3939;
     border-right: 5px solid #2b3939;
@@ -743,21 +739,14 @@
   }
 }
 
-
-
-
-
-
 .section1_slider {
   max-width: 100%;
 }
-
 
 .section1_slider .slider {
   max-width: 100%;
   box-sizing: border-box;
 }
-
 
 .section1_slider > img {
   width: 100%;

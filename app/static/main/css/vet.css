@@ -21,6 +21,7 @@
 .vetlab {
   left: -50px;
   max-height: none;
+  max-width: calc(100% - 0px);
 }
 
 .vet_clin {
@@ -55,6 +56,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 30px;
 }
 
 /* Адаптив страницы партнёров */
@@ -66,7 +68,7 @@
   }
 
   .vet_clin {
-    width: 45%;
+    width: 40%;
     padding: 42px;
   }
 
@@ -75,11 +77,11 @@
   }
 
   .vet_title {
-    column-gap: 16px;
+    column-gap: 12px;
   }
 
   .vet_title h2 {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.2;
   }
 

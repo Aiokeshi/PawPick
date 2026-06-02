@@ -6,14 +6,14 @@ input[type="radio"] {
   min-width: 18px;
   min-height: 18px;
   margin: 0;
-  border: 2px solid #D0542E;
+  border: 2px solid #d0542e;
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
 }
 
 input[type="radio"]:checked {
-  background-color: #D0542E;
+  background-color: #d0542e;
   box-shadow: inset 0 0 0 4px #faca78;
 }
 
@@ -47,7 +47,7 @@ input[type="radio"]:checked {
   border-radius: 5px;
   min-width: 350px;
   max-width: 1480px;
-  background-color: #D0542E;
+  background-color: #d0542e;
 }
 
 .qform {
@@ -59,14 +59,14 @@ input[type="radio"]:checked {
 .progress {
   width: 100%;
   height: 10px;
-  background: #FCEBCD;
+  background: #fcebcd;
   margin-bottom: 20px;
   border-radius: 5px;
 }
 
 .progress-bar {
   height: 100%;
-  background: #6BC6C0;
+  background: #6bc6c0;
   border-radius: 5px;
 }
 
@@ -75,27 +75,27 @@ input[type="radio"]:checked {
   flex-direction: row;
   background-attachment: fixed;
 
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
 
 .qquestion {
-  color: #2B3939;
+  color: #2b3939;
   margin-bottom: 10px;
 }
 
 .qtitle {
   text-align: center;
-  color: #D0542E;
+  color: #d0542e;
 }
 
 .qanswer {
   font-size: 24px;
-  color: #2B3939;
+  color: #2b3939;
 }
 
 .qcounter {
   font-size: 21px;
-  color: #2B3939;
+  color: #2b3939;
   text-align: center;
 }
 
@@ -107,7 +107,7 @@ input[type="radio"]:checked {
 }
 
 .backbtn span {
-  color: #2B3939;
+  color: #2b3939;
 }
 
 /* Адаптив страницы теста. Спрайты вынесены в sprite.css */
@@ -116,8 +116,6 @@ input[type="radio"]:checked {
   .qback {
     align-items: center;
   }
-
-
 
   .qtitle {
     font-size: 26px;
@@ -150,8 +148,6 @@ input[type="radio"]:checked {
     max-width: calc(100% - 40px);
   }
 
-
-
   .qform {
     gap: 18px;
   }
@@ -175,6 +171,7 @@ input[type="radio"]:checked {
 
   .test_buttons {
     gap: 16px;
+    flex-direction: column-reverse;
   }
 }
 
@@ -186,7 +183,6 @@ input[type="radio"]:checked {
   .cont_form {
     max-width: calc(100% - 24px);
   }
-
 
   .progress {
     height: 8px;
@@ -248,7 +244,6 @@ input[type="radio"]:checked {
   .cont_form {
     max-width: calc(100% - 18px);
   }
-
 
   .qtitle {
     font-size: 18px;
