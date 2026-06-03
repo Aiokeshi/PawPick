@@ -57,18 +57,17 @@ body {
   background-image: url(/static/main/img/background.svg);
   filter: sepia(20%);
   background-size: cover;
-  background-position: center center;
-    background-attachment: fixed;
+  background-position: center;
+  /* background-position: center center;
+    background-attachment: fixed; */
   background-repeat: no-repeat;
   background-color: #FCEBCD;
 }
-/* .backgroundcat {
+.backgroundcat {
   background-image: url(/static/main/img/backgroundbig.svg);
   background-size: cover;
-  background-position: center center;
-    background-attachment: fixed;
   background-repeat: no-repeat;
-} */
+}
 
 .container {
   max-width: 1480px;
