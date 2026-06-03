@@ -864,9 +864,9 @@
     row-gap: 34px;
     overflow: visible;
   }
-.filters-reset {
-  font-size: 15px;
-}
+  .filters-reset {
+    font-size: 15px;
+  }
   .card_full .short_info {
     column-gap: 36px;
   }
@@ -903,9 +903,9 @@
     row-gap: 30px;
     overflow: visible;
   }
-.filters-reset {
-  font-size: 12px;
-}
+  .filters-reset {
+    font-size: 12px;
+  }
   .card_full .short_info {
     column-gap: 26px;
     align-items: stretch;

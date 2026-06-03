@@ -61,12 +61,13 @@ body {
   /* background-position: center center;
     background-attachment: fixed; */
   background-repeat: no-repeat;
-  background-color: #FCEBCD;
+  background-color: #fcebcd;
 }
 .backgroundcat {
   background-image: url(/static/main/img/backgroundbig.svg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container {

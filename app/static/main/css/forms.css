@@ -77,7 +77,6 @@ input {
     width: 80%;
     padding: 10px;
     word-break: break-all;
-    
   }
 }
 
@@ -85,7 +84,7 @@ input {
   background-image: url(/static/main/img/regback.svg);
   background-repeat: no-repeat;
   background-position: center;
-  
+
   background-repeat: repeat-x;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
@@ -180,7 +179,7 @@ input {
   .form {
     row-gap: 20px;
     padding: 30px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
   }
 
   .form_form {
@@ -221,10 +220,10 @@ input {
   }
 }
 @media screen and (max-width: 488px) {
-   .cont_form {
+  .cont_form {
     width: 340px;
   }
   .form {
-    margin-bottom:0px;
+    margin-bottom: 0px;
   }
 }

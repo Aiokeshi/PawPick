@@ -1,112 +1,112 @@
 :root {
-  --c-1: #794A3A;
-  --c-2: #794A3A;
+  --c-1: #794a3a;
+  --c-2: #794a3a;
 }
 .reel {
-    margin: 50px 0;
-    overflow: hidden;
-    background-color: #FACA78;
-    border: 15px dashed var(--c-2);
-    border-left: none;
-    border-right: none;
-     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+  margin: 50px 0;
+  overflow: hidden;
+  background-color: #faca78;
+  border: 15px dashed var(--c-2);
+  border-left: none;
+  border-right: none;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 
 .reel::before,
 .reel::after {
-    display: block;
-    content: '';
-    padding: 6px;
-    border-top: 15px solid var(--c-2);
-    border-bottom: 15px solid var(--c-2);
+  display: block;
+  content: "";
+  padding: 6px;
+  border-top: 15px solid var(--c-2);
+  border-bottom: 15px solid var(--c-2);
 }
 
 .reel::before {
-    margin-top: -29px;
+  margin-top: -29px;
 }
 
 .reel::after {
-    margin-bottom: -29px;
+  margin-bottom: -29px;
 }
 
 .sec3slider {
-    display: flex;
-    flex-direction: row;
-    width: max-content;
-    will-change: transform;
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  will-change: transform;
 }
 
 .sec3slider.is-running {
-    animation: filmReelMove 28s linear infinite;
+  animation: filmReelMove 28s linear infinite;
 }
 
 .sec3slider:hover {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .sec3slider img {
-    width: 420px;
-    height: 280px;
-    object-fit: cover;
-    object-position: center;
-    flex: 0 0 auto;
-    border-left: 15px solid var(--c-2);
-    border-right: 15px solid var(--c-2);
+  width: 420px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  flex: 0 0 auto;
+  border-left: 15px solid var(--c-2);
+  border-right: 15px solid var(--c-2);
 }
 
 @keyframes filmReelMove {
-    from {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(0);
+  }
 
-    to {
-        transform: translateX(-50%);
-    }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media screen and (max-width: 1700px) {
-    .sec3slider img {
-        width: 360px;
-        height: 240px;
-    }
+  .sec3slider img {
+    width: 360px;
+    height: 240px;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .reel {
-        margin: 34px 0;
-        border-width: 10px;
-    }
+  .reel {
+    margin: 34px 0;
+    border-width: 10px;
+  }
 
-    .reel::before,
-    .reel::after {
-        padding: 5px;
-        border-top-width: 10px;
-        border-bottom-width: 10px;
-    }
+  .reel::before,
+  .reel::after {
+    padding: 5px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+  }
 
-    .reel::before {
-        margin-top: -22px;
-    }
+  .reel::before {
+    margin-top: -22px;
+  }
 
-    .reel::after {
-        margin-bottom: -22px;
-    }
+  .reel::after {
+    margin-bottom: -22px;
+  }
 
-    .sec3slider.is-running {
-        animation-duration: 22s;
-    }
+  .sec3slider.is-running {
+    animation-duration: 22s;
+  }
 
-    .sec3slider img {
-        width: 280px;
-        height: 190px;
-        border-left-width: 10px;
-        border-right-width: 10px;
-    }
+  .sec3slider img {
+    width: 280px;
+    height: 190px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+  }
 }
 
 @media screen and (max-width: 479px) {
-    .sec3slider img {
-        width: 240px;
-        height: 170px;
-    }
+  .sec3slider img {
+    width: 240px;
+    height: 170px;
+  }
 }

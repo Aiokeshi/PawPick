@@ -21,7 +21,6 @@ footer {
   min-width: 350px;
   max-width: 1480px;
   background-color: #faca78;
-
 }
 
 .footer_sec2 {
@@ -48,11 +47,9 @@ footer {
   .button {
     font-size: 15px;
   }
-  
 }
 @media screen and (max-width: 480px) {
-  
-  .burdiv{
-  align-self:center;
-}
+  .burdiv {
+    align-self: center;
+  }
 }

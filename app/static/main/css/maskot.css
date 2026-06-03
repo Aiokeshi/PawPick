@@ -1,140 +1,131 @@
 .logo {
-    width: 150px;
+  width: 150px;
 }
-.sprite1{
-     position: relative;
-    width: 320px;
-    left: 270px;
-    bottom: 170px;
-     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+.sprite1 {
+  position: relative;
+  width: 320px;
+  left: 270px;
+  bottom: 170px;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-.sprite2{
-   width: 270px;
-    height: 370px;
-    align-self: center;
-     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+.sprite2 {
+  width: 270px;
+  height: 370px;
+  align-self: center;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-.sprite3{
-    width: 300px;
-    align-self: flex-end;
-     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+.sprite3 {
+  width: 300px;
+  align-self: flex-end;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-.sprite4{
-   width: 270px;
-    height: 370px;
-     top: 30%;
-   position: sticky;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+.sprite4 {
+  width: 270px;
+  height: 370px;
+  top: 30%;
+  position: sticky;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-.sprite5{
-   width: 270px;
-    height: 370px;
-    top: 30%;
-    position: sticky;
-     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+.sprite5 {
+  width: 270px;
+  height: 370px;
+  top: 30%;
+  position: sticky;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-.sprite6{
-   width: 270px;
-    height: 370px;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+.sprite6 {
+  width: 270px;
+  height: 370px;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
-@media screen and (min-width: 1280px) and (max-width: 1700px){
-.logo {
+@media screen and (min-width: 1280px) and (max-width: 1700px) {
+  .logo {
     width: 100px;
-}
-.sprite1{
+  }
+  .sprite1 {
     width: 240px;
     left: 200px;
     bottom: 122px;
-}
-.sprite2{
+  }
+  .sprite2 {
     width: 300px;
     height: 290px;
-    
+  }
 }
-}
-@media screen and (min-width: 1024px) and (max-width: 1279px){
-.logo {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .logo {
     width: 100px;
-}
-.sprite1{
-                width: 210px;
-        left: 182px;
-        bottom: 120px;
-}
-.sprite2{
+  }
+  .sprite1 {
+    width: 210px;
+    left: 182px;
+    bottom: 120px;
+  }
+  .sprite2 {
     width: 200px;
     height: 200px;
-    
-}
- .sprite4,
+  }
+  .sprite4,
   .sprite5 {
     display: none;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px){
-.logo {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .logo {
     width: 100px;
-}
-.sprite4,
+  }
+  .sprite4,
   .sprite5 {
     display: none;
   }
-  .sprite1{
-                width: 220px;
+  .sprite1 {
+    width: 220px;
 
+    left: 75px;
 
-                left: 75px;
-      
-        bottom: 40px;
-}
-.sprite2{
+    bottom: 40px;
+  }
+  .sprite2 {
     width: 200px;
     height: 200px;
-    
+  }
 }
-}
-    @media screen and (max-width: 767px){
-.logo {
+@media screen and (max-width: 767px) {
+  .logo {
     width: 100px;
-}
-.sprite4,
+  }
+  .sprite4,
   .sprite5 {
     display: none;
   }
 
-   .sprite1{
-               width: 200px;
-        left: 20px;
-        bottom: 15px;
-
-}
-.sprite2{
+  .sprite1 {
+    width: 200px;
+    left: 20px;
+    bottom: 15px;
+  }
+  .sprite2 {
     width: 200px;
     height: 200px;
-    display:none;
+    display: none;
+  }
+  .sprite3 {
+    display: none;
+  }
 }
-.sprite3{
-    
-    display:none;
-}
-    }
 
-
-   @media screen and (max-width: 479px){
-   .sprite1{
-                     width: 180px;
-        left: -10px;
-        bottom: 34px;
-
-}
-.sprite2{
+@media screen and (max-width: 479px) {
+  .sprite1 {
+    width: 180px;
+    left: -10px;
+    bottom: 34px;
+  }
+  .sprite2 {
     width: 200px;
     height: 200px;
-    display:none;
+    display: none;
+  }
+  .sprite3 {
+    display: none;
+  }
 }
-.sprite3{
-    
-    display:none;
-}
-    }
