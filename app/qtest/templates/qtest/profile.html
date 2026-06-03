@@ -53,7 +53,7 @@
               ><span>Избранное</span></a>
           <a
             href="{% url 'register:logout' %}"
-            class="profile_action"
+            class="profile_action anim_btn_tilt"
           >
             <span>Выход></span>
           </a>
@@ -76,7 +76,7 @@
 
                 {% if result.best_card %}
 
-                  <a href="{% url 'catalog:card' result.best_card.slug %}" class="profile_result_flag label">
+                  <a href="{% url 'catalog:card' result.best_card.slug %}" class="profile_result_flag label anim_btn_scale">
                     <p class="card_title">{{ result.best_card.name }}</p>
 
                     <svg
@@ -105,9 +105,9 @@
                   <div class="profile_similar">
                     <span>Ещё похожие:</span>
 
-                    <div class="profile_similar_list">
+                    <div class="profile_similar_list ">
                       {% for card in result.similar_cards %}
-                        <a href="{% url 'catalog:card' card.slug %}">
+                        <a href="{% url 'catalog:card' card.slug %}" class="anim_btn_scale">
                           {{ card.name }}
                         </a>
                       {% endfor %}

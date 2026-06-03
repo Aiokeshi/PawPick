@@ -818,17 +818,4 @@
     border-width: 3px;
   }
 
-  .section1_slider .arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 28px;
-  }
-
-  .section1_slider .arrow#prev {
-    left: 6px;
-  }
-
-  .section1_slider .arrow#next {
-    right: 6px;
-  }
 }

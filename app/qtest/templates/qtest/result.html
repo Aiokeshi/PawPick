@@ -28,7 +28,7 @@
         </svg>
       </div>
 
-      <section class="q_result_hero">
+      <section class="q_result_hero ">
         <div class="card qcard">
           <a href="{% url 'catalog:card' best.card.slug %}" class="card_image">
             {% if best.card.imageMain %}
@@ -41,7 +41,7 @@
           </a>
 
           <div class="info">
-            <a href="{% url 'catalog:card' best.card.slug %}" class="label">
+            <a href="{% url 'catalog:card' best.card.slug %}" class="label anim_btn_scale">
               <p class="card_title">{{ best.card.name }}</p>
 
               <svg
@@ -68,7 +68,7 @@
 
               <a
                 href="{% url 'catalog:card' item.card.slug %}"
-                class="q_similar_item"
+                class="q_similar_item anim_btn_scale"
               >
                 <div class="q_similar_image">
                   {% if item.card.imageMain %}

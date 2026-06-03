@@ -55,16 +55,19 @@ img {
 
 body {
   background-image: url(/static/main/img/background.svg);
-  background-size: cover;
-  background-position: center;
   filter: sepia(20%);
-}
-.backgroundcat {
-  background-image: url(/static/main/img/backgroundbig.svg);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+    background-attachment: fixed;
   background-repeat: no-repeat;
 }
+/* .backgroundcat {
+  background-image: url(/static/main/img/backgroundbig.svg);
+  background-size: cover;
+  background-position: center center;
+    background-attachment: fixed;
+  background-repeat: no-repeat;
+} */
 
 .container {
   max-width: 1480px;

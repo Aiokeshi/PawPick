@@ -2,7 +2,7 @@
 {% load static%} 
 {% block title%}{{'Каталог'}}{%endblock %} 
 {% block content %}
-<section class="backgroundcat">
+
   <section class="catback">
     <button
       class="mobile-filter-button"
@@ -23,7 +23,7 @@
             <h2>Отличия</h2>
 
             {% if selected_tags %}
-            <a href="{% url 'catalog:catalog' %}" class="filters-reset"
+            <a href="{% url 'catalog:catalog' %}" class="filters-reset anim_btn_tilt"
               >Сбросить</a
             >
             {% endif %}
@@ -77,8 +77,8 @@
             <button type="submit" class="btn filtbtn anim_btn_scale"><span>Применить</span></button>
 
             {% if selected_tags %}
-            <a href="{% url 'catalog:catalog' %}" class="btn filtbtn filters-reset-btn anim_btn_scale"
-              ><span>Сбросить</span></a
+            <a href="{% url 'catalog:catalog' %}" class="button sbrosbtn filters-reset-btn anim_btn_tilt"
+              ><span><Сбросить</span></a
             >
             {% endif %}
           </div>
@@ -136,7 +136,7 @@
       </div>
     </div>
   </section>
-</section>
+
 <script src="{% static 'main/js/catalog_filters.js' %}"></script>
 
 {% endblock %}

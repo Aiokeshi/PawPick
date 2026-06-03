@@ -97,6 +97,13 @@
   flex: 0 0 auto;
   box-sizing: border-box;
 }
+.sbrosbtn{
+  span{
+  color:#faca78;
+  margin-top: 10px;
+  font-size: 21px;
+  }
+}
 .tettbtn {
   height: 90px;
   span {
@@ -133,6 +140,11 @@
   .bonbtn {
     width: 420px;
   }
+  .sbrosbtn{
+  span{
+  font-size: 17px;
+  }
+}
 }
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .sec1btn {
@@ -166,6 +178,11 @@
   .bonbtn {
     width: 340px;
   }
+  .sbrosbtn{
+  span{
+  font-size: 14px;
+  }
+}
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .sec1btn {
@@ -199,6 +216,11 @@
   .bonbtn {
     width: 340px;
   }
+  .sbrosbtn{
+  span{
+  font-size: 14px;
+  }
+}
 }
 @media screen and (max-width: 767px) {
   .sec1btn {
@@ -232,6 +254,11 @@
   .bonbtn {
     width: 340px;
   }
+  .sbrosbtn{
+  span{
+  font-size: 14px;
+  }
+}
 }
 @media screen and (max-width: 479px) {
   .sec1btn {
@@ -262,4 +289,9 @@
       width: 90%;
     }
   }
+  .sbrosbtn{
+  span{
+  font-size: 14px;
+  }
+}
 }
