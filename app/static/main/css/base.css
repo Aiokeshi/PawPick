@@ -100,5 +100,6 @@ body {
   }
   .body {
     background-attachment: scroll;
+    overflow-x:hidden;
   }
 }
