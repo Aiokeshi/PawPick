@@ -250,6 +250,12 @@
 }
 
 @media screen and (max-width: 479px) {
+  .qbanner {
+    max-width: 300px;
+    h2{
+      font-size: 25px;
+    }
+  }
   .q_result_hero,
   .q_result_empty {
     padding: 20px;
