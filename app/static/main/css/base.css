@@ -98,8 +98,4 @@ body {
     max-width: 480px;
     margin: 0 auto;
   }
-  .body {
-    background-attachment: scroll;
-    overflow-x:hidden;
-  }
 }
