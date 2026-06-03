@@ -60,6 +60,7 @@ body {
   background-position: center center;
     background-attachment: fixed;
   background-repeat: no-repeat;
+  background-color: #FCEBCD;
 }
 /* .backgroundcat {
   background-image: url(/static/main/img/backgroundbig.svg);

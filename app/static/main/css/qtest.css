@@ -238,14 +238,6 @@ input[type="radio"]:checked {
   .qbtn {
     padding: 12px 14px;
   }
-  
-  .qback {
-    background-size: cover;
-    background-position: center top;
-    background-repeat: repeat-y;
-    overflow-x: hidden;
-    background-attachment: scroll;
-  }
 }
 
 @media screen and (max-width: 560px) {
