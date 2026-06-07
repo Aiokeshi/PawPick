@@ -179,7 +179,7 @@ input {
   .form {
     row-gap: 20px;
     padding: 30px;
-    margin-bottom: 0px;
+    margin-bottom:50px;
   }
 
   .form_form {
@@ -223,7 +223,7 @@ input {
   .cont_form {
     width: 340px;
   }
-  .form {
-    margin-bottom: 0px;
-  }
+.form{
+  margin-bottom:50px;
+}
 }
