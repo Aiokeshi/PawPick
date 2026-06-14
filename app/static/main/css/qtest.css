@@ -110,8 +110,6 @@ input[type="radio"]:checked {
   color: #2b3939;
 }
 
-/* Адаптив страницы теста. Спрайты вынесены в sprite.css */
-
 @media screen and (max-width: 1279px) {
   .qback {
     align-items: center;

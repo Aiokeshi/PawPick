@@ -249,7 +249,10 @@
 
 @media screen and (max-width: 479px) {
   .qbanner {
-    max-width: 300px;
+    max-width: 350px;
+    span {
+      text-align:center;
+    }
     h2 {
       font-size: 25px;
     }

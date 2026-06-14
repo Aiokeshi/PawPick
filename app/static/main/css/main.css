@@ -817,4 +817,8 @@
     padding: 20px;
     border-width: 3px;
   }
+  .section2_navbtn {
+    row-gap:20px;
+    margin-top:20px;
+  }
 }
