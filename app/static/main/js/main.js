@@ -168,4 +168,10 @@ function removeCardFromFavoritesPage(form) {
   if (card) {
     card.remove();
   }
+
+  const remainingCards = favoritesCatalog.querySelectorAll('.card');
+
+  if (remainingCards.length === 0) {
+    window.location.reload();
+  }
 }
