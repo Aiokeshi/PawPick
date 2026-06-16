@@ -325,7 +325,7 @@
 }
 
 .favorites-catalog {
-  margin: auto 100px;
+  margin: 0px 100px 200px 100px;
 }
 
 .card_full {
@@ -570,7 +570,10 @@
     background-size: 984px;
     background-image: url(/static/main/img/mobcat.svg);
   }
-
+  .favorites-catalog {
+    margin: auto 18px;
+    padding: 60px 0;
+  }
   .filflag {
     max-width: 200px;
   }
@@ -675,7 +678,10 @@
     gap: 22px;
     grid-auto-rows: auto;
   }
-
+  .unfound {
+  margin: 75px 100px 100px 100px;
+  
+}
   .card {
     max-width: none;
     min-height: 260px;
@@ -730,7 +736,7 @@
 
   .favorites-catalog {
     margin: auto 18px;
-    padding: 28px 0;
+    padding: 45px 0;
   }
 
   .card_full {
@@ -767,7 +773,10 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 26px;
   }
-
+.unfound {
+  margin: 100px 100px 100px 100px;
+  
+}
   .catback {
     background-size: 1178px;
     background-image: url(/static/main/img/mobcat.svg);
